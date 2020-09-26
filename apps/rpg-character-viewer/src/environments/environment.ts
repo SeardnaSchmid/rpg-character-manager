@@ -1,9 +1,15 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
+import { env } from '@viewer-env/.env';
 
 export const environment = {
   production: false,
+  hmr: true,
+  version: env.npm_package_version + '-dev',
+  serverUrl: '/api',
+  defaultLanguage: 'en-US',
+  supportedLanguages: ['de-DE', 'en-US'],
 };
 
 /*
