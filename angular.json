@@ -63,11 +63,14 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "browserTarget": "rpg-character-viewer:build",
-            "proxyConfig": "apps/rpg-character-viewer/proxy.conf.json"
+            "proxyConfig": "apps/rpg-character-viewer/proxy.conf.json",
+            "hmr": true,
+            "hmrWarning": false
           },
           "configurations": {
             "production": {
-              "browserTarget": "rpg-character-viewer:build:production"
+              "browserTarget": "rpg-character-viewer:build:production",
+              "hmr": false
             }
           }
         },
