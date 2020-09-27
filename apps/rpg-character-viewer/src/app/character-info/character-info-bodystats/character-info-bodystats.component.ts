@@ -3,7 +3,7 @@ import { Character } from '@viewer-app/shared/character/character';
 import { BodyStatType, getFormulaExplanation } from '@viewer-app/shared/character/characterBodyStat';
 
 @Component({
-  selector: 'app-character-info-bodystats',
+  selector: 'viewer-character-info-bodystats',
   templateUrl: './character-info-bodystats.component.html',
   styleUrls: ['./character-info-bodystats.component.scss'],
 })

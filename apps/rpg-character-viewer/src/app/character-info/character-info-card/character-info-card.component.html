@@ -15,7 +15,7 @@
     <mat-expansion-panel-header>
       <mat-panel-title><h2>Basic Information</h2></mat-panel-title>
     </mat-expansion-panel-header>
-    <app-character-info-basics [character]="character"></app-character-info-basics>
+    <viewer-character-info-basics [character]="character"></viewer-character-info-basics>
     <br />
     <button mat-raised-button color="primary" (click)="this.characterGainXP(1)">Gain one XP</button>
     <button mat-raised-button color="primary" (click)="this.characterSpendXP(5)">Buy an advance</button>
@@ -26,7 +26,7 @@
     <mat-expansion-panel-header>
       <mat-panel-title><h2>Body Stats</h2></mat-panel-title>
     </mat-expansion-panel-header>
-    <app-character-info-bodystats [character]="character"></app-character-info-bodystats>
+    <viewer-character-info-bodystats [character]="character"></viewer-character-info-bodystats>
   </mat-expansion-panel>
 
   <!--  Attributes  -->
@@ -34,7 +34,7 @@
     <mat-expansion-panel-header>
       <mat-panel-title><h2>Attributes</h2></mat-panel-title>
     </mat-expansion-panel-header>
-    <app-character-info-attributes [selectedCharacter]="character"></app-character-info-attributes>
+    <viewer-character-info-attributes [selectedCharacter]="character"></viewer-character-info-attributes>
   </mat-expansion-panel>
 
   <!--  Skills  -->
@@ -42,7 +42,7 @@
     <mat-expansion-panel-header>
       <mat-panel-title><h2>Skills</h2></mat-panel-title>
     </mat-expansion-panel-header>
-    <app-character-info-skills [selectedCharacter]="character"></app-character-info-skills>
+    <viewer-character-info-skills [selectedCharacter]="character"></viewer-character-info-skills>
   </mat-expansion-panel>
 
   <!--  Items  -->
@@ -50,7 +50,7 @@
     <mat-expansion-panel-header>
       <mat-panel-title><h2>Items</h2></mat-panel-title>
     </mat-expansion-panel-header>
-    <app-character-info-items [selectedCharacter]="character"></app-character-info-items>
+    <viewer-character-info-items [selectedCharacter]="character"></viewer-character-info-items>
   </mat-expansion-panel>
 
   <br />

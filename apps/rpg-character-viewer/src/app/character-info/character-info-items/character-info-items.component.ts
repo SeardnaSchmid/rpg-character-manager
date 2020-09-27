@@ -4,7 +4,7 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
 import { CharacterItem } from '@viewer-app/shared/item/item';
 
 @Component({
-  selector: 'app-character-info-items',
+  selector: 'viewer-character-info-items',
   templateUrl: './character-info-items.component.html',
   styleUrls: ['./character-info-items.component.scss'],
 })

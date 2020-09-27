@@ -6,7 +6,7 @@
     "ng": "nx",
     "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
     "nx": "nx",
-    "start:frontend": "nx serve rpg-character-viewer",
+    "start:frontend": "ng serve rpg-character-viewer --liveReload=true --watch=true",
     "start:backend": "ng serve api",
     "build": "ng build",
     "test": "ng test",

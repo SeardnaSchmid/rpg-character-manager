@@ -6,7 +6,7 @@ import { CharacterAttribute } from '@viewer-app/shared/character/characterAttrib
 import { CoriolisRoll } from '@viewer-app/shared/coriolis/coriolisRoll';
 
 @Component({
-  selector: 'app-character-info-attributes',
+  selector: 'viewer-character-info-attributes',
   templateUrl: './character-info-attributes.component.html',
   styleUrls: ['./character-info-attributes.component.scss'],
 })

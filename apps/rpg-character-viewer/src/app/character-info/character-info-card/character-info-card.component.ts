@@ -3,7 +3,7 @@ import { Character } from '@viewer-app/shared/character/character';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
-  selector: 'app-character-info-card',
+  selector: 'viewer-character-info-card',
   templateUrl: './character-info-card.component.html',
   styleUrls: ['./character-info-card.component.scss'],
 })

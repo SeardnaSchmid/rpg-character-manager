@@ -10,11 +10,11 @@ import {
 import { StarSystem } from '@viewer-app/shared/starSystem/system';
 
 @Component({
-  selector: 'app-character-info-basics',
+  selector: 'viewer-character-info-basics',
   templateUrl: './character-info-basics.component.html',
   styleUrls: ['./character-info-basics.component.scss'],
 })
-export class CharacterInfoBasicsComponent implements OnInit {
+export class CharacterInfoBasicsComponent {
   @Input() character: Character;
   characterOrigin = CharacterOrigin;
   characterHomeSystem = StarSystem;
@@ -24,6 +24,4 @@ export class CharacterInfoBasicsComponent implements OnInit {
   characterIcon = CharacterIcon;
 
   constructor() {}
-
-  ngOnInit() {}
 }

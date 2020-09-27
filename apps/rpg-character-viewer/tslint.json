@@ -10,7 +10,7 @@
     "component-selector": [
       true,
       "element",
-      "rpg-character-manager",
+      "viewer",
       "kebab-case"
     ]
   },
