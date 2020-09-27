@@ -1,12 +1,13 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "rootDir": ".",
     "sourceMap": true,
+    "outDir": "./dist/",
     "declaration": false,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "downlevelIteration": true,
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
@@ -14,11 +15,19 @@
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
+    "resolveJsonModule": true,
     "baseUrl": ".",
+    "rootDir": ".",
     "paths": {
       "@rpg-character-manager/api-interfaces": [
         "libs/api-interfaces/src/index.ts"
-      ]
+      ],
+      "@viewer-env/*": ["apps/rpg-character-viewer/src/environments/*"],
+      "@viewer-app/*": ["apps/rpg-character-viewer/src/app/*"],
+      "@viewer-core": ["apps/rpg-character-viewer/src/app/@core"],
+      "@viewer-core/*": ["apps/rpg-character-viewer/src/app/@core/*"],
+      "@viewer-shared": ["apps/rpg-character-viewer/src/app/@shared"],
+      "@viewer-shared/*": ["apps/rpg-character-viewer/src/app/@shared/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]
