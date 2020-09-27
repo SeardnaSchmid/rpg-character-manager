@@ -3,7 +3,7 @@ import { Character } from '@viewer-app/shared/character/character';
 import { Dice } from '@viewer-app/shared/dice/dice';
 import { AttributeType } from '@viewer-app/shared/character/characterAttribute';
 import { CharacterItem, ItemArmor, ItemClassName, ItemGadget, ItemWeapon } from '@viewer-app/shared/item/item';
-import _ = require('lodash');
+import * as _ from 'lodash';
 
 export class CoriolisRoll {
   static countNumberOfDiceForArmorRoll(item: ItemArmor, character: Character) {

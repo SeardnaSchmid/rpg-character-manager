@@ -1,7 +1,7 @@
-import { SkillType } from '@app/shared/character/characterSkill';
-import { ItemGadget, ItemTechTier, ItemWeight } from '@app/shared/item/item';
+import { SkillType } from '@viewer-app/shared/character/characterSkill';
+import { ItemGadget, ItemTechTier, ItemWeight } from '@viewer-app/shared/item/item';
 import { v4 } from 'uuid';
-import { ItemFeatureType } from '@app/shared/item/itemFeature';
+import { ItemFeatureType } from '@viewer-app/shared/item/itemFeature';
 
 const quantenFluxGenerator: ItemGadget = new ItemGadget({
   id: v4(),

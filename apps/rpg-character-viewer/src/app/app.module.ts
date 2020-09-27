@@ -17,6 +17,8 @@ import { HomeModule } from './home/home.module';
 import { ShellModule } from './shell/shell.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { CharacterInfoModule } from '@viewer-app/character-info/character-info.module';
+import { DiceRollModalComponent } from '@viewer-app/dice-roll-modal/dice-roll-modal.component';
 
 @NgModule({
   imports: [
@@ -31,6 +33,7 @@ import { AppRoutingModule } from './app-routing.module';
     SharedModule,
     ShellModule,
     HomeModule,
+    CharacterInfoModule,
     AppRoutingModule, // must be imported as the last module as it contains the fallback route
   ],
   declarations: [AppComponent],

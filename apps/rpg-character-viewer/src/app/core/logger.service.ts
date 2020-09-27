@@ -34,8 +34,6 @@
  * The possible log levels.
  * LogLevel.Off is never emitted and only used with Logger.level property to disable logs.
  */
-import { Injectable } from '@angular/core';
-
 export enum LogLevel {
   Off = 0,
   Error,
@@ -49,12 +47,7 @@ export enum LogLevel {
  */
 export type LogOutput = (source: string | undefined, level: LogLevel, ...objects: any[]) => void;
 
-@Injectable({
-  providedIn: 'root',
-})
 export class Logger {
-
-  constructor(private source?: string) {}
   /**
    * Current logging level.
    * Set it to LogLevel.Off to disable logs completely.
@@ -74,9 +67,7 @@ export class Logger {
     Logger.level = LogLevel.Warning;
   }
 
-  setSource(arg0: string) {
-    this.source = arg0;
-  }
+  constructor(private source?: string) {}
 
   /**
    * Logs messages or objects  with the debug level.

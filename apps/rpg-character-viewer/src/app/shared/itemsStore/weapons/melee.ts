@@ -1,6 +1,6 @@
-import { ItemRanges, ItemTechTier, ItemWeapon, ItemWeight } from '@app/shared/item/item';
+import { ItemRanges, ItemTechTier, ItemWeapon, ItemWeight } from '@viewer-app/shared/item/item';
 import { v4 } from 'uuid';
-import { SkillType } from '@app/shared/character/characterSkill';
+import { SkillType } from '@viewer-app/shared/character/characterSkill';
 
 type ItemWeaponConstructorFunction = () => ItemWeapon;
 
