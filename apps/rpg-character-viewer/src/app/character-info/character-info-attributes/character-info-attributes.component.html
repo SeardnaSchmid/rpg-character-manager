@@ -1,5 +1,5 @@
-<mat-placeholder *ngFor="let attribute of selectedCharacter.attributes">
-  <mat-form-field appearance="outline">
+<mat-placeholder *ngFor="let attribute of selectedCharacter.attributes" class="attribute-container">
+  <mat-form-field>
     <mat-label>{{ attribute.type | titlecase }}</mat-label>
     <mat-select [(value)]="attribute.value">
       <mat-option [value]="1">1</mat-option>

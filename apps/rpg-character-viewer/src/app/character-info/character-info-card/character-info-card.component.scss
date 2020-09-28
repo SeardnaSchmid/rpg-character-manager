@@ -1,36 +1,32 @@
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto 1fr 1fr 1fr;
-  gap: 5px 5px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr 1fr 1fr 1fr;
+  gap: 3px 3px;
   grid-template-areas:
-    'header-area header-area header-area header-area'
-    'body-stats-area attributes-area basic-information-area basic-information-area'
-    'skills-area skills-area items-area items-area'
-    'skills-area skills-area items-area items-area';
+    'header-area header-area header-area'
+    'attributes-area basic-information-area basic-information-area'
+    'body-stats-area items-area items-area'
+    'skills-area items-area items-area'
+    'skills-area items-area items-area';
 }
 .body-stats-area {
   grid-area: body-stats-area;
-  border: solid lightgrey 1px;
 }
 .basic-information-area {
   grid-area: basic-information-area;
-  border: solid lightgrey 1px;
-}
-.attributes-area {
-  grid-area: attributes-area;
-  border: solid lightgrey 1px;
 }
 .items-area {
   grid-area: items-area;
-  border: solid lightgrey 1px;
 }
 .skills-area {
   grid-area: skills-area;
-  border: solid lightgrey 1px;
 }
 .header-area {
   grid-area: header-area;
+}
+.attributes-area {
+  grid-area: attributes-area;
 }
 
 .header-avatar-image {
@@ -41,8 +37,8 @@
 .infoCard {
   min-width: 10rem;
   text-align: left;
-  margin-bottom: 0.5rem;
-  margin-right: 0.5rem;
+  margin-bottom:0.25rem;
+  margin-right:0.25rem;
 }
 
 .mat-expansion-panel {

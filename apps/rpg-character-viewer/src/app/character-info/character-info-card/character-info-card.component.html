@@ -15,46 +15,44 @@
       </i>
     </mat-card-subtitle>
   </mat-card-header>
-  <br />
 
   <!--  Basic Information  -->
-  <div class="basic-information-area">
+  <mat-card class="basic-information-area">
     <h2>Basic Information</h2>
     <viewer-character-info-basics [character]="character"></viewer-character-info-basics>
-    <br />
     <button mat-raised-button color="primary" (click)="this.characterGainXP(1)">
       Gain one XP
     </button>
     <button mat-raised-button color="primary" (click)="this.characterSpendXP(5)">
       Buy an advance
     </button>
-  </div>
+  </mat-card>
 
   <!--  Body Stats  -->
-  <div class="attributes-area">
+  <mat-card class="attributes-area">
     <mat-panel-title><h2>Body Stats</h2></mat-panel-title>
     <viewer-character-info-bodystats [character]="character"></viewer-character-info-bodystats>
-  </div>
+  </mat-card>
 
   <!--  Attributes  -->
-  <div class="body-stats-area">
+  <mat-card class="body-stats-area">
     <mat-panel-title><h2>Attributes</h2></mat-panel-title>
     <viewer-character-info-attributes
       [selectedCharacter]="character"
     ></viewer-character-info-attributes>
-  </div>
+  </mat-card>
 
   <!--  Skills  -->
-  <div class="skills-area">
+  <mat-card class="skills-area">
     <mat-panel-title><h2>Skills</h2></mat-panel-title>
     <viewer-character-info-skills [selectedCharacter]="character"></viewer-character-info-skills>
-  </div>
+  </mat-card>
 
   <!--  Items  -->
-  <div class="items-area">
+  <mat-card class="items-area">
     <mat-panel-title><h2>Items</h2></mat-panel-title>
     <viewer-character-info-items [selectedCharacter]="character"></viewer-character-info-items>
-  </div>
+  </mat-card>
 
   <br />
 
