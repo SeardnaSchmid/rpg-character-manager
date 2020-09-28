@@ -9,7 +9,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class CharacterInfoCardComponent implements OnInit {
   @Input() character: Character;
-  areAllOpen = false;
+  areAllOpen = true;
 
   constructor(private _snackBar: MatSnackBar) {}
 

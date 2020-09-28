@@ -1,60 +1,64 @@
-<mat-card class="infoCard">
-  <mat-card-header>
+<mat-card class="infoCard grid-container">
+  <mat-card-header class="header-area">
     <div mat-card-avatar class="header-avatar-image"></div>
     <mat-card-title>
-      <strong>{{ character.name.firstName }} '{{ character.name.nickName }}' {{ character.name.sureName }}</strong>
+      <strong>
+        {{ character.name.firstName }} '{{ character.name.nickName }}'
+        {{ character.name.sureName }}
+      </strong>
     </mat-card-title>
     <mat-card-subtitle>
-      <i>{{ character.background.origin }} {{ character.background.homeSystem }} {{ character.background.concept }}</i>
+      <i>
+        {{ character.background.origin }}
+        {{ character.background.homeSystem }}
+        {{ character.background.concept }}
+      </i>
     </mat-card-subtitle>
   </mat-card-header>
   <br />
 
   <!--  Basic Information  -->
-  <mat-expansion-panel [expanded]="areAllOpen">
-    <mat-expansion-panel-header>
-      <mat-panel-title><h2>Basic Information</h2></mat-panel-title>
-    </mat-expansion-panel-header>
+  <div class="basic-information-area">
+    <h2>Basic Information</h2>
     <viewer-character-info-basics [character]="character"></viewer-character-info-basics>
     <br />
-    <button mat-raised-button color="primary" (click)="this.characterGainXP(1)">Gain one XP</button>
-    <button mat-raised-button color="primary" (click)="this.characterSpendXP(5)">Buy an advance</button>
-  </mat-expansion-panel>
+    <button mat-raised-button color="primary" (click)="this.characterGainXP(1)">
+      Gain one XP
+    </button>
+    <button mat-raised-button color="primary" (click)="this.characterSpendXP(5)">
+      Buy an advance
+    </button>
+  </div>
 
   <!--  Body Stats  -->
-  <mat-expansion-panel [expanded]="areAllOpen">
-    <mat-expansion-panel-header>
-      <mat-panel-title><h2>Body Stats</h2></mat-panel-title>
-    </mat-expansion-panel-header>
+  <div class="attributes-area">
+    <mat-panel-title><h2>Body Stats</h2></mat-panel-title>
     <viewer-character-info-bodystats [character]="character"></viewer-character-info-bodystats>
-  </mat-expansion-panel>
+  </div>
 
   <!--  Attributes  -->
-  <mat-expansion-panel [expanded]="areAllOpen">
-    <mat-expansion-panel-header>
-      <mat-panel-title><h2>Attributes</h2></mat-panel-title>
-    </mat-expansion-panel-header>
-    <viewer-character-info-attributes [selectedCharacter]="character"></viewer-character-info-attributes>
-  </mat-expansion-panel>
+  <div class="body-stats-area">
+    <mat-panel-title><h2>Attributes</h2></mat-panel-title>
+    <viewer-character-info-attributes
+      [selectedCharacter]="character"
+    ></viewer-character-info-attributes>
+  </div>
 
   <!--  Skills  -->
-  <mat-expansion-panel [expanded]="areAllOpen">
-    <mat-expansion-panel-header>
-      <mat-panel-title><h2>Skills</h2></mat-panel-title>
-    </mat-expansion-panel-header>
+  <div class="skills-area">
+    <mat-panel-title><h2>Skills</h2></mat-panel-title>
     <viewer-character-info-skills [selectedCharacter]="character"></viewer-character-info-skills>
-  </mat-expansion-panel>
+  </div>
 
   <!--  Items  -->
-  <mat-expansion-panel [expanded]="areAllOpen">
-    <mat-expansion-panel-header>
-      <mat-panel-title><h2>Items</h2></mat-panel-title>
-    </mat-expansion-panel-header>
+  <div class="items-area">
+    <mat-panel-title><h2>Items</h2></mat-panel-title>
     <viewer-character-info-items [selectedCharacter]="character"></viewer-character-info-items>
-  </mat-expansion-panel>
+  </div>
 
   <br />
 
-  <button mat-raised-button color="primary" (click)="onToggleAll()">All Collapsed = {{ !areAllOpen }}</button>
-  <button mat-raised-button color="primary" (click)="onSaveCharacter()">dumpEquipedItems</button>
+  <button mat-raised-button color="primary" (click)="onSaveCharacter()">
+    dumpEquipedItems
+  </button>
 </mat-card>
