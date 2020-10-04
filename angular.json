@@ -1,39 +1,47 @@
 {
   "version": 1,
   "projects": {
-    "rpg-character-viewer": {
+    "frontend": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
         }
       },
-      "root": "apps/rpg-character-viewer",
-      "sourceRoot": "apps/rpg-character-viewer/src",
+      "root": "apps/frontend",
+      "sourceRoot": "apps/frontend/src",
       "prefix": "rpg-character-manager",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/apps/rpg-character-viewer",
-            "index": "apps/rpg-character-viewer/src/index.html",
-            "main": "apps/rpg-character-viewer/src/main.ts",
-            "polyfills": "apps/rpg-character-viewer/src/polyfills.ts",
-            "tsConfig": "apps/rpg-character-viewer/tsconfig.app.json",
+            "outputPath": "dist/apps/frontend",
+            "index": "apps/frontend/src/index.html",
+            "main": "apps/frontend/src/main.ts",
+            "polyfills": "apps/frontend/src/polyfills.ts",
+            "tsConfig": "apps/frontend/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "apps/rpg-character-viewer/src/favicon.ico",
-              "apps/rpg-character-viewer/src/assets"
+              "apps/frontend/src/favicon.ico",
+              "apps/frontend/src/assets"
             ],
-            "styles": ["apps/rpg-character-viewer/src/styles.scss"],
+            "styles": ["apps/frontend/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
+            "hmr": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/frontend/src/environments/environment.ts",
+                  "with": "apps/frontend/src/environments/environment.prod.ts"
+                }
+              ]
+            },
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "apps/rpg-character-viewer/src/environments/environment.ts",
-                  "with": "apps/rpg-character-viewer/src/environments/environment.prod.ts"
+                  "replace": "apps/frontend/src/environments/environment.ts",
+                  "with": "apps/frontend/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -62,69 +70,68 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "rpg-character-viewer:build",
-            "proxyConfig": "apps/rpg-character-viewer/proxy.conf.json",
-            "hmr": true,
-            "hmrWarning": false
+            "browserTarget": "frontend:build",
+            "proxyConfig": "apps/frontend/proxy.conf.json"
           },
           "configurations": {
             "production": {
-              "browserTarget": "rpg-character-viewer:build:production",
-              "hmr": false
+              "browserTarget": "frontend:build:production"
+            },
+            "hmr": {
+              "hmr": true,
+              "browserTarget": "frontend:build:hmr"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "rpg-character-viewer:build"
+            "browserTarget": "frontend:build"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "apps/rpg-character-viewer/tsconfig.app.json",
-              "apps/rpg-character-viewer/tsconfig.spec.json"
+              "apps/frontend/tsconfig.app.json",
+              "apps/frontend/tsconfig.spec.json",
+              "apps/frontend/tsconfig.editor.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/rpg-character-viewer/**/*"]
+            "exclude": ["**/node_modules/**", "!apps/frontend/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "apps/rpg-character-viewer/jest.config.js",
+            "jestConfig": "apps/frontend/jest.config.js",
             "passWithNoTests": true
           }
         }
       }
     },
-    "rpg-character-viewer-e2e": {
-      "root": "apps/rpg-character-viewer-e2e",
-      "sourceRoot": "apps/rpg-character-viewer-e2e/src",
+    "frontend-e2e": {
+      "root": "apps/frontend-e2e",
+      "sourceRoot": "apps/frontend-e2e/src",
       "projectType": "application",
       "architect": {
         "e2e": {
           "builder": "@nrwl/cypress:cypress",
           "options": {
-            "cypressConfig": "apps/rpg-character-viewer-e2e/cypress.json",
-            "tsConfig": "apps/rpg-character-viewer-e2e/tsconfig.e2e.json",
-            "devServerTarget": "rpg-character-viewer:serve"
+            "cypressConfig": "apps/frontend-e2e/cypress.json",
+            "tsConfig": "apps/frontend-e2e/tsconfig.e2e.json",
+            "devServerTarget": "frontend:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "rpg-character-viewer:serve:production"
+              "devServerTarget": "frontend:serve:production"
             }
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/rpg-character-viewer-e2e/tsconfig.e2e.json"],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/rpg-character-viewer-e2e/**/*"
-            ]
+            "tsConfig": ["apps/frontend-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/frontend-e2e/**/*"]
           }
         }
       }
@@ -255,5 +262,5 @@
       "unitTestRunner": "jest"
     }
   },
-  "defaultProject": "rpg-character-viewer"
+  "defaultProject": "frontend"
 }

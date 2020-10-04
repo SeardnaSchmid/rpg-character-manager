@@ -11,6 +11,7 @@
     },
     "tsconfig.base.json": "*",
     "tslint.json": "*",
+    ".eslintrc.json": "*",
     "nx.json": "*"
   },
   "tasksRunnerOptions": {
@@ -22,12 +23,12 @@
     }
   },
   "projects": {
-    "rpg-character-viewer": {
+    "frontend": {
       "tags": []
     },
-    "rpg-character-viewer-e2e": {
+    "frontend-e2e": {
       "tags": [],
-      "implicitDependencies": ["rpg-character-viewer"]
+      "implicitDependencies": ["frontend"]
     },
     "api": {
       "tags": []
