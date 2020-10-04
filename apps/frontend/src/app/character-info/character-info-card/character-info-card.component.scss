@@ -1,0 +1,51 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr 1fr 1fr 1fr;
+  gap: 3px 3px;
+  grid-template-areas:
+    'header-area header-area header-area'
+    'attributes-area basic-information-area basic-information-area'
+    'body-stats-area items-area items-area'
+    'skills-area items-area items-area'
+    'skills-area items-area items-area';
+}
+.body-stats-area {
+  grid-area: body-stats-area;
+}
+.basic-information-area {
+  grid-area: basic-information-area;
+}
+.items-area {
+  grid-area: items-area;
+}
+.skills-area {
+  grid-area: skills-area;
+}
+.header-area {
+  grid-area: header-area;
+}
+.attributes-area {
+  grid-area: attributes-area;
+}
+
+.header-avatar-image {
+  background-image: url('https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png');
+  background-size: contain;
+}
+
+.infoCard {
+  min-width: 10rem;
+  text-align: left;
+  margin-bottom:0.25rem;
+  margin-right:0.25rem;
+}
+
+.mat-expansion-panel {
+  margin-bottom: 0.25rem;
+}
+
+.mat-raised-button {
+  margin-bottom: 0.25rem;
+  margin-right: 0.25rem;
+}

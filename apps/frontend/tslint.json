@@ -1,0 +1,20 @@
+{
+  "extends": "../../tslint.json",
+  "rules": {
+    "directive-selector": [
+      true,
+      "attribute",
+      "rpgCharacterManager",
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      "rpg-character-manager",
+      "kebab-case"
+    ]
+  },
+  "linterOptions": {
+    "exclude": ["!**/*"]
+  }
+}
