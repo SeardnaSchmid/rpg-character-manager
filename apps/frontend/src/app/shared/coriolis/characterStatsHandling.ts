@@ -1,6 +1,6 @@
-import { Character } from '@viewer-app/shared/character/character';
-import { BodyStatType } from '@viewer-app/shared/character/characterBodyStat';
-import { AttributeType } from '@viewer-app/shared/character/characterAttribute';
+import { Character } from '@viewer-app/shared/coriolis/character/character';
+import { BodyStatType } from '@viewer-app/shared/coriolis/character/characterBodyStat';
+import { AttributeType } from '@viewer-app/shared/coriolis/character/characterAttribute';
 
 function updateEncumbrance(character: Character) {
   const generalEncumbranceMinimum = 0;

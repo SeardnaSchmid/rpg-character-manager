@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto 1fr 1fr 1fr 1fr;
-  gap: 3px 3px;
+  gap: 7px 7px;
   grid-template-areas:
     'header-area header-area header-area'
     'attributes-area basic-information-area basic-information-area'

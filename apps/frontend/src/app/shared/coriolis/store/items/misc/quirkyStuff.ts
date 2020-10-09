@@ -1,7 +1,7 @@
-import { SkillType } from '@viewer-app/shared/character/characterSkill';
-import { ItemGadget, ItemTechTier, ItemWeight } from '@viewer-app/shared/item/item';
+import { SkillType } from '../../../character/characterSkill';
+import { ItemGadget, ItemTechTier, ItemWeight } from '../../../item/item';
 import { v4 } from 'uuid';
-import { ItemFeatureType } from '@viewer-app/shared/item/itemFeature';
+import { ItemFeatureType } from '../../../item/itemFeature';
 
 const quantenFluxGenerator: ItemGadget = new ItemGadget({
   id: v4(),
@@ -26,7 +26,7 @@ const jostersLangerPenis: ItemGadget = new ItemGadget({
       type: ItemFeatureType.custom,
       name: 'mitGrosserMachtKommtGrosseVerantwortung',
       modifier: 9001,
-      skillTypeToBeModified: SkillType.MeleeCombat,
+      typeToBeModified: SkillType.MeleeCombat,
     },
   ],
 });

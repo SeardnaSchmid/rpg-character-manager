@@ -1,4 +1,4 @@
-import { AttributeType } from '@viewer-app/shared/character/characterAttribute';
+import { AttributeType } from './characterAttribute';
 
 export interface CharacterSkill {
   type: SkillType;

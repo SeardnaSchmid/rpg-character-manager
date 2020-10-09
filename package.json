@@ -1,13 +1,12 @@
 {
   "name": "rpg-character-manager",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "scripts": {
     "ng": "nx",
     "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
     "nx": "nx",
-    "start": "ng serve",
-    "hmr": "ng serve --configuration hmr",
+    "start": "ng serve frontend --configuration hmr",
     "build": "ng build",
     "test": "ng test",
     "lint": "nx workspace-lint && ng lint",

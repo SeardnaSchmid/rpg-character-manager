@@ -5,5 +5,6 @@ export * from "./characterBodyStat"
 export * from "./characterGroupTalent"
 export * from "./characterIconTalent"
 export * from "./characterName"
-export * from "./characterTalents"
+export * from "./characterTalent"
 export * from "./characterSkill"
+export * from './characterSpecialDice';

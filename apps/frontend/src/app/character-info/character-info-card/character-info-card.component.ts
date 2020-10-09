@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Character } from '@viewer-app/shared/character/character';
+import { Character } from '@viewer-app/shared/coriolis/character/character';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({

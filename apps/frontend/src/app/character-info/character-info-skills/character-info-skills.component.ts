@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Character } from '@viewer-app/shared/character/character';
+import { Character } from '@viewer-app/shared/coriolis/character/character';
 import { Dice } from '@viewer-app/shared/dice/dice';
 import { DiceRollService } from '@viewer-app/dice-roll-modal/dice-roll.service';
-import { CharacterSkill } from '@viewer-app/shared/character/characterSkill';
+import { CharacterSkill } from '@viewer-app/shared/coriolis/character/characterSkill';
 import { CoriolisRoll } from '@viewer-app/shared/coriolis/coriolisRoll';
 
 @Component({

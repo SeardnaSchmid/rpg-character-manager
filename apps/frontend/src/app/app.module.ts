@@ -13,6 +13,8 @@ import { ShellModule } from './shell/shell.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CharacterInfoModule } from '@viewer-app/character-info/character-info.module';
+import { RulesModule } from '@viewer-app/rules/rules.module';
+import { ItemsModule } from '@viewer-app/items/items.module';
 
 @NgModule({
   imports: [
@@ -27,6 +29,8 @@ import { CharacterInfoModule } from '@viewer-app/character-info/character-info.m
     ShellModule,
     HomeModule,
     CharacterInfoModule,
+    RulesModule,
+    ItemsModule,
     AppRoutingModule, // must be imported as the last module as it contains the fallback route
   ],
   declarations: [AppComponent],

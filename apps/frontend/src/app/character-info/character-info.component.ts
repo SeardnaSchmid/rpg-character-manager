@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { Character } from '@viewer-app//shared/character/character';
-import { AttributeType } from '@viewer-app//shared/character/characterAttribute';
-import { SkillType } from '@viewer-app//shared/character/characterSkill';
-import { BodyStatType } from '@viewer-app//shared/character/characterBodyStat';
-import { CharacterOrigin } from '@viewer-app//shared/character/characterBackground';
-import { StarSystem } from '@viewer-app//shared/starSystem/system';
-import { itemStore } from '@viewer-app//shared/itemsStore/itemStore';
+import { Character } from '@viewer-app//shared/coriolis/character/character';
+import { AttributeType } from '@viewer-app//shared/coriolis/character/characterAttribute';
+import { SkillType } from '@viewer-app//shared/coriolis/character/characterSkill';
+import { BodyStatType } from '@viewer-app//shared/coriolis/character/characterBodyStat';
+import { CharacterOrigin } from '@viewer-app//shared/coriolis/character/characterBackground';
+import { StarSystem } from '@viewer-app//shared/coriolis/starSystem/system';
+import { items } from '@viewer-app//shared/coriolis/store/items/items';
 
 @Component({
   selector: 'viewer-character-info',
@@ -62,12 +62,10 @@ export class CharacterInfoComponent {
       { type: SkillType.Technology, value: 3 },
     ],
     equipedItems: [
-      itemStore.weapons.melee.knife(),
-      itemStore.weapons.melee.knife(),
-      itemStore.weapons.melee.knife(),
-      itemStore.weapons.melee.knife(),
-      itemStore.quirkyStuff.jostersLangerPenis,
+      items.weapons.melee.axe,
+      items.weapons.melee.knife,
+      items.quirkyStuff.jostersLangerPenis,
     ],
-    spaceShipItems: [itemStore.quirkyStuff.quantenFluxGenerator],
+    spaceShipItems: [items.quirkyStuff.quantenFluxGenerator],
   });
 }

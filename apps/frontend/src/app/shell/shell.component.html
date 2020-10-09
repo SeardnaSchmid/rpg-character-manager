@@ -24,6 +24,14 @@
             <span translate>CharacterInfo</span>
           </a>
           <mat-divider></mat-divider>
+          <a mat-list-item routerLink="/rules" routerLinkActive="active" (click)="isMobile && sidenav.close()">
+            <span translate>Rules</span>
+          </a>
+          <mat-divider></mat-divider>
+          <a mat-list-item routerLink="/items" routerLinkActive="active" (click)="isMobile && sidenav.close()">
+            <span translate>Items</span>
+          </a>
+          <mat-divider></mat-divider>
           <a mat-list-item routerLink="/about" routerLinkActive="active" (click)="isMobile && sidenav.close()">
             <span translate>About</span>
           </a>

@@ -1,19 +1,20 @@
-import { Character } from '@viewer-app/shared/character/character';
-import { AttributeType } from '@viewer-app/shared/character/characterAttribute';
-import { CharacterSkill, SkillType } from '@viewer-app/shared/character/characterSkill';
+import { Character } from '@viewer-app/shared/coriolis/character/character';
+import { AttributeType } from '@viewer-app/shared/coriolis/character/characterAttribute';
+import { CharacterSkill, SkillType } from '@viewer-app/shared/coriolis/character/characterSkill';
 import { Dice } from '@viewer-app/shared/dice/dice';
 import { CoriolisRoll } from '@viewer-app/shared/coriolis/coriolisRoll';
-import { ItemFeature, ItemFeatureType } from '@viewer-app/shared/item/itemFeature';
+import { ItemFeature, ItemFeatureType } from '@viewer-app/shared/coriolis/item/itemFeature';
 import {
   CharacterItem,
   ItemArmor,
   ItemGadget,
-  ItemRanges,
+  ItemRange,
   ItemTechTier,
   ItemWeapon,
   ItemWeight,
-} from '@viewer-app/shared/item/item';
-import { BodyStatType, CharacterBodyStat } from '@viewer-app/shared/character/characterBodyStat';
+} from '@viewer-app/shared/coriolis/item/item';
+import { BodyStatType, CharacterBodyStat } from '@viewer-app/shared/coriolis/character/characterBodyStat';
+import { CharacterSpecialDice, SpecialDiceType } from '@viewer-app/shared';
 
 describe('Character', () => {
   let testobject: Character;
@@ -35,7 +36,7 @@ describe('Character', () => {
     name: 'TestFeature',
     type: ItemFeatureType.custom,
     modifier: 10,
-    skillTypeToBeModified: SkillType.Observation,
+    typeToBeModified: SkillType.Observation,
     defaultUserInput: true,
     askForUserInput: true,
   });
@@ -49,7 +50,7 @@ describe('Character', () => {
     name: 'meleeBonus',
     type: ItemFeatureType.custom,
     modifier: 42,
-    skillTypeToBeModified: SkillType.MeleeCombat,
+    typeToBeModified: SkillType.MeleeCombat,
   });
   const itemMeleeWeapon = new ItemWeapon({
     name: 'testMeleeWeapon',
@@ -58,7 +59,7 @@ describe('Character', () => {
     weight: ItemWeight.normal,
     cost: 10,
     techTier: ItemTechTier.mysterious,
-    range: ItemRanges.extreme,
+    range: ItemRange.extreme,
     baseSkill: SkillType.MeleeCombat,
     features: [testMeleeFeature],
   });
@@ -80,11 +81,35 @@ describe('Character', () => {
   };
 
   const testItems: Array<CharacterItem> = [item1, itemMeleeWeapon, itemObservationGadget, testItemArmor];
+  const testSpecialDice: Array<CharacterSpecialDice> = [];
 
   describe('Constructor', () => {
     it('creates a Character Class with no information', () => {
       testobject = new Character();
       expect(testobject).toBeTruthy();
+    });
+  });
+
+  describe('rollInitiative', () => {
+    beforeEach(() => {
+      testobject = new Character({
+        attributes: testAttributes,
+        skills: testSkills,
+        equipedItems: testItems,
+        specialDices: testSpecialDice,
+      });
+    });
+
+    it('should roll 1 dice for initiative', () => {
+      const result: Dice[] = CoriolisRoll.rollInitiative(testobject, 0);
+      expect(result).toBeTruthy();
+      expect(result.length).toEqual(1);
+    });
+
+    it('should roll 1 dice with a bonus of 10 to be above at least 11 as a result', () => {
+      const result: Dice[] = CoriolisRoll.rollInitiative(testobject, 10);
+      expect(result.length).toEqual(1);
+      expect(result[0].diceResult).toBeGreaterThanOrEqual(11);
     });
   });
 
