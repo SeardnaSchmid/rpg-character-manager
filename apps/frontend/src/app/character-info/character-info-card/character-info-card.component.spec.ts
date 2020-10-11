@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CharacterInfoCardComponent } from './character-info-card.component';
+import { MatCardModule } from '@angular/material/card';
+import { CharacterInfoBasicsComponent } from '@viewer-app/character-info/character-info-basics/character-info-basics.component';
 
 describe('CharacterInfoCardComponent', () => {
   let component: CharacterInfoCardComponent;
@@ -8,7 +10,8 @@ describe('CharacterInfoCardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [CharacterInfoCardComponent],
+      declarations: [CharacterInfoCardComponent, CharacterInfoBasicsComponent],
+      imports: [MatCardModule]
     }).compileComponents();
   }));
 

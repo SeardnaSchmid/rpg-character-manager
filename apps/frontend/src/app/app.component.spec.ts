@@ -1,9 +1,6 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateModule } from '@ngx-translate/core';
-import { Keyboard } from '@ionic-native/keyboard/ngx';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 
 import { CoreModule } from '@viewer-core';
 import { AppComponent } from './app.component';
@@ -25,11 +22,7 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule, TranslateModule.forRoot(), CoreModule],
       declarations: [AppComponent],
-      providers: [
-        { provide: Keyboard, useValue: keyboardSpy },
-        { provide: StatusBar, useValue: statusBarSpy },
-        { provide: SplashScreen, useValue: splashScreenSpy },
-      ],
+      providers: [],
     }).compileComponents();
   }));
 

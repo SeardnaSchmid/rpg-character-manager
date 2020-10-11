@@ -21,8 +21,8 @@ export enum BodyStatType {
 
 export interface DrainableStat {
   current: number;
-  maximum?: number;
   minimum: number;
+  maximum?: number;
 }
 
 export function getFormulaExplanation(bodyStatType: BodyStatType): string {

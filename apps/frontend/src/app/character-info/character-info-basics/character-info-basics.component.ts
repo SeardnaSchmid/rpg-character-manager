@@ -1,13 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Character } from '@viewer-app/shared/coriolis/character/character';
-import {
-  CharacterConcept,
-  CharacterGroupConcept,
-  CharacterIcon,
-  CharacterOrigin,
-  CharacterUpbringing,
-} from '@viewer-app/shared/coriolis/character/characterBackground';
-import { StarSystem } from '@viewer-app/shared/coriolis/starSystem/system';
+import { Character, CharacterConcept, CharacterGroupConcept, CharacterIcon, CharacterOrigin, CharacterUpbringing } from '@viewer-app/shared';
+import { StarSystem } from '@viewer-app/shared/coriolis/model/starSystem/system';
 
 @Component({
   selector: 'viewer-character-info-basics',

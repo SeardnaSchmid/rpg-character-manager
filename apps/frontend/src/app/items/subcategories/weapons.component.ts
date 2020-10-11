@@ -1,8 +1,8 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
-import { items } from '@viewer-app/shared/coriolis/store/items/items';
-import { ItemWeapon } from '@viewer-app/shared/coriolis/character/item';
+import { items } from '@viewer-app/shared/coriolis/model/store/items/items';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
+import { ItemWeapon } from '@viewer-app/shared';
 
 @Component({
   selector: 'items-weapon',

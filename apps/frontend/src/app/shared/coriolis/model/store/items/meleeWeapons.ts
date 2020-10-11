@@ -1,23 +1,28 @@
-import { ItemRange, ItemTechTier, ItemWeapon, ItemWeight } from '../../../character/item';
+import {
+  ItemRange,
+  ItemTechTier,
+  ItemWeapon,
+  ItemWeight,
+} from '../../character/item';
 import { v4 } from 'uuid';
-import { GeneralSkillType } from '../../../character/characterSkill';
+import { GeneralSkillType } from '../../character/characterSkill';
 
 type ItemWeaponConstructorFunction = () => ItemWeapon;
 
 const knife: ItemWeapon = new ItemWeapon({
-    name: 'Knife',
-    weight: ItemWeight.normal,
-    id: v4(),
-    baseSkill: GeneralSkillType.MeleeCombat,
-    bonusModifier: 0,
-    initModifier: 1,
-    damage: 2,
-    crit: 2,
-    range: ItemRange.close,
-    features: [],
-    techTier: ItemTechTier.primitive,
-    cost: 50,
-  });
+  name: 'Knife',
+  weight: ItemWeight.normal,
+  id: v4(),
+  baseSkill: GeneralSkillType.MeleeCombat,
+  bonusModifier: 0,
+  initModifier: 1,
+  damage: 2,
+  crit: 2,
+  range: ItemRange.close,
+  features: [],
+  techTier: ItemTechTier.primitive,
+  cost: 50,
+});
 const sword: ItemWeapon = new ItemWeapon({
   weight: ItemWeight.normal,
   crit: 0,
@@ -375,7 +380,7 @@ const whip: ItemWeapon = new ItemWeapon({
   baseSkill: GeneralSkillType.MeleeCombat,
 });
 
-export const melee = {
+export const meleeWeapons = {
   knife,
   sword,
   duraKnife,

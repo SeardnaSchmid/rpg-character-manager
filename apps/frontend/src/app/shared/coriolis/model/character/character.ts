@@ -10,7 +10,6 @@ import {
   CharacterSpecialDice,
 } from '../../index';
 import { CharacterItem } from './item';
-import { updateBodyStats } from '../characterStatsHandling';
 
 export class Character {
   background?: CharacterBackground;
@@ -30,9 +29,5 @@ export class Character {
 
   public constructor(init?: Partial<Character>) {
     Object.assign(this, init);
-  }
-
-  updateBodyStats() {
-    updateBodyStats(this);
   }
 }

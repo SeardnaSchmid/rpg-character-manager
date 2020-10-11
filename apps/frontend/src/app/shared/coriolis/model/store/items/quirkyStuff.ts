@@ -1,12 +1,12 @@
-import { GeneralSkillType } from '../../../character/characterSkill';
-import { ItemGadget, ItemTechTier, ItemWeight } from '../../../character/item';
+import { AdvancedSkillType, GeneralSkillType } from '../../character/characterSkill';
+import { ItemGadget, ItemTechTier, ItemWeight } from '../../character/item';
 import { v4 } from 'uuid';
-import { ItemFeatureType } from '../../../character/itemFeature';
+import { ItemFeatureType } from '../../character/itemFeature';
 
 const quantenFluxGenerator: ItemGadget = new ItemGadget({
   id: v4(),
   amount: 0,
-  baseSkill: GeneralSkillType.MysticalPowers,
+  baseSkill: AdvancedSkillType.MysticalPowers,
   cost: 0,
   techTier: ItemTechTier.mysterious,
   name: 'QuantenFluxGenerator',
@@ -21,14 +21,7 @@ const jostersLangerPenis: ItemGadget = new ItemGadget({
   baseSkill: GeneralSkillType.MeleeCombat,
   techTier: ItemTechTier.advanced,
   amount: 1,
-  features: [
-    {
-      type: ItemFeatureType.custom,
-      name: 'mitGrosserMachtKommtGrosseVerantwortung',
-      modifier: 9001,
-      typeToBeModified: GeneralSkillType.MeleeCombat,
-    },
-  ],
+  features: [],
 });
 
 export const quirkyStuff = {

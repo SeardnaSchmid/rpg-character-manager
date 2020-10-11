@@ -7,9 +7,9 @@ import { CoreModule } from '@viewer-core';
 import { SharedModule } from '@viewer-shared';
 import { MaterialModule } from '@viewer-app/material.module';
 import { RulesComponent } from './rules.component';
-import { QuoteService } from './quote.service';
+import { GmReferenceComponent } from '@viewer-app/rules/coriolis-rules';
 
-describe('HomeComponent', () => {
+describe('RulesComponent', () => {
   let component: RulesComponent;
   let fixture: ComponentFixture<RulesComponent>;
 
@@ -23,8 +23,7 @@ describe('HomeComponent', () => {
         SharedModule,
         HttpClientTestingModule,
       ],
-      declarations: [RulesComponent],
-      providers: [QuoteService],
+      declarations: [RulesComponent, GmReferenceComponent],
     }).compileComponents();
   }));
 

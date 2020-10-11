@@ -4,11 +4,11 @@ import {
   BodyStatType,
   CharacterBodyStat,
   CharacterModifier,
-  CharacterSkill,
+  CharacterSkill, DrainableStat,
   GeneralSkillType
-} from './character';
-import { ItemFeatureType } from './character/itemFeature';
-import { ItemArmor, ItemGadget, ItemRange, ItemTechTier, ItemWeapon, ItemWeight } from './character/item';
+} from './model/character';
+import { ItemFeatureType } from './model/character/itemFeature';
+import { ItemArmor, ItemGadget, ItemRange, ItemTechTier, ItemWeapon, ItemWeight } from './model/character/item';
 
 export const baseAttributesMock = [
   { type: AttributeType.Agility, value: 1 },
@@ -24,6 +24,14 @@ export const baseSkillsMock: CharacterSkill[] = [
   { type: AdvancedSkillType.Technology, value: 1 }, // advanced skill
   { type: AdvancedSkillType.DataDjinn, value: 1 }, // advanced skill
 ];
+export const baseDrainableStat: DrainableStat = {current: 1, minimum: 0, maximum: 10};
+export const baseBodyStatsMock: CharacterBodyStat[] = [
+  {type: BodyStatType.Hitpoints, value: baseDrainableStat},
+  {type: BodyStatType.Mindpoints, value: baseDrainableStat},
+  {type: BodyStatType.Encumbarance, value: baseDrainableStat},
+  {type: BodyStatType.RadiationPoints, value: baseDrainableStat},
+  {type: BodyStatType.Reputation, value: baseDrainableStat},
+]
 export const observationFeatureMock: CharacterModifier = new CharacterModifier({
   userQuestionAtUse: () => true,
   name: 'observationFeatureMock',

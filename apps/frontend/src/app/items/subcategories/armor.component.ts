@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
-import { items } from '@viewer-app/shared/coriolis/store/items/items';
+import { items } from '@viewer-app/shared/coriolis/model/store/items/items';
 import { ItemArmor } from '@viewer-app/shared/coriolis/character/item';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';

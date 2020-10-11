@@ -21,7 +21,7 @@ export class CharacterModifier {
 
   public userQuestionAtUse?: UserInteractionFunctionType = () => true;
 
-  public getModifierFromUserInput(): number {
+  public getModifierFromUserInput?: () => number = () => {
     if (this.askForUserInput) {
       // TODO Implement Dialog popup
       return this.modifier;

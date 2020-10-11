@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
-import { Character } from '@viewer-app//shared/coriolis/character/character';
-import { AttributeType } from '@viewer-app//shared/coriolis/character/characterAttribute';
-import { GeneralSkillType } from '@viewer-app//shared/coriolis/character/characterSkill';
-import { BodyStatType } from '@viewer-app//shared/coriolis/character/characterBodyStat';
-import { CharacterOrigin } from '@viewer-app//shared/coriolis/character/characterBackground';
-import { StarSystem } from '@viewer-app//shared/coriolis/starSystem/system';
-import { items } from '@viewer-app//shared/coriolis/store/items/items';
+import { items } from '@viewer-app//shared/coriolis/model/store/items/items';
+import {
+  AdvancedSkillType,
+  AttributeType,
+  BodyStatType,
+  Character,
+  CharacterOrigin,
+  GeneralSkillType
+} from '@viewer-app/shared';
+import { StarSystem } from '@viewer-app/shared/coriolis/model/starSystem/system';
 
 @Component({
   selector: 'viewer-character-info',
@@ -52,14 +55,14 @@ export class CharacterInfoComponent {
       { type: GeneralSkillType.Observation, value: 1 },
       { type: GeneralSkillType.RangedCombat, value: 0 },
       { type: GeneralSkillType.Survival, value: 0 },
-      { type: GeneralSkillType.Command, value: 0 },
-      { type: GeneralSkillType.Culture, value: 1 },
-      { type: GeneralSkillType.DataDjinn, value: 5 },
-      { type: GeneralSkillType.Medicurgy, value: 0 },
-      { type: GeneralSkillType.MysticalPowers, value: 0 },
-      { type: GeneralSkillType.Pilot, value: 0 },
-      { type: GeneralSkillType.Science, value: 1 },
-      { type: GeneralSkillType.Technology, value: 3 },
+      { type: AdvancedSkillType.Command, value: 0 },
+      { type: AdvancedSkillType.Culture, value: 1 },
+      { type: AdvancedSkillType.DataDjinn, value: 5 },
+      { type: AdvancedSkillType.Medicurgy, value: 0 },
+      { type: AdvancedSkillType.MysticalPowers, value: 0 },
+      { type: AdvancedSkillType.Pilot, value: 0 },
+      { type: AdvancedSkillType.Science, value: 1 },
+      { type: AdvancedSkillType.Technology, value: 3 },
     ],
     equipedItems: [
       items.weapons.melee.axe,

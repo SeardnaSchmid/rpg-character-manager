@@ -7,9 +7,9 @@ import { CoreModule } from '@viewer-core';
 import { SharedModule } from '@viewer-shared';
 import { MaterialModule } from '@viewer-app/material.module';
 import { ItemsComponent } from './items.component';
-import { QuoteService } from './quote.service';
+import { ItemArmorComponent, ItemWeaponComponent } from '@viewer-app/items/subcategories';
 
-describe('HomeComponent', () => {
+describe('ItemComponent', () => {
   let component: ItemsComponent;
   let fixture: ComponentFixture<ItemsComponent>;
 
@@ -23,8 +23,7 @@ describe('HomeComponent', () => {
         SharedModule,
         HttpClientTestingModule,
       ],
-      declarations: [ItemsComponent],
-      providers: [QuoteService],
+      declarations: [ItemsComponent, ItemWeaponComponent, ItemArmorComponent],
     }).compileComponents();
   }));
 
