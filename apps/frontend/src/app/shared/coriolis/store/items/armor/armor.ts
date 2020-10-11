@@ -1,6 +1,6 @@
-import { ItemArmor, ItemTechTier, ItemWeapon, ItemWeight } from '../../../item/item';
+import { ItemArmor, ItemTechTier, ItemWeapon, ItemWeight } from '../../../character/item';
 import { v4 } from 'uuid';
-import { ItemFeatureType } from '../../../item/itemFeature';
+import { ItemFeatureType } from '../../../character/itemFeature';
 
 type ItemWeaponConstructorFunction = () => ItemWeapon;
 

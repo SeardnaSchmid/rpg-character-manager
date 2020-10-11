@@ -1,19 +1,11 @@
 import { AttributeType } from './characterAttribute';
 
 export interface CharacterSkill {
-  type: SkillType;
+  type: GeneralSkillType | AdvancedSkillType;
   value: number;
 }
 
-export enum SkillType {
-  Dexterity = 'Dexterity',
-  Force = 'Force',
-  Infiltration = 'Infiltration',
-  Manipulation = 'Manipulation',
-  MeleeCombat = 'MeleeCombat',
-  Observation = 'Observation',
-  RangedCombat = 'RangedCombat',
-  Survival = 'Survival',
+export enum AdvancedSkillType {
   Command = 'Command',
   Culture = 'Culture',
   DataDjinn = 'DataDjinn',
@@ -24,43 +16,78 @@ export enum SkillType {
   Technology = 'Technology',
 }
 
+export const AdvancedSkillTypesList = [
+  AdvancedSkillType.Command,
+  AdvancedSkillType.Culture,
+  AdvancedSkillType.DataDjinn,
+  AdvancedSkillType.Medicurgy,
+  AdvancedSkillType.MysticalPowers,
+  AdvancedSkillType.Pilot,
+  AdvancedSkillType.Science,
+  AdvancedSkillType.Technology
+];
+
+export enum GeneralSkillType {
+  Dexterity = 'Dexterity',
+  Force = 'Force',
+  Infiltration = 'Infiltration',
+  Manipulation = 'Manipulation',
+  MeleeCombat = 'MeleeCombat',
+  Observation = 'Observation',
+  RangedCombat = 'RangedCombat',
+  Survival = 'Survival',
+}
+
+export const GeneralSkillsTypesList = [
+  GeneralSkillType.Dexterity,
+  GeneralSkillType.Force,
+  GeneralSkillType.Infiltration,
+  GeneralSkillType.Manipulation,
+  GeneralSkillType.MeleeCombat,
+  GeneralSkillType.Observation,
+  GeneralSkillType.RangedCombat,
+  GeneralSkillType.Survival,
+];
+
 /**
  * Returns the BaseAttributeType of a Skill
  * @param skill- the skill you want to convert
  */
-export function GetBaseAttributeTypeOfSkill(skill: SkillType): AttributeType {
+export function GetBaseAttributeTypeOfSkill(
+  skill: GeneralSkillType | AdvancedSkillType
+): AttributeType {
   switch (skill) {
-    case SkillType.Dexterity:
+    case GeneralSkillType.Dexterity:
       return AttributeType.Agility;
-    case SkillType.Force:
+    case GeneralSkillType.Force:
       return AttributeType.Strength;
-    case SkillType.Infiltration:
+    case GeneralSkillType.Infiltration:
       return AttributeType.Agility;
-    case SkillType.Manipulation:
+    case GeneralSkillType.Manipulation:
       return AttributeType.Empathy;
-    case SkillType.MeleeCombat:
+    case GeneralSkillType.MeleeCombat:
       return AttributeType.Strength;
-    case SkillType.Observation:
+    case GeneralSkillType.Observation:
       return AttributeType.Wits;
-    case SkillType.RangedCombat:
+    case GeneralSkillType.RangedCombat:
       return AttributeType.Agility;
-    case SkillType.Survival:
+    case GeneralSkillType.Survival:
       return AttributeType.Wits;
-    case SkillType.Command:
+    case AdvancedSkillType.Command:
       return AttributeType.Empathy;
-    case SkillType.Culture:
+    case AdvancedSkillType.Culture:
       return AttributeType.Empathy;
-    case SkillType.DataDjinn:
+    case AdvancedSkillType.DataDjinn:
       return AttributeType.Wits;
-    case SkillType.Medicurgy:
+    case AdvancedSkillType.Medicurgy:
       return AttributeType.Wits;
-    case SkillType.MysticalPowers:
+    case AdvancedSkillType.MysticalPowers:
       return AttributeType.Empathy;
-    case SkillType.Pilot:
+    case AdvancedSkillType.Pilot:
       return AttributeType.Agility;
-    case SkillType.Science:
+    case AdvancedSkillType.Science:
       return AttributeType.Wits;
-    case SkillType.Technology:
+    case AdvancedSkillType.Technology:
       return AttributeType.Wits;
     default:
       throw new Error('Invalid Input Skill');

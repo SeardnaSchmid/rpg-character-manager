@@ -1,9 +1,9 @@
 import { Character } from '@viewer-app/shared/coriolis/character/character';
 import { AttributeType } from '@viewer-app/shared/coriolis/character/characterAttribute';
-import { CharacterSkill, SkillType } from '@viewer-app/shared/coriolis/character/characterSkill';
+import { CharacterSkill, GeneralSkillType } from '@viewer-app/shared/coriolis/character/characterSkill';
 import { Dice } from '@viewer-app/shared/dice/dice';
 import { CoriolisRoll } from '@viewer-app/shared/coriolis/coriolisRoll';
-import { ItemFeature, ItemFeatureType } from '@viewer-app/shared/coriolis/item/itemFeature';
+import { ItemFeatureType } from '@viewer-app/shared/coriolis/character/itemFeature';
 import {
   CharacterItem,
   ItemArmor,
@@ -12,9 +12,9 @@ import {
   ItemTechTier,
   ItemWeapon,
   ItemWeight,
-} from '@viewer-app/shared/coriolis/item/item';
+} from '@viewer-app/shared/coriolis/character/item';
 import { BodyStatType, CharacterBodyStat } from '@viewer-app/shared/coriolis/character/characterBodyStat';
-import { CharacterSpecialDice, SpecialDiceType } from '@viewer-app/shared';
+import { CharacterModifier, CharacterSpecialDice } from '@viewer-app/shared';
 
 describe('Character', () => {
   let testobject: Character;
@@ -26,17 +26,17 @@ describe('Character', () => {
     { type: AttributeType.Empathy, value: 5 },
   ];
   const testSkills: CharacterSkill[] = [
-    { type: SkillType.Dexterity, value: 5 },
-    { type: SkillType.MeleeCombat, value: 5 },
-    { type: SkillType.RangedCombat, value: 5 },
-    { type: SkillType.Observation, value: 3 },
+    { type: GeneralSkillType.Dexterity, value: 5 },
+    { type: GeneralSkillType.MeleeCombat, value: 5 },
+    { type: GeneralSkillType.RangedCombat, value: 5 },
+    { type: GeneralSkillType.Observation, value: 3 },
   ];
-  const testFeatureObservation: ItemFeature = new ItemFeature({
+  const testFeatureObservation: CharacterModifier = new CharacterModifier({
     userQuestionAtUse: () => true,
     name: 'TestFeature',
     type: ItemFeatureType.custom,
     modifier: 10,
-    typeToBeModified: SkillType.Observation,
+    typeToBeModified: GeneralSkillType.Observation,
     defaultUserInput: true,
     askForUserInput: true,
   });
@@ -44,13 +44,13 @@ describe('Character', () => {
     name: 'testItem',
     amount: 1,
     features: [testFeatureObservation],
-    baseSkill: SkillType.Observation,
+    baseSkill: GeneralSkillType.Observation,
   });
   const testMeleeFeature = new ItemFeature({
     name: 'meleeBonus',
     type: ItemFeatureType.custom,
     modifier: 42,
-    typeToBeModified: SkillType.MeleeCombat,
+    typeToBeModified: GeneralSkillType.MeleeCombat,
   });
   const itemMeleeWeapon = new ItemWeapon({
     name: 'testMeleeWeapon',
@@ -60,12 +60,12 @@ describe('Character', () => {
     cost: 10,
     techTier: ItemTechTier.mysterious,
     range: ItemRange.extreme,
-    baseSkill: SkillType.MeleeCombat,
+    baseSkill: GeneralSkillType.MeleeCombat,
     features: [testMeleeFeature],
   });
   const itemObservationGadget = new ItemGadget({
     name: 'testObservationGadget',
-    baseSkill: SkillType.Observation,
+    baseSkill: GeneralSkillType.Observation,
     features: [testFeatureObservation],
   });
   const testItemArmor = new ItemArmor({
@@ -87,50 +87,6 @@ describe('Character', () => {
     it('creates a Character Class with no information', () => {
       testobject = new Character();
       expect(testobject).toBeTruthy();
-    });
-  });
-
-  describe('rollInitiative', () => {
-    beforeEach(() => {
-      testobject = new Character({
-        attributes: testAttributes,
-        skills: testSkills,
-        equipedItems: testItems,
-        specialDices: testSpecialDice,
-      });
-    });
-
-    it('should roll 1 dice for initiative', () => {
-      const result: Dice[] = CoriolisRoll.rollInitative(testobject, 0);
-      expect(result).toBeTruthy();
-      expect(result.length).toEqual(1);
-    });
-
-    it('should roll 1 dice with a bonus of 10 to be above at least 11 as a result', () => {
-      const result: Dice[] = CoriolisRoll.rollInitative(testobject, 10);
-      expect(result.length).toEqual(1);
-      expect(result[0].diceResult).toBeGreaterThanOrEqual(11);
-    });
-  });
-
-  describe('rollSkill', () => {
-    beforeEach(() => {
-      testobject = new Character({
-        attributes: testAttributes,
-        skills: testSkills,
-        equipedItems: testItems,
-      });
-    });
-
-    it('should roll 10 dice from a defined skill and determine the amount of successes', () => {
-      const skillTestResult: Dice[] = CoriolisRoll.rollSkill(SkillType.Dexterity, testobject, 0);
-      expect(skillTestResult).toBeTruthy();
-      expect(skillTestResult.length).toEqual(10);
-    });
-
-    it('should roll 12 dice. 3 attribute, 3 skill, 10 item, 10 item = 26 dice', () => {
-      const skillTestResult: Dice[] = CoriolisRoll.rollSkill(SkillType.Observation, testobject);
-      expect(skillTestResult.length).toEqual(26);
     });
   });
 

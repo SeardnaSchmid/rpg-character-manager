@@ -1,10 +1,10 @@
-import { ItemFeature, ItemFeatureType } from '../../../item/itemFeature';
-import { SkillType, SpecialDiceType } from '../../../character';
+import { ItemFeature, ItemFeatureType } from '../../../character/itemFeature';
+import { GeneralSkillType, SpecialDiceType } from '../../../character';
 
 const bulky: ItemFeature = {
   name: "bulky",
   type: ItemFeatureType.bulky,
-  typeToBeModified: SkillType.Dexterity,
+  typeToBeModified: GeneralSkillType.Dexterity,
   modifier: -2,
 };
 const long: ItemFeature = {
@@ -16,7 +16,7 @@ const long: ItemFeature = {
 const small: ItemFeature = {
   name: "small",
   type: ItemFeatureType.small,
-  typeToBeModified: SkillType.Dexterity,
+  typeToBeModified: GeneralSkillType.Dexterity,
   modifier: -2,
 };
 

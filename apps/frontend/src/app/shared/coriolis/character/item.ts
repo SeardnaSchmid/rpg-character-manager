@@ -1,5 +1,5 @@
-import { ItemFeature } from './itemFeature';
-import { SkillType } from '../character/characterSkill';
+import { AdvancedSkillType, GeneralSkillType } from './characterSkill';
+import { CharacterModifier } from '@viewer-app/shared';
 
 export type CharacterItem = ItemWeapon | ItemArmor | ItemGadget;
 
@@ -8,12 +8,12 @@ export class CharacterItemBase {
   name?: string;
   techTier?: ItemTechTier = ItemTechTier.ordinary;
   cost? = 0;
-  features?: Array<ItemFeature> = [];
+  features?: Array<CharacterModifier> = [];
   isRestricted?: boolean = false;
   inHands?: boolean = false;
   weight?: ItemWeight = ItemWeight.normal;
   amount? = 1;
-  baseSkill?: SkillType;
+  baseSkill?: GeneralSkillType | AdvancedSkillType;
   itemSubCategory: ItemWeaponSubCategory | ItemArmorSubCategory | ItemGadgetSubCategory;
   protected _itemClassName: ItemClassName;
 

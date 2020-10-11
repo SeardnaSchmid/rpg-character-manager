@@ -1,6 +1,3 @@
-import { SkillType } from '../character/characterSkill';
-import { AttributeType, SpecialDiceType } from '../../index';
-
 export enum ItemFeatureType {
   bulky = 'bulky', // test
   small = 'small',
@@ -39,39 +36,4 @@ export enum ItemFeatureType {
   reinforcedExoServos = 'reinforcedExoServos',
   custom = 'custom',
   reduceOneHitBy3 = 'reduceOneHitBy3',
-}
-
-export type UserInteractionFunctionType = () => boolean;
-
-export class ItemFeature {
-  // mandatory fields
-  public name: string;
-  public type: ItemFeatureType;
-  public modifier: number;
-  public typeToBeModified: SkillType | AttributeType | SpecialDiceType;
-
-  // optional fields
-  public defaultUserInput? = true;
-  public askForUserInput? = false;
-
-  public constructor(init?: Partial<ItemFeature>) {
-    Object.assign(this, init);
-  }
-
-  public userQuestionAtUse?: UserInteractionFunctionType = () => true;
-
-  public getModifier(): number {
-    if (this.askForUserInput) {
-      // TODO Implement Dialog
-      return this.modifier;
-    } else {
-      if (this.defaultUserInput) {
-        // modifier can be applied
-        return this.modifier;
-      } else {
-        // modifier does not apply because of the question
-        return 0;
-      }
-    }
-  }
 }

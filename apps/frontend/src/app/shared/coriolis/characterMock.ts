@@ -1,6 +1,14 @@
-import { AttributeType, BodyStatType, CharacterBodyStat, CharacterSkill, SkillType } from './character';
-import { ItemFeature, ItemFeatureType } from './item/itemFeature';
-import { ItemArmor, ItemGadget, ItemRange, ItemTechTier, ItemWeapon, ItemWeight } from './item/item';
+import {
+  AdvancedSkillType,
+  AttributeType,
+  BodyStatType,
+  CharacterBodyStat,
+  CharacterModifier,
+  CharacterSkill,
+  GeneralSkillType
+} from './character';
+import { ItemFeatureType } from './character/itemFeature';
+import { ItemArmor, ItemGadget, ItemRange, ItemTechTier, ItemWeapon, ItemWeight } from './character/item';
 
 export const attributesMock = [
   { type: AttributeType.Agility, value: 1 },
@@ -9,37 +17,41 @@ export const attributesMock = [
   { type: AttributeType.Empathy, value: 1 },
 ];
 export const skillsMock: CharacterSkill[] = [
-  { type: SkillType.Dexterity, value: 1 },
-  { type: SkillType.MeleeCombat, value: 1 },
-  { type: SkillType.RangedCombat, value: 1 },
-  { type: SkillType.Observation, value: 1 },
+  { type: GeneralSkillType.Dexterity, value: 1 }, // general skill
+  { type: GeneralSkillType.MeleeCombat, value: 1 }, // general skill
+  { type: GeneralSkillType.RangedCombat, value: 1 }, // general skill
+  { type: GeneralSkillType.Observation, value: 1 }, // general skill
+  { type: AdvancedSkillType.Technology, value: 1 }, // advanced skill
+  { type: AdvancedSkillType.DataDjinn, value: 1 }, // advanced skill
 ];
-export const observationFeatureMock: ItemFeature = new ItemFeature({
+export const observationFeatureMock: CharacterModifier = new CharacterModifier({
   userQuestionAtUse: () => true,
   name: 'observationFeatureMock',
   type: ItemFeatureType.custom,
   modifier: 10,
-  typeToBeModified: SkillType.Observation,
+  typeToBeModified: GeneralSkillType.Observation,
   defaultUserInput: true,
   askForUserInput: true,
 });
-export const meleeFeatureMock = new ItemFeature({
+export const meleeFeatureMock = new CharacterModifier({
   name: 'meleeFeatureMock',
   type: ItemFeatureType.custom,
   askForUserInput: false,
-  typeToBeModified: SkillType.MeleeCombat,
+  modifier: 1,
+  typeToBeModified: GeneralSkillType.MeleeCombat,
   userQuestionAtUse: () => { return true },
   defaultUserInput: true,
 });
+
 export const gadgetMockObservation = new ItemGadget({
   name: 'gadgetMockObservation',
   amount: 1,
   features: [observationFeatureMock],
-  baseSkill: SkillType.Observation,
+  baseSkill: GeneralSkillType.Observation,
 });
 export const gadgetMockMeleeCombat = new ItemGadget({
   name: 'gadgetMockMeleeCombat',
-  baseSkill: SkillType.MeleeCombat,
+  baseSkill: GeneralSkillType.MeleeCombat,
   features: [observationFeatureMock],
 });
 export const itemWeaponMockMelee = new ItemWeapon({
@@ -51,7 +63,7 @@ export const itemWeaponMockMelee = new ItemWeapon({
   cost: 10,
   techTier: ItemTechTier.mysterious,
   range: ItemRange.extreme,
-  baseSkill: SkillType.MeleeCombat,
+  baseSkill: GeneralSkillType.MeleeCombat,
   features: [meleeFeatureMock],
 });
 export const itemArmorMock = new ItemArmor({
@@ -65,3 +77,9 @@ export const testEncumbaranceBodyStat: CharacterBodyStat = {
     maximum: 0,
   },
 };
+export const item1 = new ItemGadget({
+  name: 'testItem',
+  amount: 1,
+  features: [observationFeatureMock],
+  baseSkill: GeneralSkillType.Observation,
+});

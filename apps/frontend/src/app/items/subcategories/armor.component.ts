@@ -1,7 +1,6 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { SkillType } from '@viewer-app/shared';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { items } from '@viewer-app/shared/coriolis/store/items/items';
-import { ItemArmor, ItemWeapon } from '@viewer-app/shared/coriolis/item/item';
+import { ItemArmor } from '@viewer-app/shared/coriolis/character/item';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 

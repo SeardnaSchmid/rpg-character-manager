@@ -4,12 +4,12 @@ import {
   CharacterBodyStat,
   CharacterGroupTalent,
   CharacterIconTalent,
+  CharacterModifier,
   CharacterName,
   CharacterSkill,
   CharacterSpecialDice,
-  CharacterTalent,
 } from '../../index';
-import { CharacterItem } from '../item/item';
+import { CharacterItem } from './item';
 import { updateBodyStats } from '../characterStatsHandling';
 
 export class Character {
@@ -22,7 +22,7 @@ export class Character {
   specialDices?: Array<CharacterSpecialDice> = [];
 
   groupTalent?: CharacterGroupTalent;
-  talents?: Array<CharacterTalent> = [];
+  talents?: Array<CharacterModifier> = [];
   iconTalent?: CharacterIconTalent;
 
   equipedItems?: Array<CharacterItem> = [];

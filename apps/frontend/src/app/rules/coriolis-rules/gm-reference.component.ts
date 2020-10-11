@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { GetBaseAttributeTypeOfSkill, SkillType } from '@viewer-app/shared';
-import { EnumToArrayPipe } from '@viewer-app/shared/pipes/enumToArray.pipe';
+import { Component } from '@angular/core';
+import { GetBaseAttributeTypeOfSkill, GeneralSkillType } from '@viewer-app/shared';
 import { EnumValues } from 'enum-values';
 
 @Component({
@@ -30,13 +29,13 @@ import { EnumValues } from 'enum-values';
 export class GmReferenceComponent {
   constructor() {}
 
-  allSkills = SkillType;
+  allSkills = GeneralSkillType;
   displayedColumns: string[] = ['name', 'baseAttribute'];
   dataSource = EnumValues.getNames(
-    SkillType
+    GeneralSkillType
   ).map((skill) => ({
     name: skill,
-    baseAttribute: GetBaseAttributeTypeOfSkill(SkillType[skill]),
+    baseAttribute: GetBaseAttributeTypeOfSkill(GeneralSkillType[skill]),
   }));
 }
 

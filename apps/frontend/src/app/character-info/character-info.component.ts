@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Character } from '@viewer-app//shared/coriolis/character/character';
 import { AttributeType } from '@viewer-app//shared/coriolis/character/characterAttribute';
-import { SkillType } from '@viewer-app//shared/coriolis/character/characterSkill';
+import { GeneralSkillType } from '@viewer-app//shared/coriolis/character/characterSkill';
 import { BodyStatType } from '@viewer-app//shared/coriolis/character/characterBodyStat';
 import { CharacterOrigin } from '@viewer-app//shared/coriolis/character/characterBackground';
 import { StarSystem } from '@viewer-app//shared/coriolis/starSystem/system';
@@ -44,22 +44,22 @@ export class CharacterInfoComponent {
       { type: AttributeType.Empathy, value: 3 },
     ],
     skills: [
-      { type: SkillType.Dexterity, value: 0 },
-      { type: SkillType.Force, value: 3 },
-      { type: SkillType.Infiltration, value: 0 },
-      { type: SkillType.Manipulation, value: 0 },
-      { type: SkillType.MeleeCombat, value: 5 },
-      { type: SkillType.Observation, value: 1 },
-      { type: SkillType.RangedCombat, value: 0 },
-      { type: SkillType.Survival, value: 0 },
-      { type: SkillType.Command, value: 0 },
-      { type: SkillType.Culture, value: 1 },
-      { type: SkillType.DataDjinn, value: 5 },
-      { type: SkillType.Medicurgy, value: 0 },
-      { type: SkillType.MysticalPowers, value: 0 },
-      { type: SkillType.Pilot, value: 0 },
-      { type: SkillType.Science, value: 1 },
-      { type: SkillType.Technology, value: 3 },
+      { type: GeneralSkillType.Dexterity, value: 0 },
+      { type: GeneralSkillType.Force, value: 3 },
+      { type: GeneralSkillType.Infiltration, value: 0 },
+      { type: GeneralSkillType.Manipulation, value: 0 },
+      { type: GeneralSkillType.MeleeCombat, value: 5 },
+      { type: GeneralSkillType.Observation, value: 1 },
+      { type: GeneralSkillType.RangedCombat, value: 0 },
+      { type: GeneralSkillType.Survival, value: 0 },
+      { type: GeneralSkillType.Command, value: 0 },
+      { type: GeneralSkillType.Culture, value: 1 },
+      { type: GeneralSkillType.DataDjinn, value: 5 },
+      { type: GeneralSkillType.Medicurgy, value: 0 },
+      { type: GeneralSkillType.MysticalPowers, value: 0 },
+      { type: GeneralSkillType.Pilot, value: 0 },
+      { type: GeneralSkillType.Science, value: 1 },
+      { type: GeneralSkillType.Technology, value: 3 },
     ],
     equipedItems: [
       items.weapons.melee.axe,

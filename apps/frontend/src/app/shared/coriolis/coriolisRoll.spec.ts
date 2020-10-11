@@ -1,8 +1,12 @@
 import { Character } from '@viewer-app/shared/coriolis/character/character';
 import { Dice } from '@viewer-app/shared/dice/dice';
 import { CoriolisRoll } from '@viewer-app/shared/coriolis/coriolisRoll';
-import { attributesMock, itemWeaponMockMelee, skillsMock } from '@viewer-app/shared/coriolis/characterMock';
-import { AttributeType } from '@viewer-app/shared';
+import {
+  attributesMock,
+  itemWeaponMockMelee,
+  skillsMock,
+} from '@viewer-app/shared/coriolis/characterMock';
+import { AttributeType, GeneralSkillType } from '@viewer-app/shared';
 
 describe('CoriolisRoll', () => {
   let characterBaseMock: Character;
@@ -20,7 +24,7 @@ describe('CoriolisRoll', () => {
         attributes: attributesMock,
         skills: skillsMock,
         equipedItems: [],
-        specialDices: []
+        specialDices: [],
       });
     });
 
@@ -45,24 +49,80 @@ describe('CoriolisRoll', () => {
     });
   });
 
-  describe('rollAttribute', function() {
-    beforeEach(function() {
+  describe('rollAttribute', function () {
+    beforeEach(function () {
       characterBaseMock = new Character({
         attributes: attributesMock,
         skills: skillsMock,
         equipedItems: [],
-        specialDices: []
+        specialDices: [],
       });
     });
 
-    it('rolls strength with the expected number of dice', function() {
-      const result: Dice[] = CoriolisRoll.rollAttribute(AttributeType.Strength, characterBaseMock);
+    it('rolls strength with the expected number of dice', function () {
+      const result: Dice[] = CoriolisRoll.rollAttribute(
+        AttributeType.Strength,
+        characterBaseMock
+      );
       expect(result.length).toBe(1);
     });
 
-    it('rolls strength with the expected number of dice and the modifier is applied', function() {
-      const result: Dice[] = CoriolisRoll.rollAttribute(AttributeType.Strength, characterBaseMock, 10);
+    it('rolls strength with the expected number of dice and the modifier is applied', function () {
+      const result: Dice[] = CoriolisRoll.rollAttribute(
+        AttributeType.Strength,
+        characterBaseMock,
+        10
+      );
       expect(result.length).toBe(11);
+    });
+
+    it('rolls strength with a item beeing a modifier', function () {
+      const tmpCharacterMock = new Character(characterBaseMock);
+      tmpCharacterMock.equipedItems;
+      const result: Dice[] = CoriolisRoll.rollAttribute(
+        AttributeType.Strength,
+        characterBaseMock,
+        10
+      );
+      expect(result.length).toBe(11);
+    });
+  });
+
+  describe('rollSkill', () => {
+    beforeEach(() => {
+      characterBaseMock = new Character({
+        attributes: attributesMock,
+        skills: skillsMock,
+        equipedItems: [],
+      });
+    });
+
+    it('should roll 2 dice from base character mock 1 agi 1 dex', () => {
+      const skillTestResult: Dice[] = CoriolisRoll.rollSkill(
+        GeneralSkillType.Dexterity,
+        characterBaseMock,
+        0
+      );
+      expect(skillTestResult).toBeTruthy();
+      expect(skillTestResult.length).toEqual(2);
+    });
+
+    it('should roll 12 dice from base character mock 1 agi 1 dex + 10 modifier', () => {
+      const skillTestResult: Dice[] = CoriolisRoll.rollSkill(
+        GeneralSkillType.Observation,
+        characterBaseMock,
+        10
+      );
+      expect(skillTestResult.length).toEqual(12);
+    });
+
+    it('should roll 0 dice from base character mock 1 agi 1 dex - 10 modifier', () => {
+      const skillTestResult: Dice[] = CoriolisRoll.rollSkill(
+        GeneralSkillType.Observation,
+        characterBaseMock,
+        -10
+      );
+      expect(skillTestResult.length).toEqual(0);
     });
   });
 });
