@@ -38,7 +38,7 @@ export class CoriolisRoll {
    * @param character the Character which provides stats
    * @param manualModifications - manual modifications for the roll
    */
-  public static rollInitiative(
+  public static rollInitative(
     character: Character,
     manualModifications: number = 0
   ): Dice[] {
@@ -49,12 +49,12 @@ export class CoriolisRoll {
 
     // TODO implement feature bonus aggregation
     const equipedItemsInitBonus = equipedItemWeapons.reduce(
-      (p, item) => p + item.init,
+      (p, item) => p + item.initModifier,
       0
     );
     return CoriolisRoll.rollNumberOfDice(
       numberDiceForInitiativeRoll,
-      equipedItemsInitBonus
+      equipedItemsInitBonus + manualModifications
     );
   }
 
@@ -124,7 +124,7 @@ export class CoriolisRoll {
   ) {
     let result = 0;
     result += this.countNumberOfDiceForSkill(item.baseSkill, character);
-    result += item.bonus;
+    result += item.bonusModifier;
     return result;
   }
 
@@ -145,7 +145,6 @@ export class CoriolisRoll {
     character: Character
   ) {
     let result = 0;
-
     switch (item.getItemClassType()) {
       case ItemClassName.itemArmor:
         result = CoriolisRoll.countNumberOfDiceForArmorRoll(
@@ -153,21 +152,18 @@ export class CoriolisRoll {
           character
         );
         break;
-
       case ItemClassName.itemWeapon:
         result = CoriolisRoll.countNumberOfDiceForWeaponRoll(
           item as ItemWeapon,
           character
         );
         break;
-
       case ItemClassName.itemGadget:
         result = CoriolisRoll.countNumberOfDiceForGadgetRoll(
           item as ItemGadget,
           character
         );
         break;
-
       default:
         throw Error('Invalid ItemClass');
     }
@@ -192,7 +188,6 @@ export class CoriolisRoll {
       (item) => item.type === skill
     );
     const skillValue = usedSkill.value;
-
     const baseAttributeToUse: AttributeType = GetBaseAttributeTypeOfSkill(
       skill
     );
@@ -214,7 +209,10 @@ export class CoriolisRoll {
     );
   }
 
-  private static countBonusFromItemsAndTalents(character: Character, type: AttributeType | SkillType | BodyStatType | SpecialDiceType) {
+  private static countBonusFromItemsAndTalents(
+    character: Character,
+    type: AttributeType | SkillType | BodyStatType | SpecialDiceType
+  ) {
     const bonusFromItems = character.equipedItems.reduce(
       (prev, item) =>
         prev +
@@ -236,9 +234,15 @@ export class CoriolisRoll {
     if (_.isNil(character.equipedItems)) {
       return 0;
     }
-    const bonusFromItemsAndTalents = this.countBonusFromItemsAndTalents(character, skillType);
+    const bonusFromItemsAndTalents = this.countBonusFromItemsAndTalents(
+      character,
+      skillType
+    );
     const skill = character.skills.find((skill) => skill.type === skillType);
-    const baseAttributeValue = this.countAvailableDiceForAttribute(skill.)
+    const baseAttributeValue = this.countAvailableDiceForAttribute(
+      GetBaseAttributeTypeOfSkill(skill.type),
+      character
+    );
     return skill.value + bonusFromItemsAndTalents;
   }
 
@@ -246,13 +250,15 @@ export class CoriolisRoll {
     attributeType: AttributeType,
     character: Character
   ): number {
-    const bonusFromItemsAndTalents = this.countBonusFromItemsAndTalents(character, attributeType);
+    const bonusFromItemsAndTalents = this.countBonusFromItemsAndTalents(
+      character,
+      attributeType
+    );
     const attribute = character.attributes.find(
       (attribute) => attribute.type === attributeType
     );
     return attribute.value + bonusFromItemsAndTalents;
   }
-
 
   private static countTalentBonusForSkill(
     skill: SkillType,

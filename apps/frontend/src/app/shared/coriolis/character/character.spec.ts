@@ -54,7 +54,7 @@ describe('Character', () => {
   });
   const itemMeleeWeapon = new ItemWeapon({
     name: 'testMeleeWeapon',
-    bonus: 3,
+    bonusModifier: 3,
     blastPower: 0,
     weight: ItemWeight.normal,
     cost: 10,
@@ -101,13 +101,13 @@ describe('Character', () => {
     });
 
     it('should roll 1 dice for initiative', () => {
-      const result: Dice[] = CoriolisRoll.rollInitiative(testobject, 0);
+      const result: Dice[] = CoriolisRoll.rollInitative(testobject, 0);
       expect(result).toBeTruthy();
       expect(result.length).toEqual(1);
     });
 
     it('should roll 1 dice with a bonus of 10 to be above at least 11 as a result', () => {
-      const result: Dice[] = CoriolisRoll.rollInitiative(testobject, 10);
+      const result: Dice[] = CoriolisRoll.rollInitative(testobject, 10);
       expect(result.length).toEqual(1);
       expect(result[0].diceResult).toBeGreaterThanOrEqual(11);
     });

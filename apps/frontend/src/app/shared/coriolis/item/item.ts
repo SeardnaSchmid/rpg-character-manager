@@ -27,8 +27,8 @@ export class CharacterItemBase {
 }
 
 export class ItemWeapon extends CharacterItemBase {
-  bonus? = 0;
-  init? = 0;
+  bonusModifier? = 0; // bonus dice for
+  initModifier? = 0;
   blastPower? = 0;
   damage: number;
   crit: number;

@@ -44,27 +44,30 @@ export enum ItemFeatureType {
 export type UserInteractionFunctionType = () => boolean;
 
 export class ItemFeature {
-  name: string;
-  type: ItemFeatureType;
-  private _modifier: number;
-  typeToBeModified: SkillType | AttributeType | SpecialDiceType;
-  defaultUserInput? = true;
-  askForUserInput? = false;
+  // mandatory fields
+  public name: string;
+  public type: ItemFeatureType;
+  public modifier: number;
+  public typeToBeModified: SkillType | AttributeType | SpecialDiceType;
+
+  // optional fields
+  public defaultUserInput? = true;
+  public askForUserInput? = false;
 
   public constructor(init?: Partial<ItemFeature>) {
     Object.assign(this, init);
   }
 
-  userQuestionAtUse?: UserInteractionFunctionType = () => true;
+  public userQuestionAtUse?: UserInteractionFunctionType = () => true;
 
   public getModifier(): number {
     if (this.askForUserInput) {
       // TODO Implement Dialog
-      return this._modifier;
+      return this.modifier;
     } else {
       if (this.defaultUserInput) {
         // modifier can be applied
-        return this._modifier;
+        return this.modifier;
       } else {
         // modifier does not apply because of the question
         return 0;
