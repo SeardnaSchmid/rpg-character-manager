@@ -46,7 +46,7 @@ describe('Character', () => {
     features: [testFeatureObservation],
     baseSkill: GeneralSkillType.Observation,
   });
-  const testMeleeFeature = new ItemFeature({
+  const testMeleeFeature = new CharacterModifier({
     name: 'meleeBonus',
     type: ItemFeatureType.custom,
     modifier: 42,

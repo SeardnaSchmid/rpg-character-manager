@@ -1,5 +1,5 @@
 import { GeneralSkillType } from '../character/characterSkill';
-import { AttributeType, SpecialDiceType, TalentType } from '.';
+import { AttributeType, BodyStatType, SpecialDiceType, TalentType } from '.';
 import { ItemFeatureType } from './itemFeature';
 
 export type UserInteractionFunctionType = () => boolean;
@@ -9,7 +9,7 @@ export class CharacterModifier {
   public name: string;
   public type: ItemFeatureType | TalentType;
   public modifier: number;
-  public typeToBeModified: GeneralSkillType | AttributeType | SpecialDiceType;
+  public typeToBeModified: GeneralSkillType | AttributeType | SpecialDiceType | BodyStatType;
 
   // optional fields
   public defaultUserInput? = true;

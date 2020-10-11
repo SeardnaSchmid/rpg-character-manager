@@ -10,13 +10,13 @@ import {
 import { ItemFeatureType } from './character/itemFeature';
 import { ItemArmor, ItemGadget, ItemRange, ItemTechTier, ItemWeapon, ItemWeight } from './character/item';
 
-export const attributesMock = [
+export const baseAttributesMock = [
   { type: AttributeType.Agility, value: 1 },
   { type: AttributeType.Wits, value: 1 },
   { type: AttributeType.Strength, value: 1 },
   { type: AttributeType.Empathy, value: 1 },
 ];
-export const skillsMock: CharacterSkill[] = [
+export const baseSkillsMock: CharacterSkill[] = [
   { type: GeneralSkillType.Dexterity, value: 1 }, // general skill
   { type: GeneralSkillType.MeleeCombat, value: 1 }, // general skill
   { type: GeneralSkillType.RangedCombat, value: 1 }, // general skill
@@ -65,6 +65,18 @@ export const itemWeaponMockMelee = new ItemWeapon({
   range: ItemRange.extreme,
   baseSkill: GeneralSkillType.MeleeCombat,
   features: [meleeFeatureMock],
+});
+
+export const itemWeaponMockMelee2 = new ItemWeapon({
+  name: 'itemWeaponMockMelee2',
+  initModifier: 0,
+  bonusModifier: 1,
+  weight: ItemWeight.normal,
+  cost: 10,
+  techTier: ItemTechTier.mysterious,
+  range: ItemRange.close,
+  baseSkill: GeneralSkillType.MeleeCombat,
+  features: [],
 });
 export const itemArmorMock = new ItemArmor({
   name: 'itemArmorMock',

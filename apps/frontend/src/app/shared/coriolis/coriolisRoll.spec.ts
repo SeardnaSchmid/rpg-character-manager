@@ -2,14 +2,19 @@ import { Character } from '@viewer-app/shared/coriolis/character/character';
 import { Dice } from '@viewer-app/shared/dice/dice';
 import { CoriolisRoll } from '@viewer-app/shared/coriolis/coriolisRoll';
 import {
-  attributesMock,
+  baseAttributesMock,
   itemWeaponMockMelee,
-  skillsMock,
+  itemWeaponMockMelee2,
+  baseSkillsMock
 } from '@viewer-app/shared/coriolis/characterMock';
 import { AttributeType, GeneralSkillType } from '@viewer-app/shared';
 
 describe('CoriolisRoll', () => {
   let characterBaseMock: Character;
+
+  beforeEach(() => {
+    characterBaseMock = undefined;
+  })
 
   describe('Constructor', () => {
     it('creates a Character Class with no information', () => {
@@ -21,8 +26,8 @@ describe('CoriolisRoll', () => {
   describe('rollInitiative', () => {
     beforeEach(() => {
       characterBaseMock = new Character({
-        attributes: attributesMock,
-        skills: skillsMock,
+        attributes: baseAttributesMock,
+        skills: baseSkillsMock,
         equipedItems: [],
         specialDices: [],
       });
@@ -52,8 +57,8 @@ describe('CoriolisRoll', () => {
   describe('rollAttribute', function () {
     beforeEach(function () {
       characterBaseMock = new Character({
-        attributes: attributesMock,
-        skills: skillsMock,
+        attributes: baseAttributesMock,
+        skills: baseSkillsMock,
         equipedItems: [],
         specialDices: [],
       });
@@ -91,8 +96,8 @@ describe('CoriolisRoll', () => {
   describe('rollSkill', () => {
     beforeEach(() => {
       characterBaseMock = new Character({
-        attributes: attributesMock,
-        skills: skillsMock,
+        attributes: baseAttributesMock,
+        skills: baseSkillsMock,
         equipedItems: [],
       });
     });
@@ -123,6 +128,58 @@ describe('CoriolisRoll', () => {
         -10
       );
       expect(skillTestResult.length).toEqual(0);
+    });
+  });
+
+  describe('rollItem', () => {
+    beforeEach(() => {
+      characterBaseMock = undefined;
+    });
+
+    it('should roll 6 dice: 1 str 1 melee 3 weaponbonus 1 weapon feature = 6', () => {
+      characterBaseMock = new Character({
+        attributes: baseAttributesMock,
+        skills: baseSkillsMock,
+        equipedItems: [itemWeaponMockMelee],
+      });
+
+      const skillTestResult: Dice[] = CoriolisRoll.rollItem(
+        itemWeaponMockMelee,
+        characterBaseMock,
+        0
+      );
+      expect(skillTestResult).toBeTruthy();
+      expect(skillTestResult.length).toEqual(6);
+    });
+
+    it('should roll 3 dice: 1 str 1 melee 1 weaponbonus = 3', () => {
+      characterBaseMock = new Character({
+        attributes: baseAttributesMock,
+        skills: baseSkillsMock,
+        equipedItems: [itemWeaponMockMelee2],
+      });
+
+      const skillTestResult: Dice[] = CoriolisRoll.rollItem(
+        itemWeaponMockMelee2,
+        characterBaseMock,
+        0
+      );
+      expect(skillTestResult).toBeTruthy();
+      expect(skillTestResult.length).toEqual(3);
+    });
+
+    it('should throw error if it is tried to roll an item which is not equiped on the character', () => {
+      characterBaseMock = new Character({
+        attributes: baseAttributesMock,
+        skills: baseSkillsMock,
+        equipedItems: [itemWeaponMockMelee],
+      });
+
+      expect(() => CoriolisRoll.rollItem(
+        itemWeaponMockMelee2,
+        characterBaseMock,
+        0
+      )).toThrow(/^(Can't find item)/);
     });
   });
 });

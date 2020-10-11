@@ -122,6 +122,15 @@ export class CoriolisRoll {
     character: Character,
     manualModifications: number = 0
   ): Dice[] {
+    // check if item exists on character
+    if (!character.equipedItems.includes(item)) {
+      throw Error(
+        `Can't find item ${JSON.stringify(
+          item
+        )} on Character equiped List: ${JSON.stringify(character.equipedItems)}`
+      );
+    }
+
     const numberOfDiceToRoll =
       CoriolisRoll.countDiceForItemRoll(item, character) + manualModifications;
     return CoriolisRoll.rollNumberOfDice(numberOfDiceToRoll);
@@ -221,7 +230,11 @@ export class CoriolisRoll {
       character
     );
 
-    return toBeRolledSkill.value + skillBonusFromItemsAndTalents + diceFromBaseAttribute;
+    return (
+      toBeRolledSkill.value +
+      skillBonusFromItemsAndTalents +
+      diceFromBaseAttribute
+    );
   }
 
   private static countDiceForAttributeRoll(
