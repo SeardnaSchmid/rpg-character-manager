@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { MatDialog} from '@angular/material/dialog';
 import { Dice } from '@viewer-app/shared/dice/dice';
 import { DiceRollModalDialogData, DiceRollModalComponent } from '@viewer-app/dice-roll-modal/dice-roll-modal.component';
-import { CharacterAttribute } from '@viewer-app/shared/character/characterAttribute';
-import { CharacterSkill } from '@viewer-app/shared/character/characterSkill';
+import { CharacterAttribute } from '@viewer-app/shared/coriolis/character/characterAttribute';
+import { CharacterSkill } from '@viewer-app/shared/coriolis/character/characterSkill';
 
 @Injectable({
   providedIn: 'root',

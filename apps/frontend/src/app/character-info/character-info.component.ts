@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
-import { Character } from '@viewer-app//shared/character/character';
-import { AttributeType } from '@viewer-app//shared/character/characterAttribute';
-import { SkillType } from '@viewer-app//shared/character/characterSkill';
-import { BodyStatType } from '@viewer-app//shared/character/characterBodyStat';
-import { CharacterOrigin } from '@viewer-app//shared/character/characterBackground';
-import { StarSystem } from '@viewer-app//shared/starSystem/system';
-import { itemStore } from '@viewer-app//shared/itemsStore/itemStore';
+import { items } from '@viewer-app//shared/coriolis/model/store/items/items';
+import {
+  AdvancedSkillType,
+  AttributeType,
+  BodyStatType,
+  Character,
+  CharacterOrigin,
+  GeneralSkillType
+} from '@viewer-app/shared';
+import { StarSystem } from '@viewer-app/shared/coriolis/model/starSystem/system';
 
 @Component({
   selector: 'viewer-character-info',
@@ -44,30 +47,28 @@ export class CharacterInfoComponent {
       { type: AttributeType.Empathy, value: 3 },
     ],
     skills: [
-      { type: SkillType.Dexterity, value: 0 },
-      { type: SkillType.Force, value: 3 },
-      { type: SkillType.Infiltration, value: 0 },
-      { type: SkillType.Manipulation, value: 0 },
-      { type: SkillType.MeleeCombat, value: 5 },
-      { type: SkillType.Observation, value: 1 },
-      { type: SkillType.RangedCombat, value: 0 },
-      { type: SkillType.Survival, value: 0 },
-      { type: SkillType.Command, value: 0 },
-      { type: SkillType.Culture, value: 1 },
-      { type: SkillType.DataDjinn, value: 5 },
-      { type: SkillType.Medicurgy, value: 0 },
-      { type: SkillType.MysticalPowers, value: 0 },
-      { type: SkillType.Pilot, value: 0 },
-      { type: SkillType.Science, value: 1 },
-      { type: SkillType.Technology, value: 3 },
+      { type: GeneralSkillType.Dexterity, value: 0 },
+      { type: GeneralSkillType.Force, value: 3 },
+      { type: GeneralSkillType.Infiltration, value: 0 },
+      { type: GeneralSkillType.Manipulation, value: 0 },
+      { type: GeneralSkillType.MeleeCombat, value: 5 },
+      { type: GeneralSkillType.Observation, value: 1 },
+      { type: GeneralSkillType.RangedCombat, value: 0 },
+      { type: GeneralSkillType.Survival, value: 0 },
+      { type: AdvancedSkillType.Command, value: 0 },
+      { type: AdvancedSkillType.Culture, value: 1 },
+      { type: AdvancedSkillType.DataDjinn, value: 5 },
+      { type: AdvancedSkillType.Medicurgy, value: 0 },
+      { type: AdvancedSkillType.MysticalPowers, value: 0 },
+      { type: AdvancedSkillType.Pilot, value: 0 },
+      { type: AdvancedSkillType.Science, value: 1 },
+      { type: AdvancedSkillType.Technology, value: 3 },
     ],
     equipedItems: [
-      itemStore.weapons.melee.knife(),
-      itemStore.weapons.melee.knife(),
-      itemStore.weapons.melee.knife(),
-      itemStore.weapons.melee.knife(),
-      itemStore.quirkyStuff.jostersLangerPenis,
+      items.weapons.melee.axe,
+      items.weapons.melee.knife,
+      items.quirkyStuff.jostersLangerPenis,
     ],
-    spaceShipItems: [itemStore.quirkyStuff.quantenFluxGenerator],
+    spaceShipItems: [items.quirkyStuff.quantenFluxGenerator],
   });
 }

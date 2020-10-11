@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Character } from '@viewer-app/shared/character/character';
-import { BodyStatType, getFormulaExplanation } from '@viewer-app/shared/character/characterBodyStat';
+import { Character } from '@viewer-app/shared/coriolis/character/character';
+import { BodyStatType, getFormulaExplanation } from '@viewer-app/shared/coriolis/character/characterBodyStat';
 
 @Component({
   selector: 'viewer-character-info-bodystats',

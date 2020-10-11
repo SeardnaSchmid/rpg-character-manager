@@ -1,9 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Character } from '@viewer-app/shared/character/character';
 import { Dice } from '@viewer-app/shared/dice/dice';
 import { DiceRollService } from '@viewer-app/dice-roll-modal/dice-roll.service';
-import { CharacterSkill } from '@viewer-app/shared/character/characterSkill';
-import { CoriolisRoll } from '@viewer-app/shared/coriolis/coriolisRoll';
+import {
+  Character,
+  CharacterSkill,
+  CoriolisCoreControllsService,
+} from '@viewer-app/shared';
 
 @Component({
   selector: 'viewer-character-info-skills',
@@ -13,12 +15,18 @@ import { CoriolisRoll } from '@viewer-app/shared/coriolis/coriolisRoll';
 export class CharacterInfoSkillsComponent implements OnInit {
   @Input() selectedCharacter: Character;
 
-  constructor(public diceRollService: DiceRollService) {}
+  constructor(
+    public diceRollService: DiceRollService,
+    public coriolisCoreControllsService: CoriolisCoreControllsService
+  ) {}
 
   ngOnInit() {}
 
   onDiceRollPressed(skill: CharacterSkill) {
-    const dice: Dice[] = CoriolisRoll.rollSkill(skill.type, this.selectedCharacter);
+    const dice: Dice[] = this.coriolisCoreControllsService.rollSkill(
+      skill.type,
+      this.selectedCharacter
+    );
     this.diceRollService.openDialog(skill, dice);
   }
 }

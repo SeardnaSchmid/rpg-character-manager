@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Character } from '@viewer-app/shared/character/character';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Character } from '@viewer-app/shared';
 
 @Component({
   selector: 'viewer-character-info-card',

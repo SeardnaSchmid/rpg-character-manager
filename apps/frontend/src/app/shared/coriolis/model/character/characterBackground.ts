@@ -1,4 +1,4 @@
-import { StarSystem } from '@viewer-app/shared/starSystem/system';
+import { StarSystem } from '../starSystem/system';
 
 export enum CharacterUpbringing {
   Plebeian = 'Plebeian',

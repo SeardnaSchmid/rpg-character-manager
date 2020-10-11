@@ -3,7 +3,3 @@ export enum TalentType {
   CombatVeteran,
   Defensive,
 }
-
-export interface CharacterTalents {
-  type: TalentType;
-}

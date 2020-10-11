@@ -16,9 +16,9 @@ export class Dice {
   /**
    * Roll the dice with defaultNumberOfSides and return the number rolled
    */
-  public roll(): this {
+  public roll(resultModifier: number = 0): this {
     this.hasBeenRolled = true;
-    this.diceResult = Math.floor(Math.random() * this.numberOfSides) + 1;
+    this.diceResult = Math.floor(Math.random() * this.numberOfSides) + 1 + resultModifier;
     return this;
   }
 
