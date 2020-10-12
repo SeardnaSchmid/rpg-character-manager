@@ -1,5 +1,7 @@
 export enum ItemFeatureType {
-  bulky = 'bulky', // test
+  antiVehicle = 'antiVehicle',
+  armorPiercing = 'armorPiercing',
+  bulky = 'bulky',
   small = 'small',
   long = 'long',
   reliable = 'reliable',
@@ -8,10 +10,8 @@ export enum ItemFeatureType {
   flexible = 'flexible',
   stun = 'stun',
   slow = 'slow',
-  antiVehicle = 'antiVehicle',
   thermalSweep = 'thermalSweep',
   highCapacity = 'highCapacity',
-  armorPiercing = 'armorPiercing',
   blocksVisionAndSensors = 'blocksVisionAndSensors',
   singleShot = 'singleShot',
   fire1 = 'fire1',
@@ -36,4 +36,6 @@ export enum ItemFeatureType {
   reinforcedExoServos = 'reinforcedExoServos',
   custom = 'custom',
   reduceOneHitBy3 = 'reduceOneHitBy3',
+  light = 'light',
+  heavy = 'heavy',
 }

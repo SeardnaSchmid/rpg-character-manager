@@ -1,13 +1,11 @@
-import { meleeWeapons } from './meleeWeapons';
-import { armors } from './armors';
+import { meleeWeapon } from './meleeWeapon';
+import { armor } from './armors';
 import { quirkyStuff } from './quirkyStuff';
-import { feature } from './features';
 
 export const items = {
   weapons: {
-    melee: meleeWeapons,
+    melee: meleeWeapon,
   },
-  armor: armors,
+  armor,
   quirkyStuff,
-  feature,
 };

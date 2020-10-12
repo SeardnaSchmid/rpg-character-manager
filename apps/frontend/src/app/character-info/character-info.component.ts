@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { items } from '@viewer-app//shared/coriolis/model/store/items/items';
 import {
   AdvancedSkillType,
   AttributeType,
@@ -64,11 +63,7 @@ export class CharacterInfoComponent {
       { type: AdvancedSkillType.Science, value: 1 },
       { type: AdvancedSkillType.Technology, value: 3 },
     ],
-    equipedItems: [
-      items.weapons.melee.axe,
-      items.weapons.melee.knife,
-      items.quirkyStuff.jostersLangerPenis,
-    ],
-    spaceShipItems: [items.quirkyStuff.quantenFluxGenerator],
+    equipedItems: [],
+    spaceShipItems: [],
   });
 }

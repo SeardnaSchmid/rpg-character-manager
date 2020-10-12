@@ -1,15 +1,25 @@
-import { ItemArmor, ItemTechTier, ItemWeapon, ItemWeight } from '../../character/item';
+import {
+  ItemArmor,
+  ItemTechTier,
+  ItemWeapon,
+} from '../../character/item';
 import { v4 } from 'uuid';
-import { feature } from './features'
+import {
+  bulky,
+  thermostaticSuit,
+  vacuumSuit,
+  oxygenSupply,
+  reinforcedExoServos,
+  reduceOneHitBy3,
+} from '../features';
 
 type ItemWeaponConstructorFunction = () => ItemWeapon;
 
 const lightPrimitiveArmor: ItemArmor = new ItemArmor({
   id: v4(),
   name: 'Light primitive armor',
-  weight: ItemWeight.normal,
   armorRating: 2,
-  features: [feature.bulky],
+  features: [bulky],
   techTier: ItemTechTier.primitive,
   cost: 300,
   extraFeaturesSlots: 0,
@@ -17,9 +27,8 @@ const lightPrimitiveArmor: ItemArmor = new ItemArmor({
 const heavyPrimitiveArmor: ItemArmor = new ItemArmor({
   id: v4(),
   name: 'Heavy primitive armor',
-  weight: ItemWeight.normal,
   armorRating: 3,
-  features: [feature.bulky],
+  features: [bulky],
   techTier: ItemTechTier.primitive,
   cost: 600,
   extraFeaturesSlots: 0,
@@ -27,7 +36,6 @@ const heavyPrimitiveArmor: ItemArmor = new ItemArmor({
 const flightsuit: ItemArmor = new ItemArmor({
   id: v4(),
   name: 'Flight suit',
-  weight: ItemWeight.normal,
   armorRating: 1,
   features: [],
   techTier: ItemTechTier.ordinary,
@@ -37,7 +45,6 @@ const flightsuit: ItemArmor = new ItemArmor({
 const protectiveClothing: ItemArmor = new ItemArmor({
   id: v4(),
   name: 'Protective Clothing',
-  weight: ItemWeight.normal,
   armorRating: 3,
   features: [],
   techTier: ItemTechTier.ordinary,
@@ -47,14 +54,8 @@ const protectiveClothing: ItemArmor = new ItemArmor({
 const exoShell: ItemArmor = new ItemArmor({
   id: v4(),
   name: 'Exo shell',
-  weight: ItemWeight.normal,
   armorRating: 2,
-  features: [
-    feature.bulky,
-    feature.thermostaticSuit,
-    feature.vacuumSuit,
-    feature.oxygenSupply,
-  ],
+  features: [bulky, thermostaticSuit, vacuumSuit, oxygenSupply],
   techTier: ItemTechTier.ordinary,
   cost: 2000,
   extraFeaturesSlots: 0,
@@ -62,14 +63,8 @@ const exoShell: ItemArmor = new ItemArmor({
 const reinforcedExoShell: ItemArmor = new ItemArmor({
   id: v4(),
   name: 'Reinforced exo shell',
-  weight: ItemWeight.normal,
   armorRating: 3,
-  features: [
-    feature.bulky,
-    feature.thermostaticSuit,
-    feature.vacuumSuit,
-    feature.oxygenSupply,
-  ],
+  features: [bulky, thermostaticSuit, vacuumSuit, oxygenSupply],
   techTier: ItemTechTier.ordinary,
   cost: 3000,
   extraFeaturesSlots: 1,
@@ -77,7 +72,6 @@ const reinforcedExoShell: ItemArmor = new ItemArmor({
 const lightArmor: ItemArmor = new ItemArmor({
   id: v4(),
   name: 'Light armor',
-  weight: ItemWeight.normal,
   armorRating: 4,
   features: [],
   techTier: ItemTechTier.ordinary,
@@ -87,7 +81,6 @@ const lightArmor: ItemArmor = new ItemArmor({
 const heavyArmor: ItemArmor = new ItemArmor({
   id: v4(),
   name: 'Heavy armor',
-  weight: ItemWeight.normal,
   armorRating: 6,
   features: [],
   techTier: ItemTechTier.ordinary,
@@ -97,9 +90,8 @@ const heavyArmor: ItemArmor = new ItemArmor({
 const ablativePads: ItemArmor = new ItemArmor({
   id: v4(),
   name: 'Ablative pads',
-  weight: ItemWeight.normal,
   armorRating: 0,
-  features: [feature.reduceOneHitBy3],
+  features: [reduceOneHitBy3],
   techTier: ItemTechTier.advanced,
   isRestricted: true,
   cost: 2000,
@@ -108,14 +100,8 @@ const ablativePads: ItemArmor = new ItemArmor({
 const armoredExo: ItemArmor = new ItemArmor({
   id: v4(),
   name: 'Armored exo',
-  weight: ItemWeight.normal,
   armorRating: 9,
-  features: [
-    feature.thermostaticSuit,
-    feature.vacuumSuit,
-    feature.oxygenSupply,
-    feature.reinforcedExoServos
-  ],
+  features: [thermostaticSuit, vacuumSuit, oxygenSupply, reinforcedExoServos],
   techTier: ItemTechTier.advanced,
   isRestricted: true,
   cost: 25000,
@@ -124,14 +110,8 @@ const armoredExo: ItemArmor = new ItemArmor({
 const battleExo: ItemArmor = new ItemArmor({
   id: v4(),
   name: 'Battle exo',
-  weight: ItemWeight.normal,
   armorRating: 10,
-  features: [
-    feature.thermostaticSuit,
-    feature.vacuumSuit,
-    feature.oxygenSupply,
-    feature.reinforcedExoServos
-  ],
+  features: [thermostaticSuit, vacuumSuit, oxygenSupply, reinforcedExoServos],
   techTier: ItemTechTier.advanced,
   cost: 60000,
   extraFeaturesSlots: 5,
@@ -139,7 +119,6 @@ const battleExo: ItemArmor = new ItemArmor({
 const shield: ItemArmor = new ItemArmor({
   id: v4(),
   name: 'Shield',
-  weight: ItemWeight.heavy,
   armorRating: 2,
   features: [],
   techTier: ItemTechTier.primitive,
@@ -149,7 +128,6 @@ const shield: ItemArmor = new ItemArmor({
 const riotShield: ItemArmor = new ItemArmor({
   id: v4(),
   name: 'Riot shield',
-  weight: ItemWeight.heavy,
   armorRating: 4,
   features: [],
   techTier: ItemTechTier.ordinary,
@@ -159,7 +137,6 @@ const riotShield: ItemArmor = new ItemArmor({
 const combatShield: ItemArmor = new ItemArmor({
   id: v4(),
   name: 'Combat shield',
-  weight: ItemWeight.heavy,
   armorRating: 6,
   features: [],
   techTier: ItemTechTier.ordinary,
@@ -167,7 +144,7 @@ const combatShield: ItemArmor = new ItemArmor({
   extraFeaturesSlots: 0,
 });
 
-export const armors = {
+export const armor = {
   lightPrimitiveArmor,
   heavyPrimitiveArmor,
   flightsuit,

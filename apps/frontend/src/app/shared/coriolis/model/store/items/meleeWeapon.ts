@@ -1,17 +1,16 @@
 import {
   ItemRange,
   ItemTechTier,
-  ItemWeapon,
-  ItemWeight,
+  ItemWeapon
 } from '../../character/item';
 import { v4 } from 'uuid';
 import { GeneralSkillType } from '../../character/characterSkill';
+import { cellPowered, heavy, light, long, mercurium} from '../features';
 
 type ItemWeaponConstructorFunction = () => ItemWeapon;
 
 const knife: ItemWeapon = new ItemWeapon({
   name: 'Knife',
-  weight: ItemWeight.normal,
   id: v4(),
   baseSkill: GeneralSkillType.MeleeCombat,
   bonusModifier: 0,
@@ -19,22 +18,20 @@ const knife: ItemWeapon = new ItemWeapon({
   damage: 2,
   crit: 2,
   range: ItemRange.close,
-  features: [],
+  features: [light],
   techTier: ItemTechTier.primitive,
   cost: 50,
 });
 const sword: ItemWeapon = new ItemWeapon({
-  weight: ItemWeight.normal,
   crit: 0,
   damage: 0,
   id: v4(),
-  name: 'sword',
+  name: 'Sword',
   range: ItemRange.close,
   techTier: ItemTechTier.primitive,
   baseSkill: GeneralSkillType.MeleeCombat,
 });
 const duraKnife: ItemWeapon = new ItemWeapon({
-  weight: ItemWeight.normal,
   name: 'Dura knife',
   id: v4(),
   bonusModifier: 0,
@@ -42,13 +39,12 @@ const duraKnife: ItemWeapon = new ItemWeapon({
   damage: 2,
   crit: 1,
   range: ItemRange.close,
-  // itemFeatures: [ItemFeatures.light, ItemFeatures.cellPowered],
+  features: [light, cellPowered],
   techTier: ItemTechTier.ordinary,
   cost: 500,
   baseSkill: GeneralSkillType.MeleeCombat,
 });
 const duraSword: ItemWeapon = new ItemWeapon({
-  weight: ItemWeight.normal,
   name: 'Dura sword',
   id: v4(),
   bonusModifier: 1,
@@ -56,13 +52,12 @@ const duraSword: ItemWeapon = new ItemWeapon({
   damage: 2,
   crit: 1,
   range: ItemRange.close,
-  // itemFeatures: [ItemFeatures.heavy, ItemFeatures.cellPowered],
+  features: [heavy, cellPowered],
   techTier: ItemTechTier.ordinary,
   cost: 1600,
   baseSkill: GeneralSkillType.MeleeCombat,
 });
 const mercuriumKnife: ItemWeapon = new ItemWeapon({
-  weight: ItemWeight.normal,
   name: 'Mercurium knife',
   id: v4(),
   bonusModifier: 1,
@@ -70,13 +65,12 @@ const mercuriumKnife: ItemWeapon = new ItemWeapon({
   damage: 3,
   crit: 2,
   range: ItemRange.close,
-  // itemFeatures: [ItemFeatures.light, ItemFeatures.mercurium, ItemFeatures.cellPowered],
+  features: [light, mercurium, cellPowered],
   techTier: ItemTechTier.advanced,
   cost: 1500,
   baseSkill: GeneralSkillType.MeleeCombat,
 });
 const mercuriumSword: ItemWeapon = new ItemWeapon({
-  weight: ItemWeight.normal,
   name: 'Mercurium sword',
   id: v4(),
   bonusModifier: 2,
@@ -84,13 +78,12 @@ const mercuriumSword: ItemWeapon = new ItemWeapon({
   damage: 3,
   crit: 2,
   range: ItemRange.close,
-  // itemFeatures: [ItemFeatures.light, ItemFeatures.mercurium, ItemFeatures.cellPowered],
+  features: [heavy, mercurium, cellPowered],
   techTier: ItemTechTier.advanced,
   cost: 3000,
   baseSkill: GeneralSkillType.MeleeCombat,
 });
 const axe: ItemWeapon = new ItemWeapon({
-  weight: ItemWeight.normal,
   name: 'Axe',
   id: v4(),
   bonusModifier: 0,
@@ -98,13 +91,12 @@ const axe: ItemWeapon = new ItemWeapon({
   damage: 3,
   crit: 2,
   range: ItemRange.close,
-  // itemFeatures: [ItemFeatures.heavy],
+  features: [heavy],
   techTier: ItemTechTier.primitive,
   cost: 150,
   baseSkill: GeneralSkillType.MeleeCombat,
 });
 const duraAxe: ItemWeapon = new ItemWeapon({
-  weight: ItemWeight.normal,
   name: 'Dura axe',
   id: v4(),
   bonusModifier: 0,
@@ -112,13 +104,12 @@ const duraAxe: ItemWeapon = new ItemWeapon({
   damage: 3,
   crit: 1,
   range: ItemRange.close,
-  // itemFeatures: [ItemFeatures.heavy, ItemFeatures.cellPowered],
+  features: [heavy, cellPowered],
   techTier: ItemTechTier.ordinary,
   cost: 2000,
   baseSkill: GeneralSkillType.MeleeCombat,
 });
 const halberd: ItemWeapon = new ItemWeapon({
-  weight: ItemWeight.normal,
   name: 'Halberd',
   id: v4(),
   bonusModifier: 0,
@@ -126,13 +117,12 @@ const halberd: ItemWeapon = new ItemWeapon({
   damage: 3,
   crit: 2,
   range: ItemRange.close,
-  // itemFeatures: [ItemFeatures.heavy, ItemFeatures.long],
+  features: [heavy, long],
   techTier: ItemTechTier.primitive,
   cost: 300,
   baseSkill: GeneralSkillType.MeleeCombat,
 });
 const duraHalberd: ItemWeapon = new ItemWeapon({
-  weight: ItemWeight.normal,
   name: 'Dura halberd',
   id: v4(),
   bonusModifier: 0,
@@ -140,13 +130,12 @@ const duraHalberd: ItemWeapon = new ItemWeapon({
   damage: 3,
   crit: 1,
   range: ItemRange.close,
-  // itemFeatures: [ItemFeatures.heavy, ItemFeatures.long, ItemFeatures.cellPowered],
+  features: [heavy, long, cellPowered],
   techTier: ItemTechTier.ordinary,
   cost: 2500,
   baseSkill: GeneralSkillType.MeleeCombat,
 });
 const baton: ItemWeapon = new ItemWeapon({
-  weight: ItemWeight.normal,
   name: 'Baton',
   id: v4(),
   bonusModifier: 2,
@@ -158,8 +147,20 @@ const baton: ItemWeapon = new ItemWeapon({
   cost: 100,
   baseSkill: GeneralSkillType.MeleeCombat,
 });
+const batonExpandable: ItemWeapon = new ItemWeapon({
+  name: 'Baton',
+  id: v4(),
+  bonusModifier: 2,
+  initModifier: 0,
+  damage: 1,
+  crit: 3,
+  range: ItemRange.close,
+  features: [light],
+  techTier: ItemTechTier.primitive,
+  cost: 100,
+  baseSkill: GeneralSkillType.MeleeCombat,
+});
 const staff: ItemWeapon = new ItemWeapon({
-  weight: ItemWeight.normal,
   name: 'Staff',
   id: v4(),
   bonusModifier: 1,
@@ -172,7 +173,6 @@ const staff: ItemWeapon = new ItemWeapon({
   baseSkill: GeneralSkillType.MeleeCombat,
 });
 const mace: ItemWeapon = new ItemWeapon({
-  weight: ItemWeight.normal,
   name: 'Mace',
   id: v4(),
   bonusModifier: 0,
@@ -186,7 +186,6 @@ const mace: ItemWeapon = new ItemWeapon({
   baseSkill: GeneralSkillType.MeleeCombat,
 });
 const powerSledge: ItemWeapon = new ItemWeapon({
-  weight: ItemWeight.normal,
   name: 'Power sledge',
   id: v4(),
   bonusModifier: 0,
@@ -200,7 +199,6 @@ const powerSledge: ItemWeapon = new ItemWeapon({
   baseSkill: GeneralSkillType.MeleeCombat,
 });
 const powerGlove: ItemWeapon = new ItemWeapon({
-  weight: ItemWeight.normal,
   name: 'Power glove',
   id: v4(),
   bonusModifier: 1,
@@ -214,7 +212,6 @@ const powerGlove: ItemWeapon = new ItemWeapon({
   baseSkill: GeneralSkillType.MeleeCombat,
 });
 const shockStick: ItemWeapon = new ItemWeapon({
-  weight: ItemWeight.normal,
   name: 'Shock stick',
   id: v4(),
   bonusModifier: 2,
@@ -228,7 +225,6 @@ const shockStick: ItemWeapon = new ItemWeapon({
   baseSkill: GeneralSkillType.MeleeCombat,
 });
 const shockWhip: ItemWeapon = new ItemWeapon({
-  weight: ItemWeight.normal,
   name: 'Shock whip',
   id: v4(),
   bonusModifier: 0,
@@ -242,7 +238,6 @@ const shockWhip: ItemWeapon = new ItemWeapon({
   baseSkill: GeneralSkillType.MeleeCombat,
 });
 const energyStaff: ItemWeapon = new ItemWeapon({
-  weight: ItemWeight.normal,
   name: 'Energy staff',
   id: v4(),
   bonusModifier: 2,
@@ -256,7 +251,6 @@ const energyStaff: ItemWeapon = new ItemWeapon({
   baseSkill: GeneralSkillType.MeleeCombat,
 });
 const energyStick: ItemWeapon = new ItemWeapon({
-  weight: ItemWeight.normal,
   name: 'Energy stick',
   id: v4(),
   bonusModifier: 2,
@@ -270,7 +264,6 @@ const energyStick: ItemWeapon = new ItemWeapon({
   baseSkill: GeneralSkillType.MeleeCombat,
 });
 const energyWhip: ItemWeapon = new ItemWeapon({
-  weight: ItemWeight.normal,
   name: 'Energy whip',
   id: v4(),
   bonusModifier: 0,
@@ -284,7 +277,6 @@ const energyWhip: ItemWeapon = new ItemWeapon({
   baseSkill: GeneralSkillType.MeleeCombat,
 });
 const handFan: ItemWeapon = new ItemWeapon({
-  weight: ItemWeight.normal,
   name: 'Hand fan',
   id: v4(),
   bonusModifier: 1,
@@ -298,7 +290,6 @@ const handFan: ItemWeapon = new ItemWeapon({
   baseSkill: GeneralSkillType.MeleeCombat,
 });
 const unarmed: ItemWeapon = new ItemWeapon({
-  weight: ItemWeight.normal,
   name: 'Unarmed',
   id: v4(),
   bonusModifier: 0,
@@ -311,7 +302,6 @@ const unarmed: ItemWeapon = new ItemWeapon({
   baseSkill: GeneralSkillType.MeleeCombat,
 });
 const brassKnuckles: ItemWeapon = new ItemWeapon({
-  weight: ItemWeight.normal,
   name: 'Brass knuckles',
   id: v4(),
   bonusModifier: 0,
@@ -325,7 +315,6 @@ const brassKnuckles: ItemWeapon = new ItemWeapon({
   baseSkill: GeneralSkillType.MeleeCombat,
 });
 const claws: ItemWeapon = new ItemWeapon({
-  weight: ItemWeight.normal,
   name: 'Claws',
   id: v4(),
   bonusModifier: 0,
@@ -338,7 +327,6 @@ const claws: ItemWeapon = new ItemWeapon({
   baseSkill: GeneralSkillType.MeleeCombat,
 });
 const duraClaws: ItemWeapon = new ItemWeapon({
-  weight: ItemWeight.normal,
   name: 'Dura claws',
   id: v4(),
   bonusModifier: 0,
@@ -346,13 +334,13 @@ const duraClaws: ItemWeapon = new ItemWeapon({
   damage: 1,
   crit: 1,
   range: ItemRange.close,
+  features: [light],
   // itemFeatures: [ItemFeatures.light, ItemFeatures.small],
   techTier: ItemTechTier.ordinary,
   cost: 600,
   baseSkill: GeneralSkillType.MeleeCombat,
 });
 const spear: ItemWeapon = new ItemWeapon({
-  weight: ItemWeight.normal,
   name: 'Spear',
   id: v4(),
   bonusModifier: 1,
@@ -366,7 +354,6 @@ const spear: ItemWeapon = new ItemWeapon({
   baseSkill: GeneralSkillType.MeleeCombat,
 });
 const whip: ItemWeapon = new ItemWeapon({
-  weight: ItemWeight.normal,
   name: 'Whip',
   id: v4(),
   bonusModifier: 0,
@@ -380,7 +367,7 @@ const whip: ItemWeapon = new ItemWeapon({
   baseSkill: GeneralSkillType.MeleeCombat,
 });
 
-export const meleeWeapons = {
+export const meleeWeapon = {
   knife,
   sword,
   duraKnife,
