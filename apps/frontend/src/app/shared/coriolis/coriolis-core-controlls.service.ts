@@ -144,8 +144,9 @@ export class CoriolisCoreControllsService {
   }
 
   public calculateEncumbarance(character, modifier: number = 0): DrainableStat {
-    const result = character.equipedItems.
-    return baseDrainableStat;
+    const characterEncumberance = character.bodyStats.find(bodystat => bodystat.type === BodyStatType.Encumbarance);
+    const result = character.equipedItems.reduce((prev, item) => prev + item.weight, 0);
+    return { ...characterEncumberance, current: result };
   }
 
   private countDiceForItemArmorRoll(item: ItemArmor, character: Character) {

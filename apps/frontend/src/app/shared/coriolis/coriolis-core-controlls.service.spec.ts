@@ -222,5 +222,14 @@ describe('CoriolisCoreControllsService', () => {
       );
       expect(result.current).toEqual(1);
     });
+
+    it('should calculate the general encumbarance', () => {
+      const tmpChar = new Character(characterBaseMock);
+      tmpChar.equipedItems = [itemWeaponMockMelee, itemWeaponMockMelee, itemWeaponMockMelee];
+      const result: DrainableStat = service.calculateEncumbarance(
+        tmpChar
+      );
+      expect(result.current).toEqual(3);
+    });
   });
 });
