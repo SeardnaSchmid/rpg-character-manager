@@ -1,7 +1,6 @@
 import { AdvancedSkillType, GeneralSkillType } from '../../character/characterSkill';
 import { ItemGadget, ItemTechTier, ItemWeight } from '../../character/item';
 import { v4 } from 'uuid';
-import { ItemFeatureType } from '../../character/itemFeature';
 
 const quantenFluxGenerator: ItemGadget = new ItemGadget({
   id: v4(),

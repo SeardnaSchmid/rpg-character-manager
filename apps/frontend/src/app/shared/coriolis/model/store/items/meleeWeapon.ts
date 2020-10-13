@@ -4,12 +4,10 @@ import {
   ItemWeapon
 } from '../../character/item';
 import { v4 } from 'uuid';
-import { GeneralSkillType } from '../../character/characterSkill';
+import { GeneralSkillType } from '../../character';
 import { cellPowered, heavy, light, long, mercurium} from '../features';
 
-type ItemWeaponConstructorFunction = () => ItemWeapon;
-
-const knife: ItemWeapon = new ItemWeapon({
+export const knife: ItemWeapon = new ItemWeapon({
   name: 'Knife',
   id: v4(),
   baseSkill: GeneralSkillType.MeleeCombat,
@@ -22,7 +20,7 @@ const knife: ItemWeapon = new ItemWeapon({
   techTier: ItemTechTier.primitive,
   cost: 50,
 });
-const sword: ItemWeapon = new ItemWeapon({
+export const sword: ItemWeapon = new ItemWeapon({
   crit: 0,
   damage: 0,
   id: v4(),
@@ -31,7 +29,7 @@ const sword: ItemWeapon = new ItemWeapon({
   techTier: ItemTechTier.primitive,
   baseSkill: GeneralSkillType.MeleeCombat,
 });
-const duraKnife: ItemWeapon = new ItemWeapon({
+export const duraKnife: ItemWeapon = new ItemWeapon({
   name: 'Dura knife',
   id: v4(),
   bonusModifier: 0,
@@ -44,7 +42,7 @@ const duraKnife: ItemWeapon = new ItemWeapon({
   cost: 500,
   baseSkill: GeneralSkillType.MeleeCombat,
 });
-const duraSword: ItemWeapon = new ItemWeapon({
+export const duraSword: ItemWeapon = new ItemWeapon({
   name: 'Dura sword',
   id: v4(),
   bonusModifier: 1,
@@ -57,7 +55,7 @@ const duraSword: ItemWeapon = new ItemWeapon({
   cost: 1600,
   baseSkill: GeneralSkillType.MeleeCombat,
 });
-const mercuriumKnife: ItemWeapon = new ItemWeapon({
+export const mercuriumKnife: ItemWeapon = new ItemWeapon({
   name: 'Mercurium knife',
   id: v4(),
   bonusModifier: 1,
@@ -70,7 +68,7 @@ const mercuriumKnife: ItemWeapon = new ItemWeapon({
   cost: 1500,
   baseSkill: GeneralSkillType.MeleeCombat,
 });
-const mercuriumSword: ItemWeapon = new ItemWeapon({
+export const mercuriumSword: ItemWeapon = new ItemWeapon({
   name: 'Mercurium sword',
   id: v4(),
   bonusModifier: 2,
@@ -83,7 +81,7 @@ const mercuriumSword: ItemWeapon = new ItemWeapon({
   cost: 3000,
   baseSkill: GeneralSkillType.MeleeCombat,
 });
-const axe: ItemWeapon = new ItemWeapon({
+export const axe: ItemWeapon = new ItemWeapon({
   name: 'Axe',
   id: v4(),
   bonusModifier: 0,
@@ -96,7 +94,7 @@ const axe: ItemWeapon = new ItemWeapon({
   cost: 150,
   baseSkill: GeneralSkillType.MeleeCombat,
 });
-const duraAxe: ItemWeapon = new ItemWeapon({
+export const duraAxe: ItemWeapon = new ItemWeapon({
   name: 'Dura axe',
   id: v4(),
   bonusModifier: 0,
@@ -109,7 +107,7 @@ const duraAxe: ItemWeapon = new ItemWeapon({
   cost: 2000,
   baseSkill: GeneralSkillType.MeleeCombat,
 });
-const halberd: ItemWeapon = new ItemWeapon({
+export const halberd: ItemWeapon = new ItemWeapon({
   name: 'Halberd',
   id: v4(),
   bonusModifier: 0,
@@ -122,7 +120,7 @@ const halberd: ItemWeapon = new ItemWeapon({
   cost: 300,
   baseSkill: GeneralSkillType.MeleeCombat,
 });
-const duraHalberd: ItemWeapon = new ItemWeapon({
+export const duraHalberd: ItemWeapon = new ItemWeapon({
   name: 'Dura halberd',
   id: v4(),
   bonusModifier: 0,
@@ -135,7 +133,7 @@ const duraHalberd: ItemWeapon = new ItemWeapon({
   cost: 2500,
   baseSkill: GeneralSkillType.MeleeCombat,
 });
-const baton: ItemWeapon = new ItemWeapon({
+export const baton: ItemWeapon = new ItemWeapon({
   name: 'Baton',
   id: v4(),
   bonusModifier: 2,
@@ -147,7 +145,7 @@ const baton: ItemWeapon = new ItemWeapon({
   cost: 100,
   baseSkill: GeneralSkillType.MeleeCombat,
 });
-const batonExpandable: ItemWeapon = new ItemWeapon({
+export const batonExpandable: ItemWeapon = new ItemWeapon({
   name: 'Baton',
   id: v4(),
   bonusModifier: 2,
@@ -160,7 +158,7 @@ const batonExpandable: ItemWeapon = new ItemWeapon({
   cost: 100,
   baseSkill: GeneralSkillType.MeleeCombat,
 });
-const staff: ItemWeapon = new ItemWeapon({
+export const staff: ItemWeapon = new ItemWeapon({
   name: 'Staff',
   id: v4(),
   bonusModifier: 1,
@@ -172,7 +170,7 @@ const staff: ItemWeapon = new ItemWeapon({
   cost: 50,
   baseSkill: GeneralSkillType.MeleeCombat,
 });
-const mace: ItemWeapon = new ItemWeapon({
+export const mace: ItemWeapon = new ItemWeapon({
   name: 'Mace',
   id: v4(),
   bonusModifier: 0,
@@ -185,7 +183,7 @@ const mace: ItemWeapon = new ItemWeapon({
   cost: 100,
   baseSkill: GeneralSkillType.MeleeCombat,
 });
-const powerSledge: ItemWeapon = new ItemWeapon({
+export const powerSledge: ItemWeapon = new ItemWeapon({
   name: 'Power sledge',
   id: v4(),
   bonusModifier: 0,
@@ -198,7 +196,7 @@ const powerSledge: ItemWeapon = new ItemWeapon({
   cost: 1000,
   baseSkill: GeneralSkillType.MeleeCombat,
 });
-const powerGlove: ItemWeapon = new ItemWeapon({
+export const powerGlove: ItemWeapon = new ItemWeapon({
   name: 'Power glove',
   id: v4(),
   bonusModifier: 1,
@@ -211,7 +209,7 @@ const powerGlove: ItemWeapon = new ItemWeapon({
   cost: 1500,
   baseSkill: GeneralSkillType.MeleeCombat,
 });
-const shockStick: ItemWeapon = new ItemWeapon({
+export const shockStick: ItemWeapon = new ItemWeapon({
   name: 'Shock stick',
   id: v4(),
   bonusModifier: 2,
@@ -224,7 +222,7 @@ const shockStick: ItemWeapon = new ItemWeapon({
   cost: 500,
   baseSkill: GeneralSkillType.MeleeCombat,
 });
-const shockWhip: ItemWeapon = new ItemWeapon({
+export const shockWhip: ItemWeapon = new ItemWeapon({
   name: 'Shock whip',
   id: v4(),
   bonusModifier: 0,
@@ -237,7 +235,7 @@ const shockWhip: ItemWeapon = new ItemWeapon({
   cost: 800,
   baseSkill: GeneralSkillType.MeleeCombat,
 });
-const energyStaff: ItemWeapon = new ItemWeapon({
+export const energyStaff: ItemWeapon = new ItemWeapon({
   name: 'Energy staff',
   id: v4(),
   bonusModifier: 2,
@@ -250,7 +248,7 @@ const energyStaff: ItemWeapon = new ItemWeapon({
   cost: 1000,
   baseSkill: GeneralSkillType.MeleeCombat,
 });
-const energyStick: ItemWeapon = new ItemWeapon({
+export const energyStick: ItemWeapon = new ItemWeapon({
   name: 'Energy stick',
   id: v4(),
   bonusModifier: 2,
@@ -263,7 +261,7 @@ const energyStick: ItemWeapon = new ItemWeapon({
   cost: 1200,
   baseSkill: GeneralSkillType.MeleeCombat,
 });
-const energyWhip: ItemWeapon = new ItemWeapon({
+export const energyWhip: ItemWeapon = new ItemWeapon({
   name: 'Energy whip',
   id: v4(),
   bonusModifier: 0,
@@ -276,7 +274,7 @@ const energyWhip: ItemWeapon = new ItemWeapon({
   cost: 1800,
   baseSkill: GeneralSkillType.MeleeCombat,
 });
-const handFan: ItemWeapon = new ItemWeapon({
+export const handFan: ItemWeapon = new ItemWeapon({
   name: 'Hand fan',
   id: v4(),
   bonusModifier: 1,
@@ -289,7 +287,7 @@ const handFan: ItemWeapon = new ItemWeapon({
   cost: 2500,
   baseSkill: GeneralSkillType.MeleeCombat,
 });
-const unarmed: ItemWeapon = new ItemWeapon({
+export const unarmed: ItemWeapon = new ItemWeapon({
   name: 'Unarmed',
   id: v4(),
   bonusModifier: 0,
@@ -301,7 +299,7 @@ const unarmed: ItemWeapon = new ItemWeapon({
   cost: 0,
   baseSkill: GeneralSkillType.MeleeCombat,
 });
-const brassKnuckles: ItemWeapon = new ItemWeapon({
+export const brassKnuckles: ItemWeapon = new ItemWeapon({
   name: 'Brass knuckles',
   id: v4(),
   bonusModifier: 0,
@@ -314,7 +312,7 @@ const brassKnuckles: ItemWeapon = new ItemWeapon({
   cost: 50,
   baseSkill: GeneralSkillType.MeleeCombat,
 });
-const claws: ItemWeapon = new ItemWeapon({
+export const claws: ItemWeapon = new ItemWeapon({
   name: 'Claws',
   id: v4(),
   bonusModifier: 0,
@@ -326,7 +324,7 @@ const claws: ItemWeapon = new ItemWeapon({
   cost: 0,
   baseSkill: GeneralSkillType.MeleeCombat,
 });
-const duraClaws: ItemWeapon = new ItemWeapon({
+export const duraClaws: ItemWeapon = new ItemWeapon({
   name: 'Dura claws',
   id: v4(),
   bonusModifier: 0,
@@ -340,7 +338,7 @@ const duraClaws: ItemWeapon = new ItemWeapon({
   cost: 600,
   baseSkill: GeneralSkillType.MeleeCombat,
 });
-const spear: ItemWeapon = new ItemWeapon({
+export const spear: ItemWeapon = new ItemWeapon({
   name: 'Spear',
   id: v4(),
   bonusModifier: 1,
@@ -353,7 +351,7 @@ const spear: ItemWeapon = new ItemWeapon({
   cost: 200,
   baseSkill: GeneralSkillType.MeleeCombat,
 });
-const whip: ItemWeapon = new ItemWeapon({
+export const whip: ItemWeapon = new ItemWeapon({
   name: 'Whip',
   id: v4(),
   bonusModifier: 0,
@@ -367,7 +365,7 @@ const whip: ItemWeapon = new ItemWeapon({
   baseSkill: GeneralSkillType.MeleeCombat,
 });
 
-export const meleeWeapon = {
+export const allMeleeWeapons = {
   knife,
   sword,
   duraKnife,

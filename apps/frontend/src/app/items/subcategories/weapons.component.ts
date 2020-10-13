@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
-import { items, ItemWeapon } from '@viewer-app/shared';
+import { allMeleeWeapons, ItemWeapon } from '@viewer-app/shared';
 
 @Component({
   selector: 'items-weapon',
@@ -74,14 +74,10 @@ import { items, ItemWeapon } from '@viewer-app/shared';
 })
 export class ItemWeaponComponent implements AfterViewInit {
   public dataSourceWeapons = new MatTableDataSource<ItemWeapon>(
-    Object.keys(items.weapons.melee).map((key) => items.weapons.melee[key])
+    Object.keys(allMeleeWeapons).map((key) => allMeleeWeapons[key])
   );
 
   @ViewChild(MatSort) sort: MatSort;
-
-  ngAfterViewInit() {
-    this.dataSourceWeapons.sort = this.sort;
-  }
 
   displayedColumnsWeapons: string[] = [
     // 'id',
@@ -96,4 +92,8 @@ export class ItemWeaponComponent implements AfterViewInit {
     'techTier',
     'cost',
   ];
+
+  ngAfterViewInit() {
+    this.dataSourceWeapons.sort = this.sort;
+  }
 }

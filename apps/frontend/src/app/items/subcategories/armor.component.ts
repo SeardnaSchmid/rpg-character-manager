@@ -1,8 +1,8 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
-import { items } from '@viewer-app/shared/coriolis/model/store/items/items';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { ItemArmor } from '@viewer-app/shared';
+import { allArmors } from '@viewer-app/shared';
 
 @Component({
   selector: 'items-armor',
@@ -49,13 +49,9 @@ import { ItemArmor } from '@viewer-app/shared';
   styleUrls: ['../items.component.scss'],
 })
 export class ItemArmorComponent implements AfterViewInit {
-  public dataSourceWeapons = new MatTableDataSource<ItemArmor>(Object.keys(items.armor).map(key => items.armor[key]));
+  public dataSourceWeapons = new MatTableDataSource<ItemArmor>(Object.keys(allArmors).map(key => allArmors[key]));
 
   @ViewChild(MatSort) sort: MatSort;
-
-  ngAfterViewInit() {
-    this.dataSourceWeapons.sort = this.sort;
-  }
 
   displayedColumnsWeapons: string[] = [
     'id',
@@ -67,4 +63,8 @@ export class ItemArmorComponent implements AfterViewInit {
     'cost',
     'extraFeaturesSlots'
   ];
+
+  ngAfterViewInit() {
+    this.dataSourceWeapons.sort = this.sort;
+  }
 }

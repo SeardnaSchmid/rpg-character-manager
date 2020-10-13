@@ -1,7 +1,6 @@
 import {
   ItemArmor,
   ItemTechTier,
-  ItemWeapon,
 } from '../../character/item';
 import { v4 } from 'uuid';
 import {
@@ -13,9 +12,7 @@ import {
   reduceOneHitBy3,
 } from '../features';
 
-type ItemWeaponConstructorFunction = () => ItemWeapon;
-
-const lightPrimitiveArmor: ItemArmor = new ItemArmor({
+export const lightPrimitiveArmor: ItemArmor = new ItemArmor({
   id: v4(),
   name: 'Light primitive armor',
   armorRating: 2,
@@ -24,7 +21,7 @@ const lightPrimitiveArmor: ItemArmor = new ItemArmor({
   cost: 300,
   extraFeaturesSlots: 0,
 });
-const heavyPrimitiveArmor: ItemArmor = new ItemArmor({
+export const heavyPrimitiveArmor: ItemArmor = new ItemArmor({
   id: v4(),
   name: 'Heavy primitive armor',
   armorRating: 3,
@@ -33,7 +30,7 @@ const heavyPrimitiveArmor: ItemArmor = new ItemArmor({
   cost: 600,
   extraFeaturesSlots: 0,
 });
-const flightsuit: ItemArmor = new ItemArmor({
+export const flightsuit: ItemArmor = new ItemArmor({
   id: v4(),
   name: 'Flight suit',
   armorRating: 1,
@@ -42,7 +39,7 @@ const flightsuit: ItemArmor = new ItemArmor({
   cost: 500,
   extraFeaturesSlots: 0,
 });
-const protectiveClothing: ItemArmor = new ItemArmor({
+export const protectiveClothing: ItemArmor = new ItemArmor({
   id: v4(),
   name: 'Protective Clothing',
   armorRating: 3,
@@ -51,7 +48,7 @@ const protectiveClothing: ItemArmor = new ItemArmor({
   cost: 1000,
   extraFeaturesSlots: 0,
 });
-const exoShell: ItemArmor = new ItemArmor({
+export const exoShell: ItemArmor = new ItemArmor({
   id: v4(),
   name: 'Exo shell',
   armorRating: 2,
@@ -60,7 +57,7 @@ const exoShell: ItemArmor = new ItemArmor({
   cost: 2000,
   extraFeaturesSlots: 0,
 });
-const reinforcedExoShell: ItemArmor = new ItemArmor({
+export const reinforcedExoShell: ItemArmor = new ItemArmor({
   id: v4(),
   name: 'Reinforced exo shell',
   armorRating: 3,
@@ -69,7 +66,7 @@ const reinforcedExoShell: ItemArmor = new ItemArmor({
   cost: 3000,
   extraFeaturesSlots: 1,
 });
-const lightArmor: ItemArmor = new ItemArmor({
+export const lightArmor: ItemArmor = new ItemArmor({
   id: v4(),
   name: 'Light armor',
   armorRating: 4,
@@ -78,7 +75,7 @@ const lightArmor: ItemArmor = new ItemArmor({
   cost: 5500,
   extraFeaturesSlots: 1,
 });
-const heavyArmor: ItemArmor = new ItemArmor({
+export const heavyArmor: ItemArmor = new ItemArmor({
   id: v4(),
   name: 'Heavy armor',
   armorRating: 6,
@@ -87,7 +84,7 @@ const heavyArmor: ItemArmor = new ItemArmor({
   cost: 10000,
   extraFeaturesSlots: 1,
 });
-const ablativePads: ItemArmor = new ItemArmor({
+export const ablativePads: ItemArmor = new ItemArmor({
   id: v4(),
   name: 'Ablative pads',
   armorRating: 0,
@@ -97,7 +94,7 @@ const ablativePads: ItemArmor = new ItemArmor({
   cost: 2000,
   extraFeaturesSlots: 0,
 });
-const armoredExo: ItemArmor = new ItemArmor({
+export const armoredExo: ItemArmor = new ItemArmor({
   id: v4(),
   name: 'Armored exo',
   armorRating: 9,
@@ -107,7 +104,7 @@ const armoredExo: ItemArmor = new ItemArmor({
   cost: 25000,
   extraFeaturesSlots: 2,
 });
-const battleExo: ItemArmor = new ItemArmor({
+export const battleExo: ItemArmor = new ItemArmor({
   id: v4(),
   name: 'Battle exo',
   armorRating: 10,
@@ -116,7 +113,7 @@ const battleExo: ItemArmor = new ItemArmor({
   cost: 60000,
   extraFeaturesSlots: 5,
 });
-const shield: ItemArmor = new ItemArmor({
+export const shield: ItemArmor = new ItemArmor({
   id: v4(),
   name: 'Shield',
   armorRating: 2,
@@ -125,7 +122,7 @@ const shield: ItemArmor = new ItemArmor({
   cost: 100,
   extraFeaturesSlots: 0,
 });
-const riotShield: ItemArmor = new ItemArmor({
+export const riotShield: ItemArmor = new ItemArmor({
   id: v4(),
   name: 'Riot shield',
   armorRating: 4,
@@ -134,7 +131,7 @@ const riotShield: ItemArmor = new ItemArmor({
   cost: 500,
   extraFeaturesSlots: 0,
 });
-const combatShield: ItemArmor = new ItemArmor({
+export const combatShield: ItemArmor = new ItemArmor({
   id: v4(),
   name: 'Combat shield',
   armorRating: 6,
@@ -144,7 +141,7 @@ const combatShield: ItemArmor = new ItemArmor({
   extraFeaturesSlots: 0,
 });
 
-export const armor = {
+export const allArmors = {
   lightPrimitiveArmor,
   heavyPrimitiveArmor,
   flightsuit,
@@ -154,6 +151,7 @@ export const armor = {
   lightArmor,
   heavyArmor,
   ablativePads,
+  armoredExo,
   battleExo,
   shield,
   riotShield,

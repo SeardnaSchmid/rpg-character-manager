@@ -1,4 +1,4 @@
-import { ItemFeatureType } from '../character/itemFeature';
+import { ItemFeatureType } from '../character/index';
 import { BodyStatType, CharacterModifier, GeneralSkillType, SpecialDiceType } from '../character';
 
 export const bulky: CharacterModifier = {
@@ -73,4 +73,20 @@ export const heavy: CharacterModifier = {
   type: ItemFeatureType.heavy,
   typeToBeModified: BodyStatType.Encumbarance,
   modifier: 1,
+};
+
+export const allFeatures = {
+  bulky,
+  long,
+  thermostaticSuit,
+  vacuumSuit,
+  oxygenSupply,
+  reduceOneHitBy3,
+  reinforcedExoServos,
+  antiVehicle,
+  cellPowered,
+  mercurium,
+  light,
+  small,
+  heavy,
 };
