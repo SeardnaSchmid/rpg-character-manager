@@ -14,8 +14,16 @@ import { allArmors } from '@viewer-app/shared';
           <td mat-cell *matCellDef="let element">{{ element.id }}</td>
         </ng-container>
         <ng-container matColumnDef="name">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>name</th>
-          <td mat-cell *matCellDef="let element">{{ element.name | titlecase }}</td>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.name | titlecase }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="subCategory">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Sub category</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.itemSubCategory | titlecase }}
+        </td>
         </ng-container>
         <ng-container matColumnDef="weight">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>weight</th>
@@ -27,7 +35,11 @@ import { allArmors } from '@viewer-app/shared';
         </ng-container>
         <ng-container matColumnDef="features">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>features</th>
-          <td mat-cell *matCellDef="let element">{{ element.features }}</td>
+          <td mat-cell *matCellDef="let element">
+            <ng-container *ngFor="let feature of element.features">
+              <span >{{ feature.name | titlecase }} </span>
+            </ng-container>
+          </td>
         </ng-container>
         <ng-container matColumnDef="techTier">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>techTier</th>
@@ -54,9 +66,10 @@ export class ItemArmorComponent implements AfterViewInit {
   @ViewChild(MatSort) sort: MatSort;
 
   displayedColumnsWeapons: string[] = [
-    'id',
+    // 'id',
     'name',
-    'weight',
+    'subCategory',
+    // 'weight',
     'armorRating',
     'features',
     'techTier',

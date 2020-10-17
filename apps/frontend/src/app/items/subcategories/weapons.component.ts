@@ -22,6 +22,12 @@ import { allMeleeWeapons, ItemWeapon } from '@viewer-app/shared';
           {{ element.name | titlecase }}
         </td>
       </ng-container>
+      <ng-container matColumnDef="itemSubCategory">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Sub-Category</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.itemSubCategory | titlecase }}
+        </td>
+      </ng-container>
       <ng-container matColumnDef="weight">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>weight</th>
         <td mat-cell *matCellDef="let element">{{ element.weight }}</td>
@@ -52,7 +58,7 @@ import { allMeleeWeapons, ItemWeapon } from '@viewer-app/shared';
         <th mat-header-cell *matHeaderCellDef mat-sort-header>features</th>
         <td mat-cell *matCellDef="let element">
           <ng-container *ngFor="let feature of element.features">
-            <span > {{ feature.name | titlecase }}, </span>
+            <span>{{ feature.name | titlecase }} </span>
           </ng-container>
         </td>
       </ng-container>
@@ -82,7 +88,8 @@ export class ItemWeaponComponent implements AfterViewInit {
   displayedColumnsWeapons: string[] = [
     // 'id',
     'name',
-    'weight',
+    'itemSubCategory',
+    // 'weight',
     'bonus',
     'init',
     'damage',
