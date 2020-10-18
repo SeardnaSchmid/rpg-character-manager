@@ -57,8 +57,10 @@ import { meleeWeaponsList, ItemWeapon } from '@viewer-app/shared';
       <ng-container matColumnDef="features">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>features</th>
         <td mat-cell *matCellDef="let element">
-          <ng-container *ngFor="let feature of element.features">
-            <span>{{ feature.name | titlecase }} </span>
+          <ng-container *ngFor="let feature of element.features; let i = index">
+            <span *ngIf="feature.infoText" class="tooltip dotted" [tooltip]='feature.infoText' placement="bottom">{{ feature.name | titlecase }}</span>
+            <span *ngIf="!feature.infoText"> {{ feature.name | titlecase }}</span>
+            <span *ngIf="i !== element.features.length - 1">,</span>
           </ng-container>
         </td>
       </ng-container>

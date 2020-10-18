@@ -10,6 +10,7 @@ export class CharacterModifier {
   public type: ItemFeatureType | TalentType;
   public modifier: number;
   public typeToBeModified: GeneralSkillType | AttributeType | SpecialDiceType | BodyStatType;
+  public infoText?: string;
 
   // optional fields
   public defaultUserInput? = true;

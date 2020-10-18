@@ -66,6 +66,9 @@ export const light: CharacterModifier = {
   type: ItemFeatureType.light,
   typeToBeModified: BodyStatType.Encumbarance,
   modifier: -0.5,
+  infoText: "Light weapons only count as half an item in the character inventory\n" +
+    "(page 27). They are also easier to carry concealed, requiring an\n" +
+    "observation test for someone to spot the weapon."
 };
 export const small: CharacterModifier = light;
 export const heavy: CharacterModifier = {

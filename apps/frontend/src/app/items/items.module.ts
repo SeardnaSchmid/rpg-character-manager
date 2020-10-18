@@ -12,6 +12,7 @@ import {
   ItemArmorComponent,
   ItemWeaponComponent,
 } from '@viewer-app/items/subcategories';
+import { TooltipModule } from 'ng2-tooltip-directive';
 
 @NgModule({
   imports: [
@@ -21,6 +22,7 @@ import {
     SharedModule,
     FlexLayoutModule,
     MaterialModule,
+    TooltipModule,
     ItemsRoutingModule,
   ],
   declarations: [ItemsComponent, ItemWeaponComponent, ItemArmorComponent],

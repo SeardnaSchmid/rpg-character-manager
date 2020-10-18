@@ -16,8 +16,8 @@ import {
   ItemGadget,
   ItemWeapon,
   SpecialDiceType
-} from '@viewer-app/shared';
-import { baseDrainableStat } from '@viewer-app/shared/coriolis/characterMock';
+} from './model';
+// import { baseDrainableStat } from '@viewer-app/shared/coriolis/characterMock';
 
 @Injectable({
   providedIn: 'root',
