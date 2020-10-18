@@ -11,7 +11,7 @@ import {
 } from '../../index';
 import { CharacterItem } from './item';
 
-export class Character {
+export class CoriolisCharacter {
   background?: CharacterBackground;
   name?: CharacterName;
 
@@ -27,7 +27,7 @@ export class Character {
   equipedItems?: Array<CharacterItem> = [];
   spaceShipItems?: Array<CharacterItem> = [];
 
-  public constructor(init?: Partial<Character>) {
+  public constructor(init?: Partial<CoriolisCharacter>) {
     Object.assign(this, init);
   }
 }

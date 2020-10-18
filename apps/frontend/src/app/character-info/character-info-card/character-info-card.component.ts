@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Character } from '@viewer-app/shared';
+import { CoriolisCharacter } from '@viewer-app/shared';
 
 @Component({
   selector: 'viewer-character-info-card',
@@ -8,7 +8,7 @@ import { Character } from '@viewer-app/shared';
   styleUrls: ['./character-info-card.component.scss'],
 })
 export class CharacterInfoCardComponent implements OnInit {
-  @Input() character: Character;
+  @Input() character: CoriolisCharacter;
   areAllOpen = true;
 
   constructor(private _snackBar: MatSnackBar) {}

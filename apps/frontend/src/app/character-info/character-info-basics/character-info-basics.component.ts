@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Character, CharacterConcept, CharacterGroupConcept, CharacterIcon, CharacterOrigin, CharacterUpbringing } from '@viewer-app/shared';
+import { CoriolisCharacter, CharacterConcept, CharacterGroupConcept, CharacterIcon, CharacterOrigin, CharacterUpbringing } from '@viewer-app/shared';
 import { StarSystem } from '@viewer-app/shared/coriolis/model/starSystem/system';
 
 @Component({
@@ -8,7 +8,7 @@ import { StarSystem } from '@viewer-app/shared/coriolis/model/starSystem/system'
   styleUrls: ['./character-info-basics.component.scss'],
 })
 export class CharacterInfoBasicsComponent {
-  @Input() character: Character;
+  @Input() character: CoriolisCharacter;
   characterOrigin = CharacterOrigin;
   characterHomeSystem = StarSystem;
   characterUpBringing = CharacterUpbringing;

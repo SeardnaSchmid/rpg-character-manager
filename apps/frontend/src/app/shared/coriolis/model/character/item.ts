@@ -132,6 +132,7 @@ export enum ItemMeleeWeaponSubCategory {
 
 export enum ItemArmorSubCategory {
   armor = 'armor',
+  exo = 'exo',
   shield = 'shield'
 }
 

@@ -52,7 +52,7 @@ export const protectiveClothing: ItemArmor = new ItemArmor({
 export const exoShell: ItemArmor = new ItemArmor({
   id: v4(),
   name: 'Exo shell',
-  itemSubCategory: ItemArmorSubCategory.armor,
+  itemSubCategory: ItemArmorSubCategory.exo,
   armorRating: 2,
   features: [bulkyArmor, thermostaticSuit, vacuumSuit, oxygenSupply],
   techTier: ItemTechTier.ordinary,
@@ -62,7 +62,7 @@ export const exoShell: ItemArmor = new ItemArmor({
 export const reinforcedExoShell: ItemArmor = new ItemArmor({
   id: v4(),
   name: 'Reinforced exo shell',
-  itemSubCategory: ItemArmorSubCategory.armor,
+  itemSubCategory: ItemArmorSubCategory.exo,
   armorRating: 3,
   features: [bulkyArmor, thermostaticSuit, vacuumSuit, oxygenSupply],
   techTier: ItemTechTier.ordinary,
@@ -103,7 +103,7 @@ export const ablativePads: ItemArmor = new ItemArmor({
 export const armoredExo: ItemArmor = new ItemArmor({
   id: v4(),
   name: 'Armored exo',
-  itemSubCategory: ItemArmorSubCategory.armor,
+  itemSubCategory: ItemArmorSubCategory.exo,
   armorRating: 9,
   features: [thermostaticSuit, vacuumSuit, oxygenSupply, reinforcedExoServos],
   techTier: ItemTechTier.advanced,
@@ -114,7 +114,7 @@ export const armoredExo: ItemArmor = new ItemArmor({
 export const battleExo: ItemArmor = new ItemArmor({
   id: v4(),
   name: 'Battle exo',
-  itemSubCategory: ItemArmorSubCategory.armor,
+  itemSubCategory: ItemArmorSubCategory.exo,
   armorRating: 10,
   features: [thermostaticSuit, vacuumSuit, oxygenSupply, reinforcedExoServos],
   techTier: ItemTechTier.advanced,
@@ -153,18 +153,19 @@ export const combatShield: ItemArmor = new ItemArmor({
 });
 
 export const armorsList = {
+  flightsuit,
+  lightPrimitiveArmor,
+  heavyPrimitiveArmor,
+  protectiveClothing,
+  exoShell,
+  reinforcedExoShell,
+  lightArmor,
+  heavyArmor,
   ablativePads,
   armoredExo,
   battleExo,
-  combatShield,
-  exoShell,
-  flightsuit,
-  heavyArmor,
-  heavyPrimitiveArmor,
-  lightArmor,
-  lightPrimitiveArmor,
-  protectiveClothing,
-  reinforcedExoShell,
-  riotShield,
+
   shield,
+  riotShield,
+  combatShield,
 };

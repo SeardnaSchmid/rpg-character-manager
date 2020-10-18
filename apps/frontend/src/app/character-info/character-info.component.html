@@ -1,3 +1,5 @@
 <div class="container infoComponent">
-  <viewer-character-info-card [character]="char1"></viewer-character-info-card>
+  <ng-container *ngFor="let character of chars">
+    <viewer-character-info-card [character]="character"></viewer-character-info-card>
+  </ng-container>
 </div>

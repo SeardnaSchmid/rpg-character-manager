@@ -7,18 +7,18 @@ import {
   baseSkillsMock,
   itemWeaponMockMelee,
   itemWeaponMockMelee2,
-} from '@viewer-app/shared/coriolis/characterMock';
+} from '@viewer-app/shared/coriolis/mocks/characterMock';
 import { Dice } from '@viewer-app/shared/dice/dice';
 import {
   AttributeType,
-  Character,
+  CoriolisCharacter,
   DrainableStat,
   GeneralSkillType,
 } from '@viewer-app/shared';
 
 describe('CoriolisCoreControllsService', () => {
   let service: CoriolisCoreControllsService;
-  let characterBaseMock: Character;
+  let characterBaseMock: CoriolisCharacter;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
@@ -31,14 +31,14 @@ describe('CoriolisCoreControllsService', () => {
 
   describe('Constructor', () => {
     it('creates a Character Class with no information', () => {
-      characterBaseMock = new Character();
+      characterBaseMock = new CoriolisCharacter();
       expect(characterBaseMock).toBeTruthy();
     });
   });
 
   describe('rollInitiative', () => {
     beforeEach(() => {
-      characterBaseMock = new Character({
+      characterBaseMock = new CoriolisCharacter({
         attributes: baseAttributesMock,
         skills: baseSkillsMock,
         equipedItems: [],
@@ -65,7 +65,7 @@ describe('CoriolisCoreControllsService', () => {
     });
 
     it('should roll 1 dice with a bonus of 10 from a equiped weapon to be above at least 11 as a result', () => {
-      const tmpCharacterMock = new Character(characterBaseMock);
+      const tmpCharacterMock = new CoriolisCharacter(characterBaseMock);
       tmpCharacterMock.equipedItems = [itemWeaponMockMelee];
       const result: Dice[] = service.rollInitative(
         tmpCharacterMock
@@ -77,7 +77,7 @@ describe('CoriolisCoreControllsService', () => {
 
   describe('rollAttribute', function () {
     beforeEach(function () {
-      characterBaseMock = new Character({
+      characterBaseMock = new CoriolisCharacter({
         attributes: baseAttributesMock,
         skills: baseSkillsMock,
         equipedItems: [],
@@ -103,7 +103,7 @@ describe('CoriolisCoreControllsService', () => {
     });
 
     it('rolls strength with a item beeing a modifier', function () {
-      const tmpCharacterMock = new Character(characterBaseMock);
+      const tmpCharacterMock = new CoriolisCharacter(characterBaseMock);
       tmpCharacterMock.equipedItems;
       const result: Dice[] = service.rollAttribute(
         AttributeType.Strength,
@@ -116,7 +116,7 @@ describe('CoriolisCoreControllsService', () => {
 
   describe('rollSkill', () => {
     beforeEach(() => {
-      characterBaseMock = new Character({
+      characterBaseMock = new CoriolisCharacter({
         attributes: baseAttributesMock,
         skills: baseSkillsMock,
         equipedItems: [],
@@ -158,7 +158,7 @@ describe('CoriolisCoreControllsService', () => {
     });
 
     it('should roll 6 dice: 1 str 1 meleeWeapons 3 weaponbonus 1 weapon feature = 6', () => {
-      characterBaseMock = new Character({
+      characterBaseMock = new CoriolisCharacter({
         attributes: baseAttributesMock,
         skills: baseSkillsMock,
         equipedItems: [itemWeaponMockMelee],
@@ -174,7 +174,7 @@ describe('CoriolisCoreControllsService', () => {
     });
 
     it('should roll 3 dice: 1 str 1 meleeWeapons 1 weaponbonus = 3', () => {
-      characterBaseMock = new Character({
+      characterBaseMock = new CoriolisCharacter({
         attributes: baseAttributesMock,
         skills: baseSkillsMock,
         equipedItems: [itemWeaponMockMelee2],
@@ -190,7 +190,7 @@ describe('CoriolisCoreControllsService', () => {
     });
 
     it('should throw error if it is tried to roll an item which is not equiped on the character', () => {
-      characterBaseMock = new Character({
+      characterBaseMock = new CoriolisCharacter({
         attributes: baseAttributesMock,
         skills: baseSkillsMock,
         equipedItems: [itemWeaponMockMelee],
@@ -208,7 +208,7 @@ describe('CoriolisCoreControllsService', () => {
 
   describe('calculateEncumbarance', () => {
     beforeEach(() => {
-      characterBaseMock = new Character({
+      characterBaseMock = new CoriolisCharacter({
         attributes: baseAttributesMock,
         skills: baseSkillsMock,
         bodyStats: baseBodyStatsMock,
@@ -224,7 +224,7 @@ describe('CoriolisCoreControllsService', () => {
     });
 
     it('should calculate the general encumbarance', () => {
-      const tmpChar = new Character(characterBaseMock);
+      const tmpChar = new CoriolisCharacter(characterBaseMock);
       tmpChar.equipedItems = [itemWeaponMockMelee, itemWeaponMockMelee, itemWeaponMockMelee];
       const result: DrainableStat = service.calculateEncumbarance(
         tmpChar

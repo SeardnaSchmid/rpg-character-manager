@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { finalize } from 'rxjs/operators';
-
-import { QuoteService } from './quote.service';
+import { CharacterPersistenceService } from '@viewer-app/shared/services/character-persistence.service';
+import { CoriolisCharacter , allCharacterMocksList } from '@viewer-app/shared';
 
 @Component({
   selector: 'app-home',
@@ -9,22 +8,24 @@ import { QuoteService } from './quote.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  quote: string | undefined;
+  chars: CoriolisCharacter[];
   isLoading = false;
 
-  constructor(private quoteService: QuoteService) {}
+  constructor(private readonly characterPersistenceService: CharacterPersistenceService) {}
 
   ngOnInit() {
-    // this.isLoading = true;
-    // this.quoteService
-    //   .getRandomQuote({ category: 'dev' })
-    //   .pipe(
-    //     finalize(() => {
-    //       this.isLoading = false;
-    //     })
-    //   )
-    //   .subscribe((quote: string) => {
-    //     this.quote = quote;
-    //   });
+    this.resetCharacters();
+  }
+
+  public resetCharacters(){
+    this.isLoading = true;
+    this.characterPersistenceService.deleteAll();
+    this.characterPersistenceService.setList(allCharacterMocksList);
+    this.chars = this.characterPersistenceService.getAll();
+    this.isLoading = false;
+  }
+  public clearCharacters(){
+    this.chars = [];
+    this.characterPersistenceService.deleteAll();
   }
 }

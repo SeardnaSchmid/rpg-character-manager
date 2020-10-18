@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Dice } from '@viewer-app/shared/dice/dice';
 import { DiceRollService } from '@viewer-app/dice-roll-modal/dice-roll.service';
 import {
-  Character,
+  CoriolisCharacter,
   CharacterSkill,
   CoriolisCoreControllsService,
 } from '@viewer-app/shared';
@@ -13,7 +13,7 @@ import {
   styleUrls: ['./character-info-skills.component.scss'],
 })
 export class CharacterInfoSkillsComponent implements OnInit {
-  @Input() selectedCharacter: Character;
+  @Input() selectedCharacter: CoriolisCharacter;
 
   constructor(
     public diceRollService: DiceRollService,

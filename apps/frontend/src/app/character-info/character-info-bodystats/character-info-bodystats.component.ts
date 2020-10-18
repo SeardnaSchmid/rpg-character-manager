@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { BodyStatType, Character, getFormulaExplanation } from '@viewer-app/shared';
+import { BodyStatType, CoriolisCharacter, getFormulaExplanation } from '@viewer-app/shared';
 
 @Component({
   selector: 'viewer-character-info-bodystats',
@@ -7,7 +7,7 @@ import { BodyStatType, Character, getFormulaExplanation } from '@viewer-app/shar
   styleUrls: ['./character-info-bodystats.component.scss'],
 })
 export class CharacterInfoBodystatsComponent implements OnInit {
-  @Input() character: Character;
+  @Input() character: CoriolisCharacter;
   private getBodyStatExplanation: (bodyStatType: BodyStatType) => string;
 
   constructor() {

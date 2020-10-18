@@ -30,8 +30,10 @@ export const knife: ItemWeapon = new ItemWeapon({
 });
 export const sword: ItemWeapon = new ItemWeapon({
   itemSubCategory: ItemMeleeWeaponSubCategory.knivesAndSwords,
+  bonusModifier: 1,
+  initModifier: 0,
+  damage: 2,
   crit: 0,
-  damage: 0,
   id: v4(),
   name: 'Sword',
   range: ItemRange.close,
@@ -164,7 +166,7 @@ export const baton: ItemWeapon = new ItemWeapon({
   baseSkill: GeneralSkillType.MeleeCombat,
 });
 export const batonExpandable: ItemWeapon = new ItemWeapon({
-  name: 'Baton',
+  name: 'Baton expandable',
   itemSubCategory: ItemMeleeWeaponSubCategory.blunt,
   id: v4(),
   bonusModifier: 2,
@@ -174,7 +176,7 @@ export const batonExpandable: ItemWeapon = new ItemWeapon({
   range: ItemRange.close,
   features: [lightWeapon],
   techTier: ItemTechTier.primitive,
-  cost: 100,
+  cost: 200,
   baseSkill: GeneralSkillType.MeleeCombat,
 });
 export const staff: ItemWeapon = new ItemWeapon({
@@ -407,21 +409,26 @@ export const meleeWeaponsList = {
   duraSword,
   mercuriumKnife,
   mercuriumSword,
+
   axe,
   duraAxe,
   halberd,
   duraHalberd,
+
   baton,
+  batonExpandable,
   staff,
   mace,
   powerSledge,
   powerGlove,
+
   shockStick,
   shockWhip,
   energyStaff,
   energyStick,
   energyWhip,
   handFan,
+
   unarmed,
   brassKnuckles,
   claws,

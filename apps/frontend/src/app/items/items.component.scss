@@ -16,3 +16,7 @@ q {
 table {
   width: 100%;
 }
+
+tr.mat-row, tr.mat-footer-row {
+  height: 1.5rem;
+}

@@ -1,4 +1,4 @@
-export * from './character';
+export * from './coriolisCharacter';
 export * from './characterAttribute';
 export * from './characterBackground';
 export * from './characterBodyStat';

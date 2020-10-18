@@ -5,7 +5,7 @@ import {
   AdvancedSkillTypesList,
   AttributeType,
   BodyStatType,
-  Character,
+  CoriolisCharacter,
   CharacterItem,
   DrainableStat,
   GeneralSkillsTypesList,
@@ -47,7 +47,7 @@ export class CoriolisCoreControllsService {
    * @param diceResultModifier - manual modifications for the roll
    */
   public rollInitative(
-    character: Character,
+    character: CoriolisCharacter,
     diceResultModifier: number = 0
   ): Dice[] {
     const numberDiceForInitiativeRoll = 1;
@@ -74,7 +74,7 @@ export class CoriolisCoreControllsService {
    */
   public rollSkill(
     skillType: GeneralSkillType | AdvancedSkillType,
-    character: Character,
+    character: CoriolisCharacter,
     manualDiceModifier: number = 0
   ): Dice[] {
     const toBeRolledSkill = character.skills.find(
@@ -108,7 +108,7 @@ export class CoriolisCoreControllsService {
    */
   public rollAttribute(
     attribute: AttributeType,
-    character: Character,
+    character: CoriolisCharacter,
     manualModifications: number = 0
   ): Dice[] {
     const numberOfDiceToRoll =
@@ -125,7 +125,7 @@ export class CoriolisCoreControllsService {
    */
   public rollItem(
     item: CharacterItem,
-    character: Character,
+    character: CoriolisCharacter,
     manualModifications: number = 0
   ): Dice[] {
     // check if item exists on character
@@ -149,20 +149,20 @@ export class CoriolisCoreControllsService {
     return { ...characterEncumberance, current: result };
   }
 
-  private countDiceForItemArmorRoll(item: ItemArmor, character: Character) {
+  private countDiceForItemArmorRoll(item: ItemArmor, character: CoriolisCharacter) {
     let result = 0;
     result += this.countDiceForSkillRoll(item.baseSkill, character);
     return result;
   }
 
-  private countDiceForItemWeaponRoll(item: ItemWeapon, character: Character) {
+  private countDiceForItemWeaponRoll(item: ItemWeapon, character: CoriolisCharacter) {
     let result = 0;
     result += this.countDiceForSkillRoll(item.baseSkill, character);
     result += item.bonusModifier;
     return result;
   }
 
-  private countDiceForItemGadgetRoll(item: ItemGadget, character: Character) {
+  private countDiceForItemGadgetRoll(item: ItemGadget, character: CoriolisCharacter) {
     let result = 0;
     result += this.countDiceForSkillRoll(item.baseSkill, character);
     return result;
@@ -171,7 +171,7 @@ export class CoriolisCoreControllsService {
   /**
    * counts the number of dice we can use for the itemroll
    */
-  private countDiceForItemRoll(item: CharacterItem, character: Character) {
+  private countDiceForItemRoll(item: CharacterItem, character: CoriolisCharacter) {
     let result = 0;
     switch (item.getItemClassType()) {
       case ItemClassName.itemArmor:
@@ -206,7 +206,7 @@ export class CoriolisCoreControllsService {
    */
   private countDiceForSkillRoll(
     skillType: GeneralSkillType | AdvancedSkillType,
-    character: Character
+    character: CoriolisCharacter
   ): number {
     const toBeRolledSkill = character.skills.find(
       (characterSkills) => characterSkills.type === skillType
@@ -240,7 +240,7 @@ export class CoriolisCoreControllsService {
 
   private countDiceForAttributeRoll(
     attributeType: AttributeType,
-    character: Character
+    character: CoriolisCharacter
   ): number {
     const toBeRolledAttribute = character.attributes.find(
       (characterAttributes) => characterAttributes.type === attributeType
@@ -261,7 +261,7 @@ export class CoriolisCoreControllsService {
   }
 
   private countItemAndTalentBonus(
-    character: Character,
+    character: CoriolisCharacter,
     type:
       | AttributeType
       | GeneralSkillType

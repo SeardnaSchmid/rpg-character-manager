@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
-import { Character, CharacterItem } from '@viewer-app/shared';
+import { CoriolisCharacter, CharacterItem } from '@viewer-app/shared';
 
 @Component({
   selector: 'viewer-character-info-items',
@@ -8,7 +8,7 @@ import { Character, CharacterItem } from '@viewer-app/shared';
   styleUrls: ['./character-info-items.component.scss'],
 })
 export class CharacterInfoItemsComponent implements OnInit {
-  @Input() selectedCharacter: Character;
+  @Input() selectedCharacter: CoriolisCharacter;
 
   constructor() {}
 

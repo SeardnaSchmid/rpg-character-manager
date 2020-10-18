@@ -34,7 +34,7 @@ import { meleeWeaponsList, ItemWeapon } from '@viewer-app/shared';
       </ng-container>
       <ng-container matColumnDef="bonus">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>bonus</th>
-        <td mat-cell *matCellDef="let element">{{ element.bonus }}</td>
+        <td mat-cell *matCellDef="let element">{{ element.bonusModifier }}</td>
       </ng-container>
       <ng-container matColumnDef="init">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>init</th>
