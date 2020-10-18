@@ -1,4 +1,4 @@
-import { GeneralSkillType } from '../character/characterSkill';
+import { AdvancedSkillType, GeneralSkillType } from '../character/characterSkill';
 import { AttributeType, BodyStatType, SpecialDiceType, TalentType } from '.';
 import { ItemFeatureType } from './itemFeature';
 
@@ -9,7 +9,7 @@ export class CharacterModifier {
   public name: string;
   public type: ItemFeatureType | TalentType;
   public modifier: number;
-  public typeToBeModified: GeneralSkillType | AttributeType | SpecialDiceType | BodyStatType;
+  public typeToBeModified: GeneralSkillType | AdvancedSkillType | AttributeType | SpecialDiceType | BodyStatType;
   public infoText?: string;
 
   // optional fields

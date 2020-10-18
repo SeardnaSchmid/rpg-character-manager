@@ -14,7 +14,7 @@ export class CharacterItemBase {
   weight?: ItemWeight = ItemWeight.normal;
   amount? = 1;
   baseSkill?: GeneralSkillType | AdvancedSkillType;
-  itemSubCategory: ItemWeaponSubCategory | ItemArmorSubCategory | ItemGadgetSubCategory;
+  itemSubCategory: ItemRangedWeaponSubCategory | ItemMeleeWeaponSubCategory | ItemArmorSubCategory | ItemGadgetSubCategory;
   protected _itemClassName: ItemClassName;
 
   constructor(init?: Partial<CharacterItemBase>) {
@@ -107,47 +107,33 @@ export enum ItemWeight {
   notWearable = 9001, // too heavy to wear
 }
 
-export enum ItemWeaponSubCategory {
-  pistol,
-  carabine,
-  grape,
-  rifle,
-  heavyWeapon,
-  kniveAndSword,
-  axe,
-  blunt,
-  stunAndEnergy,
-  explosive,
-  grenade,
-  other
+export enum ItemRangedWeaponSubCategory {
+  pistol = 'pistol',
+  carabine = 'carabine',
+  grape = 'grape',
+  rifle = 'rifle',
+  heavyWeapon = 'heavyWeapon',
+  kniveAndSword = 'kniveAndSword',
+  axe = 'axe',
+  blunt = 'blunt',
+  stunAndEnergy = 'stunAndEnergy',
+  explosive = 'explosive',
+  grenade = 'grenade',
+  other = 'other'
+}
+
+export enum ItemMeleeWeaponSubCategory {
+  knivesAndSwords= 'knifesAndSwords',
+  axes = 'axes',
+  blunt = 'blunt',
+  stunAndEnergy = 'stunAndEnergy',
+  other = 'other',
 }
 
 export enum ItemArmorSubCategory {
-  pistol,
-  carabine,
-  grape,
-  rifle,
-  heavyWeapon,
-  kniveAndSword,
-  axe,
-  blunt,
-  stunAndEnergy,
-  explosive,
-  grenade,
-  other
+  armor = 'armor',
+  shield = 'shield'
 }
 
 export enum ItemGadgetSubCategory {
-  pistol,
-  carabine,
-  grape,
-  rifle,
-  heavyWeapon,
-  kniveAndSword,
-  axe,
-  blunt,
-  stunAndEnergy,
-  explosive,
-  grenade,
-  other
 }

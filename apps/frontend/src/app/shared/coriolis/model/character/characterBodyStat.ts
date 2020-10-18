@@ -17,6 +17,7 @@ export enum BodyStatType {
   Encumbarance = 'Encumbarance',
   RadiationPoints = 'RadiationPoints',
   Reputation = 'Reputation',
+  Armor = "Armor",
 }
 
 export interface DrainableStat {
