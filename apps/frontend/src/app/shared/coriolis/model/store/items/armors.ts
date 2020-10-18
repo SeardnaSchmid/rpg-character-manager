@@ -141,7 +141,7 @@ export const combatShield: ItemArmor = new ItemArmor({
   extraFeaturesSlots: 0,
 });
 
-export const allArmors = {
+export const armorsList = {
   lightPrimitiveArmor,
   heavyPrimitiveArmor,
   flightsuit,

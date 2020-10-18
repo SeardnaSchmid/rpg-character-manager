@@ -2,7 +2,7 @@ import { AdvancedSkillType, GeneralSkillType } from '../../character/characterSk
 import { ItemGadget, ItemTechTier, ItemWeight } from '../../character/item';
 import { v4 } from 'uuid';
 
-const quantenFluxGenerator: ItemGadget = new ItemGadget({
+export const quantenFluxGenerator: ItemGadget = new ItemGadget({
   id: v4(),
   amount: 0,
   baseSkill: AdvancedSkillType.MysticalPowers,
@@ -12,7 +12,7 @@ const quantenFluxGenerator: ItemGadget = new ItemGadget({
   weight: ItemWeight.normal,
   // skillToBeInfluenced: { skillToBeModified: SkillType.Technology, modifierValue: 42 }
 });
-const jostersLangerPenis: ItemGadget = new ItemGadget({
+export const jostersLangerPenis: ItemGadget = new ItemGadget({
   id: v4(),
   name: 'JostersLangerPenis',
   weight: ItemWeight.notWearable,
@@ -23,7 +23,7 @@ const jostersLangerPenis: ItemGadget = new ItemGadget({
   features: [],
 });
 
-export const quirkyStuff = {
+export const quirkyStuffList = {
   quantenFluxGenerator,
   jostersLangerPenis,
 };

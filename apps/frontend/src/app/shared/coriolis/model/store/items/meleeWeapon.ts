@@ -365,7 +365,7 @@ export const whip: ItemWeapon = new ItemWeapon({
   baseSkill: GeneralSkillType.MeleeCombat,
 });
 
-export const allMeleeWeapons = {
+export const meleeWeaponsList = {
   knife,
   sword,
   duraKnife,

@@ -2,7 +2,7 @@ import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { ItemArmor } from '@viewer-app/shared';
-import { allArmors } from '@viewer-app/shared';
+import { armorsList } from '@viewer-app/shared';
 
 @Component({
   selector: 'items-armor',
@@ -61,7 +61,7 @@ import { allArmors } from '@viewer-app/shared';
   styleUrls: ['../items.component.scss'],
 })
 export class ItemArmorComponent implements AfterViewInit {
-  public dataSourceWeapons = new MatTableDataSource<ItemArmor>(Object.keys(allArmors).map(key => allArmors[key]));
+  public dataSourceWeapons = new MatTableDataSource<ItemArmor>(Object.keys(armorsList).map(key => armorsList[key]));
 
   @ViewChild(MatSort) sort: MatSort;
 
