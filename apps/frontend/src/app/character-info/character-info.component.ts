@@ -1,20 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-import { CoriolisCharacter } from '@viewer-app/shared';
+import { allCharacterMocksList, CoriolisCharacter } from '@viewer-app/shared';
 import { CharacterPersistenceService } from '@viewer-app/shared/services/character-persistence.service';
 
 @Component({
-  selector: 'viewer-character-info',
+  selector: 'frontend-character-info',
   templateUrl: './character-info.component.html',
   styleUrls: ['./character-info.component.scss'],
 })
 export class CharacterInfoComponent implements OnInit {
   public chars: CoriolisCharacter[];
+  public isLoading: boolean;
 
   constructor(
     private readonly characterPersistenceService: CharacterPersistenceService
   ) {}
 
-  ngOnInit() {
-    this.chars = this.characterPersistenceService.getAll();
+  async ngOnInit() {
+    this.chars = await this.characterPersistenceService.findAll();
+  }
+
+  public async resetCharacters() {
+    this.isLoading = true;
+    await this.characterPersistenceService.deleteAll();
+    await this.characterPersistenceService.setList(allCharacterMocksList);
+    this.chars = await this.characterPersistenceService.findAll();
+    this.isLoading = false;
+  }
+  public async clearCharacters() {
+    this.chars = [];
+    await this.characterPersistenceService.deleteAll();
   }
 }

@@ -12,6 +12,7 @@ import {
 import { CharacterItem } from './item';
 
 export class CoriolisCharacter {
+  id?: string;
   background?: CharacterBackground;
   name?: CharacterName;
 

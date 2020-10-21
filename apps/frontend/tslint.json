@@ -4,13 +4,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "rpgCharacterManager",
+      "frontend",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "rpg-character-manager",
+      "frontend",
       "kebab-case"
     ]
   },

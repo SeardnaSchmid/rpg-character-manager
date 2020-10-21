@@ -10,37 +10,45 @@ export class CharacterPersistenceService {
 
   constructor() {}
 
-  public set(id: string, character: any) {
-    if (this.data.has(id)) throw Error('Item already exists. Id collision');
-    this.data.set(id, character);
+  public async create(character: CoriolisCharacter): Promise<CoriolisCharacter> {
+
+    if(!character.id) {
+      character.id = v4();
+    }
+    this.data.set(character.id, character);
+    return character;
   }
 
-  public get(id: string): CoriolisCharacter {
-    if (!this.data.has(id))
+  public async findOneById(id: string): Promise<CoriolisCharacter> {
     return this.data.get(id);
   }
 
-  public getAll(): CoriolisCharacter[] {
+  public async findAll(): Promise<CoriolisCharacter[]> {
     return [...this.data.values()];
   }
 
-  public delete(id: string) {
+  public deleteOneById(id: string): Promise<void> {
     if (this.data.has(id)) {
       this.data.delete(id);
+    } else {
+      throw new Error(`${id} does not exist in memory`);
     }
+    return;
   }
 
-  public deleteAll() {
+  public deleteAll(): Promise<void> {
     this.data.clear();
+    return;
   }
-  setList(allCharacters: CoriolisCharacter[]) {
+
+  async setList(allCharacters: CoriolisCharacter[]): Promise<void> {
     if (allCharacters.length <= 0) {
       return;
     }
 
-    allCharacters.map(character => {
-      this.set(v4(), character);
+    allCharacters.map(async character => {
+      await this.create(character);
     })
+    return;
   }
-
 }

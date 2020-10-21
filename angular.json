@@ -10,7 +10,7 @@
       },
       "root": "apps/frontend",
       "sourceRoot": "apps/frontend/src",
-      "prefix": "rpg-character-manager",
+      "prefix": "frontend",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",

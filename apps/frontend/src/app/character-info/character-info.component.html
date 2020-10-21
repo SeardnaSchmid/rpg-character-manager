@@ -1,4 +1,18 @@
 <div class="container infoComponent">
+  <mat-card-content>
+    <mat-card-title translate>Characters in Memory</mat-card-title>
+    <button (click)="resetCharacters()">Load Mocks</button>
+    <button (click)="clearCharacters()">Clear Memory</button>
+    <mat-card-subtitle>
+      <viewer-loader [isLoading]="isLoading" size="1.5"></viewer-loader>
+      <ul [hidden]="isLoading">
+        <li *ngFor="let character of chars">
+          <q [hidden]="isLoading">{{ character.name.firstName }}</q>
+        </li>
+      </ul>
+    </mat-card-subtitle>
+  </mat-card-content>
+
   <ng-container *ngFor="let character of chars">
     <viewer-character-info-card [character]="character"></viewer-character-info-card>
   </ng-container>
