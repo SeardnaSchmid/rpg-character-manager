@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { MediaObserver } from '@angular/flex-layout';
 
 @Component({
-  selector: 'app-shell',
+  selector: 'frontend-shell',
   templateUrl: './shell.component.html',
   styleUrls: ['./shell.component.scss'],
 })

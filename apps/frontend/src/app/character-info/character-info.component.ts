@@ -16,7 +16,7 @@ export class CharacterInfoComponent implements OnInit {
   ) {}
 
   async ngOnInit() {
-    this.chars = await this.characterPersistenceService.findAll();
+    await this.resetCharacters();
   }
 
   public async resetCharacters() {

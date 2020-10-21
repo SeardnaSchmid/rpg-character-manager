@@ -5,15 +5,20 @@
     <button (click)="clearCharacters()">Clear Memory</button>
     <mat-card-subtitle>
       <viewer-loader [isLoading]="isLoading" size="1.5"></viewer-loader>
-      <ul [hidden]="isLoading">
-        <li *ngFor="let character of chars">
-          <q [hidden]="isLoading">{{ character.name.firstName }}</q>
-        </li>
-      </ul>
+      <mat-list [hidden]="isLoading">
+        <mat-divider></mat-divider>
+        <div *ngFor="let character of chars">
+          <a mat-list-item [routerLink]="'characterInfo/' + character.id" routerLinkActive="active">
+            <span translate>CharacterInfo: {{ character.name.firstName }}</span>
+          </a>
+        </div>
+      </mat-list>
     </mat-card-subtitle>
   </mat-card-content>
 
   <ng-container *ngFor="let character of chars">
-    <viewer-character-info-card [character]="character"></viewer-character-info-card>
+    <viewer-character-info-card
+      [character]="character"
+    ></viewer-character-info-card>
   </ng-container>
 </div>
