@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CoriolisCharacter } from '@viewer-app/shared';
+import { ActivatedRoute } from '@angular/router';
+import { CharacterPersistenceService } from '@viewer-app/shared/services/character-persistence.service';
 
 @Component({
   selector: 'viewer-character-info-card',
@@ -8,12 +10,15 @@ import { CoriolisCharacter } from '@viewer-app/shared';
   styleUrls: ['./character-info-card.component.scss'],
 })
 export class CharacterInfoCardComponent implements OnInit {
-  @Input() character: CoriolisCharacter;
+  character: CoriolisCharacter;
   areAllOpen = true;
 
-  constructor(private _snackBar: MatSnackBar) {}
+  constructor(private route: ActivatedRoute, private _snackBar: MatSnackBar, private characterPersistenceService: CharacterPersistenceService) {}
 
-  ngOnInit() {}
+  async ngOnInit() {
+    const selectedCharacterId = this.route.snapshot.url[1].toString();
+    this.character = await this.characterPersistenceService.findOneById(selectedCharacterId);
+  }
 
   onToggleAll() {
     this.areAllOpen = !this.areAllOpen;

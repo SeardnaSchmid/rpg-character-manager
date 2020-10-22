@@ -8,7 +8,7 @@
       <mat-list [hidden]="isLoading">
         <mat-divider></mat-divider>
         <div *ngFor="let character of chars">
-          <a mat-list-item [routerLink]="'characterInfo/' + character.id" routerLinkActive="active">
+          <a mat-list-item [routerLink]="character.id" routerLinkActive="active">
             <span translate>CharacterInfo: {{ character.name.firstName }}</span>
           </a>
         </div>
@@ -16,9 +16,9 @@
     </mat-card-subtitle>
   </mat-card-content>
 
-  <ng-container *ngFor="let character of chars">
-    <viewer-character-info-card
-      [character]="character"
-    ></viewer-character-info-card>
-  </ng-container>
+<!--  <ng-container *ngFor="let character of chars">-->
+<!--    <viewer-character-info-card-->
+<!--      [character]="character"-->
+<!--    ></viewer-character-info-card>-->
+<!--  </ng-container>-->
 </div>
