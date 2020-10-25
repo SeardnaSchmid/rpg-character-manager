@@ -3,6 +3,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { CoriolisCharacter } from '@viewer-app/shared';
 import { ActivatedRoute } from '@angular/router';
 import { CharacterPersistenceService } from '@viewer-app/shared/services/character-persistence.service';
+import { Router } from '@angular/router';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'viewer-character-info-card',
@@ -13,11 +15,25 @@ export class CharacterInfoCardComponent implements OnInit {
   character: CoriolisCharacter;
   areAllOpen = true;
 
-  constructor(private route: ActivatedRoute, private _snackBar: MatSnackBar, private characterPersistenceService: CharacterPersistenceService) {}
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private _snackBar: MatSnackBar,
+    private characterPersistenceService: CharacterPersistenceService
+  ) {}
 
   async ngOnInit() {
-    const selectedCharacterId = this.route.snapshot.url[1].toString();
-    this.character = await this.characterPersistenceService.findOneById(selectedCharacterId);
+    const selectedCharacterId: string = this.route.snapshot.params.id;
+    this.character = await this.characterPersistenceService.findOneById(
+      selectedCharacterId
+    );
+    if (!this.character) {
+      this.router.navigateByUrl('/not-found', { replaceUrl: true });
+    }
+  }
+
+  private characterFound(character: CoriolisCharacter) {
+    !_.isNil(character);
   }
 
   onToggleAll() {

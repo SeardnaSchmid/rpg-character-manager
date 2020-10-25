@@ -26,6 +26,7 @@ export class CharacterInfoComponent implements OnInit {
     this.chars = await this.characterPersistenceService.findAll();
     this.isLoading = false;
   }
+
   public async clearCharacters() {
     this.chars = [];
     await this.characterPersistenceService.deleteAll();

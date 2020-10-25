@@ -1,24 +1,40 @@
-<div class="container infoComponent">
-  <mat-card-content>
-    <mat-card-title translate>Characters in Memory</mat-card-title>
-    <button (click)="resetCharacters()">Load Mocks</button>
-    <button (click)="clearCharacters()">Clear Memory</button>
-    <mat-card-subtitle>
-      <viewer-loader [isLoading]="isLoading" size="1.5"></viewer-loader>
-      <mat-list [hidden]="isLoading">
-        <mat-divider></mat-divider>
-        <div *ngFor="let character of chars">
-          <a mat-list-item [routerLink]="character.id" routerLinkActive="active">
-            <span translate>CharacterInfo: {{ character.name.firstName }}</span>
-          </a>
-        </div>
-      </mat-list>
-    </mat-card-subtitle>
-  </mat-card-content>
+<div class="infoComponent">
+  <h1 translate>Characters in Memory</h1>
+  <button mat-raised-button color="accent" (click)="resetCharacters()" style="margin-right: 1em">
+    Load Mocks
+  </button>
+  <button mat-raised-button color="accent" (click)="clearCharacters()" style="margin-right: 1em">
+    Clear Memory
+  </button>
 
-<!--  <ng-container *ngFor="let character of chars">-->
-<!--    <viewer-character-info-card-->
-<!--      [character]="character"-->
-<!--    ></viewer-character-info-card>-->
-<!--  </ng-container>-->
+  <viewer-loader [isLoading]="isLoading" size="1.5"></viewer-loader>
+  <mat-list [hidden]="isLoading">
+    <div class="infoComponent-characterCards">
+      <div *ngFor="let character of chars">
+        <mat-divider></mat-divider>
+        <mat-card>
+          <strong>
+            {{ character.name.firstName }} '{{ character.name.nickName }}'
+            {{ character.name.sureName }}
+          </strong>
+          <mat-card-subtitle>
+            <i>
+              {{ character.background.origin }}
+              {{ character.background.homeSystem }}
+              {{ character.background.concept }}
+            </i>
+          </mat-card-subtitle>
+          <a
+            mat-list-item
+            [routerLink]="character.id"
+            routerLinkActive="active"
+          >
+            <button mat-raised-button color="primary">
+              Open CharacterInfo
+            </button>
+          </a>
+        </mat-card>
+      </div>
+    </div>
+  </mat-list>
 </div>

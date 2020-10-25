@@ -16,6 +16,7 @@ import { CharacterInfoModule } from '@viewer-app/character-info/character-info.m
 import { RulesModule } from '@viewer-app/rules/rules.module';
 import { ItemsModule } from '@viewer-app/items/items.module';
 import { TooltipModule } from 'ng2-tooltip-directive';
+import { NotFoundModule } from '@viewer-app/not-found/not-found.module';
 
 @NgModule({
   imports: [
@@ -33,6 +34,7 @@ import { TooltipModule } from 'ng2-tooltip-directive';
     RulesModule,
     ItemsModule,
     TooltipModule,
+    NotFoundModule,
     AppRoutingModule, // must be imported as the last module as it contains the fallback route
   ],
   declarations: [AppComponent],

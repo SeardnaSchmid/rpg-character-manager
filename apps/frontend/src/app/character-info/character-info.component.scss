@@ -1,5 +1,9 @@
 .infoComponent {
   margin: 1rem;
-  display: flex;
-  flex-wrap: wrap;
+}
+
+.infoComponent-characterCards {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 }

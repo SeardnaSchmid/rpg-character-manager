@@ -15,7 +15,7 @@ import {
   ItemClassName,
   ItemGadget,
   ItemWeapon,
-  SpecialDiceType
+  SpecialDiceType,
 } from './model';
 // import { baseDrainableStat } from '@viewer-app/shared/coriolis/characterMock';
 
@@ -138,31 +138,44 @@ export class CoriolisCoreControllsService {
     }
 
     const numberOfDiceToRoll =
-      this.countDiceForItemRoll(item, character) +
-      manualModifications;
+      this.countDiceForItemRoll(item, character) + manualModifications;
     return this.rollNumberOfDice(numberOfDiceToRoll);
   }
 
   public calculateEncumbarance(character, modifier: number = 0): DrainableStat {
-    const characterEncumberance = character.bodyStats.find(bodystat => bodystat.type === BodyStatType.Encumbarance);
-    const result = character.equipedItems.reduce((prev, item) => prev + item.weight, 0);
+    const characterEncumberance = character.bodyStats.find(
+      (bodystat) => bodystat.type === BodyStatType.Encumbarance
+    );
+    const result = character.equipedItems.reduce(
+      (prev, item) => prev + item.weight,
+      0
+    );
     return { ...characterEncumberance, current: result };
   }
 
-  private countDiceForItemArmorRoll(item: ItemArmor, character: CoriolisCharacter) {
+  private countDiceForItemArmorRoll(
+    item: ItemArmor,
+    character: CoriolisCharacter
+  ) {
     let result = 0;
     result += this.countDiceForSkillRoll(item.baseSkill, character);
     return result;
   }
 
-  private countDiceForItemWeaponRoll(item: ItemWeapon, character: CoriolisCharacter) {
+  private countDiceForItemWeaponRoll(
+    item: ItemWeapon,
+    character: CoriolisCharacter
+  ) {
     let result = 0;
     result += this.countDiceForSkillRoll(item.baseSkill, character);
     result += item.bonusModifier;
     return result;
   }
 
-  private countDiceForItemGadgetRoll(item: ItemGadget, character: CoriolisCharacter) {
+  private countDiceForItemGadgetRoll(
+    item: ItemGadget,
+    character: CoriolisCharacter
+  ) {
     let result = 0;
     result += this.countDiceForSkillRoll(item.baseSkill, character);
     return result;
@@ -171,26 +184,20 @@ export class CoriolisCoreControllsService {
   /**
    * counts the number of dice we can use for the itemroll
    */
-  private countDiceForItemRoll(item: CharacterItem, character: CoriolisCharacter) {
+  private countDiceForItemRoll(
+    item: CharacterItem,
+    character: CoriolisCharacter
+  ) {
     let result = 0;
     switch (item.getItemClassType()) {
       case ItemClassName.itemArmor:
-        result = this.countDiceForItemArmorRoll(
-          item as ItemArmor,
-          character
-        );
+        result = this.countDiceForItemArmorRoll(item as ItemArmor, character);
         break;
       case ItemClassName.itemWeapon:
-        result = this.countDiceForItemWeaponRoll(
-          item as ItemWeapon,
-          character
-        );
+        result = this.countDiceForItemWeaponRoll(item as ItemWeapon, character);
         break;
       case ItemClassName.itemGadget:
-        result = this.countDiceForItemGadgetRoll(
-          item as ItemGadget,
-          character
-        );
+        result = this.countDiceForItemGadgetRoll(item as ItemGadget, character);
         break;
       default:
         throw Error('Invalid ItemClass');
@@ -269,7 +276,8 @@ export class CoriolisCoreControllsService {
       | BodyStatType
       | SpecialDiceType
   ) {
-    const bonusFromItems = character.equipedItems.reduce(
+    const equipedItems = !!character.equipedItems ? character.equipedItems : [];
+    const bonusFromItems = equipedItems.reduce(
       (prev, item) =>
         prev +
         item.features
@@ -280,7 +288,8 @@ export class CoriolisCoreControllsService {
           ),
       0
     );
-    const bonusFromTalents = character.talents
+    const talents = !!character.talents ? character.talents : [];
+    const bonusFromTalents = talents
       .filter((talent) => talent.typeToBeModified === type)
       .reduce((prev, talent) => prev + talent.getModifierFromUserInput(), 0);
     return bonusFromItems + bonusFromTalents;

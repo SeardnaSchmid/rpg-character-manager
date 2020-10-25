@@ -45,6 +45,7 @@
     "@nestjs/platform-express": "7.0.0",
     "@ngx-translate/core": "13.0.0",
     "@nrwl/angular": "10.3.0",
+    "angular-cli-ghpages": "^0.6.2",
     "enum-values": "1.2.1",
     "material-design-icons-iconfont": "6.1.0",
     "ng2-tooltip-directive": "^2.9.22",
