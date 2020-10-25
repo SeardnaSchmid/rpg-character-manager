@@ -105,6 +105,7 @@ export const item1 = new ItemGadget({
   baseSkill: GeneralSkillType.Observation,
 });
 export const characterArasharMock: CoriolisCharacter =   {
+  id: "arashar1",
   name: {
     firstName: "Arashar",
     nickName: "",
@@ -170,6 +171,7 @@ export const characterArasharMock: CoriolisCharacter =   {
 }
 
 export const characterArasharMock2: CoriolisCharacter = {
+  id: "berashar1",
   name: {
     firstName: "Berashar",
     nickName: "",

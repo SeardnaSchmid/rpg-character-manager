@@ -1,4 +1,5 @@
-<mat-card class="infoCard grid-container">
+<viewer-loader *ngIf="!character"></viewer-loader>
+<mat-card *ngIf="character" class="infoCard grid-container">
   <mat-card-header class="header-area">
     <div mat-card-avatar class="header-avatar-image"></div>
     <mat-card-title>

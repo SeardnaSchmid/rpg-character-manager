@@ -4,7 +4,7 @@ import { EnumValues } from 'enum-values';
 @Pipe({ name: 'enumToArray' })
 export class EnumToArrayPipe implements PipeTransform {
   // tslint:disable-next-line:ban-types
-  transform(data: Object) {
+  public transform(data: Object) {
     return EnumValues.getNames(data);
   }
 }

@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { CoriolisCharacter } from '@viewer-app/shared/coriolis';
+import {
+  CoriolisCharacter,
+} from '@viewer-app/shared/coriolis';
 import { v4 } from 'uuid';
 
 @Injectable({
@@ -10,9 +12,10 @@ export class CharacterPersistenceService {
 
   constructor() {}
 
-  public async create(character: CoriolisCharacter): Promise<CoriolisCharacter> {
-
-    if(!character.id) {
+  public async create(
+    character: CoriolisCharacter
+  ): Promise<CoriolisCharacter> {
+    if (!character.id) {
       character.id = v4();
     }
     this.data.set(character.id, character);
@@ -46,9 +49,9 @@ export class CharacterPersistenceService {
       return;
     }
 
-    allCharacters.map(async character => {
+    allCharacters.map(async (character) => {
       await this.create(character);
-    })
+    });
     return;
   }
 }
