@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {
-  CoriolisCharacter,
+  allCharacterMocksList,
+  CoriolisCharacter
 } from '@viewer-app/shared/coriolis';
 import { v4 } from 'uuid';
 
@@ -10,7 +11,9 @@ import { v4 } from 'uuid';
 export class CharacterPersistenceService {
   private data = new Map<string, CoriolisCharacter>();
 
-  constructor() {}
+  constructor() {
+    this.setList(allCharacterMocksList);
+  }
 
   public async create(
     character: CoriolisCharacter
