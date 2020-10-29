@@ -1,51 +1,460 @@
-| RANGED WEAPONS                  |       |      |           |           |         |                                                                      |      |        |
-| ------------------------------- | ----- | ---- | --------- | --------- | ------- | -------------------------------------------------------------------- | ---- | ------ |
-| PISTOLS                         | BONUS | INIT | DAMAGE    | CRIT      | RANGE   | FEATURES                                                             | TECH | COST   |
-| Vulcan cricket                  | +1    | +2   | 2         | 2         | Short   | Light                                                                | O    | 700    |
-| Vulcan pistol                   | +1    | +1   | 2         | 2         | Short   | Reliable                                                             | O    | 500    |
-| Vulcan pistol Arax Omir         | 0     | 0    | 3         | 2         | Short   | '+2 to MANIPULATION when threatening                                 | O    | 1,200  |
-| Vulcan Scorpion                 | -1    | +1   | 2         | 2         | Short   | Automatic fire                                                       | O    | 1,000  |
-| Accelerator pistol              | +1    | 0    | 2         | 1         | Long    | Silent                                                               | O    | 700    |
-| Thermal cricket                 | +1    | +2   | 3         | 2         | Short   | Light                                                                | A    | 2,500  |
-| Thermal pistol                  | +1    | +1   | 3         | 2         | Long    |                                                                      | A    | 2,300  |
-| Stun gun                        | +1    | +1   | 2         | Stun      | Short   | Stun                                                                 | A    | 2,000  |
-| CARBINES                        | BONUS | INIT | DAMAGE    | CRIT      | RANGE   | FEATURES                                                             | TECH | COST   |
-| Vulcan carbine                  | +1    | 0    | 3         | 2         | Short   | Automatic fire                                                       | O    | 2,000  |
-| Legionnaire carbine Dayal-3     | +1    | 0    | 3         | 2         | Long    | Automatic fire, High capacity, Built-in grenade launcher             | O*   | 3,000  |
-| Vulcan PDW                      | +1    | 1    | 3         | 2         | Short   | Automatic fire                                                       | O    | 2,500  |
-| Accelerator carbine             | +1    | 0    | 3         | 1         | Long    | Automatic fire, Armor- piercing, Silent                              | O    | 3,000  |
-| Twin carbine                    | +1    | 0    | 4         | 2         | Long    | Armor-piercing, Silent                                               | O    | 3,700  |
-| Thermal carbine                 | +1    | 0    | 4         | 2         | Long    | Thermal sweep                                                        | A    | 6,500  |
-| GRAPE WEAPONS                   | BONUS | INIT | DAMAGE    | CRIT      | RANGE   | FEATURES                                                             | TECH | COST   |
-| Saladin grape gun               | +2    | 0    | 2         | 2         | Short   | Single-shot                                                          | P    | 200    |
-| Grape rifle                     | +2    | 0    | 2         | 2         | Short   |                                                                      | O    | 400    |
-| Sawn-off grape rifle            | +2    | +1   | 2         | 3         | Short   |                                                                      | O    | 400    |
-| Grape carbine                   | +2    | +1   | 2         | 2         | Short   | Automatic fire                                                       | O    | 600    |
-| RIFLES                          | BONUS | INIT | DAMAGE    | CRIT      | RANGE   | FEATURES                                                             | TECH | COST   |
-| Long rifle                      | 0     | 0    | 2         | 2         | Long    | Single-shot                                                          | P    | 100    |
-| Sawed-off long rifle            | 0     | +1   | 2         | 2         | Short   | Single-shot                                                          | P    | 100    |
-| Accelerator rifle               | +1    | 0    | 3         | 1         | Extreme | Armor-piercing, Night sights, Silent                                 | O    | 2,000  |
-| Accelerator rifle Nestera Parox | 0     | 0    | 4         | 1         | Extreme | Heavy, Anti-vehicle, Armor- piercing, Night sights, Silent           | O    | 3,000  |
-| Thermal rifle                   | 0     | 0    | 5         | 2         | Extreme | Armor-piercing, Night sights                                         | A    | 6,000  |
-| HEAVY WEAPONS                   | BONUS | INIT | DAMAGE    | CRIT      | RANGE   | FEATURES                                                             | TECH | COST   |
-| Vulcan machine gun              | +1    | 0    | 4         | 2         | Short   | Heavy, Bulky, Automatic fire, High capacity                          | O*   | 6,500  |
-| Accelerator machine gun         | +1    | 0    | 3         | 1         | Long    | Heavy, Bulky, Automatic fire, High capacity, Armor- piercing, Silent | O*   | 10,000 |
-| Accelerator launcher            | +1    | 0    | Grenade   | Grenade   | Long    | Heavy                                                                | O*   | 8,000  |
-| Missile launcher                | 0     | 0    | 6         | 1         | Extreme | Heavy, Single-shot, Anti-vehicle                                     | O*   | 900    |
-| Flamethrower                    | +1    | 0    | 3         | 1         | Short   | Heavy, Fire 3                                                        | O*   | 1,800  |
-| Grenade launcher                | 0     | 0    | Grenade   | Grenade   | Long    | Single-shot                                                          | O*   | 1,200  |
-| Thermal machine gun             | +1    | 0    | 4         | 1         | Long    | Heavy, Bulky, Thermal sweep, High capacity                           | A*   | 22,000 |
-| WEAPON SYSTEMS                  | BONUS | INIT | DAMAGE    | CRIT      | RANGE   | FEATURES                                                             | TECH | COST   |
-| Missile system                  | +2    | 0    |           |           | Extreme | Anti-vehicle                                                         | O*   | 10,000 |
-| – Armor-piercing                |       |      | 5         | 1         |         | Armor-piercing                                                       |      |        |
-| – Blast                         |       |      | Grenade   | Grenade   |         |                                                                      |      |        |
-| Thermal projector               | +2    | 0    | 4         | 1         | Short   | Thermal sweep, Fire 5, Bulky                                         | A*   | 26,000 |
-| Firestorm system                | +1    | 0    | 5         | 1         | Long    | Anti-vehicle, Slow, Fire 6, Blast Power 5                            | O*   | 18,000 |
-| OTHER                           | BONUS | INIT | DAMAGE    | CRIT      | RANGE   | FEATURES                                                             | TECH | COST   |
-| Blowpipe                        | 0     | +2   | 1         | 4         | Short   | Light, Single-shot                                                   | P    | 50     |
-| Throwing knife                  | 0     | +1   | 1         | 2         | Short   | Light                                                                | P    | 50     |
-| Throwing spear                  | +1    | +1   | 2         | 2         | Short   |                                                                      | P    | 150    |
-| Throwing axe                    | 0     | 0    | 2         | 2         | Short   |                                                                      | P    | 300    |
-| Spear-thrower                   | 0     | 0    | 2         | 2         | Short   | Heavy, Single-shot                                                   | P    | 600    |
-| Harpoon                         | +1    | +1   | 2         | 3         | Short   | Heavy, Single-shot                                                   | P    | 200    |
-| Combat bow                      | +1    | +1   | 3/Grenade | 2/Grenade | Long    | Single-shot                                                          | O    | 2,000  |
+import { ItemRange, ItemTechTier, ItemWeapon } from '../../character';
+import {
+  antiVehicle,
+  armorPiercing,
+  automaticFire,
+  builtInWeapon, bulkyWeapon, fire3, heavyWeapon,
+  highCapacityWeapon,
+  lightWeapon,
+  reliableWeapon,
+  silent, singleShotWeapon,
+  stun, thermalSweep
+} from '../features';
+
+export const vulcanCricket = {
+  name: 'vulcanCricket',
+  bonusModifier: +1,
+  initModifier: +2,
+  damage: 2,
+  crit: 2,
+  range: ItemRange.short,
+  features: [lightWeapon],
+  techTier: ItemTechTier.ordinary,
+  cost: 700
+} as ItemWeapon;
+export const vulcanPistol = {
+  name: 'vulcanPistol',
+  bonusModifier: +1,
+  initModifier: +1,
+  damage: 2,
+  crit: 2,
+  range: ItemRange.short,
+  features: [reliableWeapon],
+  techTier: ItemTechTier.ordinary,
+  cost: 500
+} as ItemWeapon;
+export const vulcanPistolAraxOmir = {
+  name: 'vulcanPistolAraxOmir',
+  bonusModifier: 0,
+  initModifier: 0,
+  damage: 3,
+  crit: 2,
+  range: ItemRange.short,
+  features: ['+2toMANIPULATIONwhenthreatening'],
+  techTier: ItemTechTier.ordinary,
+  cost: 1200
+} as ItemWeapon;
+export const vulcanScorpion = {
+  name: 'vulcanScorpion',
+  bonusModifier: -1,
+  initModifier: +1,
+  damage: 2,
+  crit: 2,
+  range: ItemRange.short,
+  features: [automaticFire],
+  techTier: ItemTechTier.ordinary,
+  cost: 1000
+} as ItemWeapon;
+export const acceleratorPistol = {
+  name: 'acceleratorPistol',
+  bonusModifier: +1,
+  initModifier: 0,
+  damage: 2,
+  crit: 1,
+  range: ItemRange.long,
+  features: [silent],
+  techTier: ItemTechTier.ordinary,
+  cost: 700
+} as ItemWeapon;
+export const thermalCricket = {
+  name: 'thermalCricket',
+  bonusModifier: +1,
+  initModifier: +2,
+  damage: 3,
+  crit: 2,
+  range: ItemRange.short,
+  features: [lightWeapon],
+  techTier: ItemTechTier.advanced,
+  cost: 2500
+} as ItemWeapon;
+export const thermalPistol = {
+  name: 'thermalPistol',
+  bonusModifier: +1,
+  initModifier: +1,
+  damage: 3,
+  crit: 2,
+  range: ItemRange.long,
+  features: [],
+  techTier: ItemTechTier.advanced,
+  cost: 2300
+} as ItemWeapon;
+export const stunGun = {
+  name: 'stunGun',
+  bonusModifier: +1,
+  initModifier: +1,
+  damage: 2,
+  crit: 'stun',
+  range: ItemRange.short,
+  features: [stun],
+  techTier: ItemTechTier.advanced,
+  cost: 2000
+} as ItemWeapon;
+export const vulcanCarbine = {
+  name: 'vulcanCarbine',
+  bonusModifier: +1,
+  initModifier: 0,
+  damage: 3,
+  crit: 2,
+  range: ItemRange.short,
+  features: [automaticFire],
+  techTier: ItemTechTier.ordinary,
+  cost: 2000
+} as ItemWeapon;
+export const legionnaireCarbineDayal3 = {
+  name: 'legionnaireCarbineDayal3',
+  bonusModifier: +1,
+  initModifier: 0,
+  damage: 3,
+  crit: 2,
+  range: ItemRange.long,
+  features: [automaticFire, highCapacityWeapon, builtInWeapon],
+  techTier: ItemTechTier.ordinary,
+  cost: 3000
+} as ItemWeapon;
+export const vulcanPdw = {
+  name: 'vulcanPdw',
+  bonusModifier: +1,
+  initModifier: 1,
+  damage: 3,
+  crit: 2,
+  range: ItemRange.short,
+  features: [automaticFire],
+  techTier: ItemTechTier.ordinary,
+  cost: 2500
+} as ItemWeapon;
+export const acceleratorCarbine = {
+  name: 'acceleratorCarbine',
+  bonusModifier: +1,
+  initModifier: 0,
+  damage: 3,
+  crit: 1,
+  range: ItemRange.long,
+  features: [automaticFire, armorPiercing, silent],
+  techTier: ItemTechTier.ordinary,
+  cost: 3000
+} as ItemWeapon;
+export const twinCarbine = {
+  name: 'twinCarbine',
+  bonusModifier: +1,
+  initModifier: 0,
+  damage: 4,
+  crit: 2,
+  range: ItemRange.long,
+  features: [armorPiercing, silent],
+  techTier: ItemTechTier.ordinary,
+  cost: 3700
+} as ItemWeapon;
+export const thermalCarbine = {
+  name: 'thermalCarbine',
+  bonusModifier: +1,
+  initModifier: 0,
+  damage: 4,
+  crit: 2,
+  range: ItemRange.long,
+  features: [thermalSweep],
+  techTier: ItemTechTier.advanced,
+  cost: 6500
+} as ItemWeapon;
+export const saladinGrapeGun = {
+  name: 'saladinGrapeGun',
+  bonusModifier: +2,
+  initModifier: 0,
+  damage: 2,
+  crit: 2,
+  range: ItemRange.short,
+  features: [singleShotWeapon],
+  techTier: ItemTechTier.primitive,
+  cost: 200
+} as ItemWeapon;
+export const grapeRifle = {
+  name: 'grapeRifle',
+  bonusModifier: +2,
+  initModifier: 0,
+  damage: 2,
+  crit: 2,
+  range: ItemRange.short,
+  features: [],
+  techTier: ItemTechTier.ordinary,
+  cost: 400
+} as ItemWeapon;
+export const sawnOffGrapeRifle = {
+  name: 'sawnOffGrapeRifle',
+  bonusModifier: +2,
+  initModifier: +1,
+  damage: 2,
+  crit: 3,
+  range: ItemRange.short,
+  features: [],
+  techTier: ItemTechTier.ordinary,
+  cost: 400
+} as ItemWeapon;
+export const grapeCarbine = {
+  name: 'grapeCarbine',
+  bonusModifier: +2,
+  initModifier: +1,
+  damage: 2,
+  crit: 2,
+  range: ItemRange.short,
+  features: [automaticFire],
+  techTier: ItemTechTier.ordinary,
+  cost: 600
+} as ItemWeapon;
+export const longRifle = {
+  name: 'longRifle',
+  bonusModifier: 0,
+  initModifier: 0,
+  damage: 2,
+  crit: 2,
+  range: ItemRange.long,
+  features: [singleShotWeapon],
+  techTier: ItemTechTier.primitive,
+  cost: 100
+} as ItemWeapon;
+export const sawedOffLongRifle = {
+  name: 'sawedOffLongRifle',
+  bonusModifier: 0,
+  initModifier: +1,
+  damage: 2,
+  crit: 2,
+  range: ItemRange.short,
+  features: [singleShotWeapon],
+  techTier: ItemTechTier.primitive,
+  cost: 100
+} as ItemWeapon;
+export const acceleratorRifle = {
+  name: 'acceleratorRifle',
+  bonusModifier: +1,
+  initModifier: 0,
+  damage: 3,
+  crit: 1,
+  range: ItemRange.extreme,
+  features: [armorPiercing, 'Nightsights', silent],
+  techTier: ItemTechTier.ordinary,
+  cost: 2000
+} as ItemWeapon;
+export const acceleratorRifleNesteraParox = {
+  name: 'acceleratorRifleNesteraParox',
+  bonusModifier: 0,
+  initModifier: 0,
+  damage: 4,
+  crit: 1,
+  range: ItemRange.extreme,
+  features: [heavyWeapon, antiVehicle, armorPiercing, 'Nightsights', silent],
+  techTier: ItemTechTier.ordinary,
+  cost: 3000
+} as ItemWeapon;
+export const thermalRifle = {
+  name: 'thermalRifle',
+  bonusModifier: 0,
+  initModifier: 0,
+  damage: 5,
+  crit: 2,
+  range: ItemRange.extreme,
+  features: [armorPiercing, 'Nightsights'],
+  techTier: ItemTechTier.advanced,
+  cost: 6000
+} as ItemWeapon;
+export const vulcanMachineGun = {
+  name: 'vulcanMachineGun',
+  bonusModifier: +1,
+  initModifier: 0,
+  damage: 4,
+  crit: 2,
+  range: ItemRange.short,
+  features: [heavyWeapon, bulkyWeapon, automaticFire, highCapacityWeapon],
+  techTier: ItemTechTier.ordinary,
+  cost: 6500
+} as ItemWeapon;
+export const acceleratorMachineGun = {
+  name: 'acceleratorMachineGun',
+  bonusModifier: +1,
+  initModifier: 0,
+  damage: 3,
+  crit: 1,
+  range: ItemRange.long,
+  features: [heavyWeapon, bulkyWeapon, automaticFire, highCapacityWeapon, armorPiercing, silent],
+  techTier: ItemTechTier.ordinary,
+  cost: 10000
+} as ItemWeapon;
+export const acceleratorLauncher = {
+  name: 'acceleratorLauncher',
+  bonusModifier: +1,
+  initModifier: 0,
+  damage: 'grenade',
+  crit: 'grenade',
+  range: ItemRange.long,
+  features: [heavyWeapon],
+  techTier: ItemTechTier.ordinary,
+  cost: 8000
+} as ItemWeapon;
+export const missileLauncher = {
+  name: 'missileLauncher',
+  bonusModifier: 0,
+  initModifier: 0,
+  damage: 6,
+  crit: 1,
+  range: ItemRange.extreme,
+  features: [heavyWeapon, singleShotWeapon, antiVehicle],
+  techTier: ItemTechTier.ordinary,
+  cost: 900
+} as ItemWeapon;
+export const flamethrower = {
+  name: 'flamethrower',
+  bonusModifier: +1,
+  initModifier: 0,
+  damage: 3,
+  crit: 1,
+  range: ItemRange.short,
+  features: [heavyWeapon, fire3],
+  techTier: ItemTechTier.ordinary,
+  cost: 1800
+} as ItemWeapon;
+export const grenadeLauncher = {
+  name: 'grenadeLauncher',
+  bonusModifier: 0,
+  initModifier: 0,
+  damage: 'grenade',
+  crit: 'grenade',
+  range: ItemRange.long,
+  features: [singleShotWeapon],
+  techTier: ItemTechTier.ordinary,
+  cost: 1200
+} as ItemWeapon;
+export const thermalMachineGun = {
+  name: 'thermalMachineGun',
+  bonusModifier: +1,
+  initModifier: 0,
+  damage: 4,
+  crit: 1,
+  range: ItemRange.long,
+  features: [heavyWeapon, bulkyWeapon, thermalSweep, highCapacityWeapon],
+  techTier: ItemTechTier.advanced,
+  cost: 22000
+} as ItemWeapon;
+export const blowpipe = {
+  name: 'blowpipe',
+  bonusModifier: 0,
+  initModifier: +2,
+  damage: 1,
+  crit: 4,
+  range: ItemRange.short,
+  features: [lightWeapon, singleShotWeapon],
+  techTier: ItemTechTier.primitive,
+  cost: 50
+} as ItemWeapon;
+export const throwingKnife = {
+  name: 'throwingKnife',
+  bonusModifier: 0,
+  initModifier: +1,
+  damage: 1,
+  crit: 2,
+  range: ItemRange.short,
+  features: [lightWeapon],
+  techTier: ItemTechTier.primitive,
+  cost: 50
+} as ItemWeapon;
+export const throwingSpear = {
+  name: 'throwingSpear',
+  bonusModifier: +1,
+  initModifier: +1,
+  damage: 2,
+  crit: 2,
+  range: ItemRange.short,
+  features: [],
+  techTier: ItemTechTier.primitive,
+  cost: 150
+} as ItemWeapon;
+export const throwingAxe = {
+  name: 'throwingAxe',
+  bonusModifier: 0,
+  initModifier: 0,
+  damage: 2,
+  crit: 2,
+  range: ItemRange.short,
+  features: [],
+  techTier: ItemTechTier.primitive,
+  cost: 300
+} as ItemWeapon;
+export const spearThrower = {
+  name: 'spearThrower',
+  bonusModifier: 0,
+  initModifier: 0,
+  damage: 2,
+  crit: 2,
+  range: ItemRange.short,
+  features: [heavyWeapon, singleShotWeapon],
+  techTier: ItemTechTier.primitive,
+  cost: 600
+} as ItemWeapon;
+export const harpoon = {
+  name: 'harpoon',
+  bonusModifier: +1,
+  initModifier: +1,
+  damage: 2,
+  crit: 3,
+  range: ItemRange.short,
+  features: [heavyWeapon, singleShotWeapon],
+  techTier: ItemTechTier.primitive,
+  cost: 200
+} as ItemWeapon;
+export const combatBow = {
+  name: 'combatBow',
+  bonusModifier: +1,
+  initModifier: +1,
+  damage: '3/grenade',
+  crit: '2/grenade',
+  range: ItemRange.long,
+  features: [singleShotWeapon],
+  techTier: ItemTechTier.ordinary,
+  cost: 2000
+} as ItemWeapon;
+
+export const allRangedWeapons = [
+  vulcanCricket,
+  vulcanPistol,
+  vulcanPistolAraxOmir,
+  vulcanScorpion,
+  acceleratorPistol,
+  thermalCricket,
+  thermalPistol,
+  stunGun,
+  vulcanCarbine,
+  legionnaireCarbineDayal3,
+  vulcanPdw,
+  acceleratorCarbine,
+  twinCarbine,
+  thermalCarbine,
+  saladinGrapeGun,
+  grapeRifle,
+  sawnOffGrapeRifle,
+  grapeCarbine,
+  longRifle,
+  sawedOffLongRifle,
+  acceleratorRifle,
+  acceleratorRifleNesteraParox,
+  thermalRifle,
+  vulcanMachineGun,
+  acceleratorMachineGun,
+  acceleratorLauncher,
+  missileLauncher,
+  flamethrower,
+  grenadeLauncher,
+  thermalMachineGun,
+  blowpipe,
+  throwingKnife,
+  throwingSpear,
+  throwingAxe,
+  spearThrower,
+  harpoon,
+  combatBow
+];

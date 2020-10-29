@@ -8,7 +8,7 @@ export class CharacterItemBase {
   name?: string;
   techTier?: ItemTechTier = ItemTechTier.ordinary;
   cost? = 0;
-  features?: Array<CharacterModifier> = [];
+  features?: Array<CharacterModifier | string> = [];
   isRestricted?: boolean = false;
   inHands?: boolean = false;
   weight?: ItemWeight = ItemWeight.normal;
@@ -30,8 +30,8 @@ export class ItemWeapon extends CharacterItemBase {
   bonusModifier? = 0; // bonus dice for
   initModifier? = 0;
   blastPower? = 0;
-  damage: number;
-  crit: number;
+  damage: number | string;
+  crit: number | string;
   range: ItemRange;
 
   constructor(init?: Partial<ItemWeapon>) {
