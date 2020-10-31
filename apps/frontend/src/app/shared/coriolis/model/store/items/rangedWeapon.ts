@@ -1,18 +1,24 @@
-import { ItemRange, ItemTechTier, ItemWeapon } from '../../character';
+import { ItemRange, ItemRangedWeaponSubCategory, ItemTechTier, ItemWeapon } from '../../character';
 import {
   antiVehicle,
   armorPiercing,
   automaticFire,
-  builtInWeapon, bulkyWeapon, fire3, heavyWeapon,
+  builtInWeapon,
+  bulkyWeapon,
+  fire3,
+  heavyWeapon,
   highCapacityWeapon,
   lightWeapon,
   reliableWeapon,
-  silent, singleShotWeapon,
-  stun, thermalSweep
+  silent,
+  singleShotWeapon,
+  stun,
+  thermalSweep
 } from '../features';
 
 export const vulcanCricket = {
   name: 'vulcanCricket',
+  itemSubCategory: ItemRangedWeaponSubCategory.pistol,
   bonusModifier: +1,
   initModifier: +2,
   damage: 2,
@@ -24,6 +30,7 @@ export const vulcanCricket = {
 } as ItemWeapon;
 export const vulcanPistol = {
   name: 'vulcanPistol',
+  itemSubCategory: ItemRangedWeaponSubCategory.pistol,
   bonusModifier: +1,
   initModifier: +1,
   damage: 2,
@@ -35,6 +42,7 @@ export const vulcanPistol = {
 } as ItemWeapon;
 export const vulcanPistolAraxOmir = {
   name: 'vulcanPistolAraxOmir',
+  itemSubCategory: ItemRangedWeaponSubCategory.pistol,
   bonusModifier: 0,
   initModifier: 0,
   damage: 3,
@@ -46,6 +54,7 @@ export const vulcanPistolAraxOmir = {
 } as ItemWeapon;
 export const vulcanScorpion = {
   name: 'vulcanScorpion',
+  itemSubCategory: ItemRangedWeaponSubCategory.pistol,
   bonusModifier: -1,
   initModifier: +1,
   damage: 2,
@@ -57,6 +66,7 @@ export const vulcanScorpion = {
 } as ItemWeapon;
 export const acceleratorPistol = {
   name: 'acceleratorPistol',
+  itemSubCategory: ItemRangedWeaponSubCategory.pistol,
   bonusModifier: +1,
   initModifier: 0,
   damage: 2,
@@ -68,6 +78,7 @@ export const acceleratorPistol = {
 } as ItemWeapon;
 export const thermalCricket = {
   name: 'thermalCricket',
+  itemSubCategory: ItemRangedWeaponSubCategory.pistol,
   bonusModifier: +1,
   initModifier: +2,
   damage: 3,
@@ -79,6 +90,7 @@ export const thermalCricket = {
 } as ItemWeapon;
 export const thermalPistol = {
   name: 'thermalPistol',
+  itemSubCategory: ItemRangedWeaponSubCategory.pistol,
   bonusModifier: +1,
   initModifier: +1,
   damage: 3,
@@ -90,6 +102,7 @@ export const thermalPistol = {
 } as ItemWeapon;
 export const stunGun = {
   name: 'stunGun',
+  itemSubCategory: ItemRangedWeaponSubCategory.pistol,
   bonusModifier: +1,
   initModifier: +1,
   damage: 2,
@@ -101,6 +114,7 @@ export const stunGun = {
 } as ItemWeapon;
 export const vulcanCarbine = {
   name: 'vulcanCarbine',
+  itemSubCategory: ItemRangedWeaponSubCategory.carabine,
   bonusModifier: +1,
   initModifier: 0,
   damage: 3,
@@ -112,6 +126,7 @@ export const vulcanCarbine = {
 } as ItemWeapon;
 export const legionnaireCarbineDayal3 = {
   name: 'legionnaireCarbineDayal3',
+  itemSubCategory: ItemRangedWeaponSubCategory.carabine,
   bonusModifier: +1,
   initModifier: 0,
   damage: 3,
@@ -123,6 +138,7 @@ export const legionnaireCarbineDayal3 = {
 } as ItemWeapon;
 export const vulcanPdw = {
   name: 'vulcanPdw',
+  itemSubCategory: ItemRangedWeaponSubCategory.carabine,
   bonusModifier: +1,
   initModifier: 1,
   damage: 3,
@@ -134,6 +150,7 @@ export const vulcanPdw = {
 } as ItemWeapon;
 export const acceleratorCarbine = {
   name: 'acceleratorCarbine',
+  itemSubCategory: ItemRangedWeaponSubCategory.carabine,
   bonusModifier: +1,
   initModifier: 0,
   damage: 3,
@@ -145,6 +162,7 @@ export const acceleratorCarbine = {
 } as ItemWeapon;
 export const twinCarbine = {
   name: 'twinCarbine',
+  itemSubCategory: ItemRangedWeaponSubCategory.carabine,
   bonusModifier: +1,
   initModifier: 0,
   damage: 4,
@@ -156,6 +174,7 @@ export const twinCarbine = {
 } as ItemWeapon;
 export const thermalCarbine = {
   name: 'thermalCarbine',
+  itemSubCategory: ItemRangedWeaponSubCategory.carabine,
   bonusModifier: +1,
   initModifier: 0,
   damage: 4,
@@ -167,6 +186,7 @@ export const thermalCarbine = {
 } as ItemWeapon;
 export const saladinGrapeGun = {
   name: 'saladinGrapeGun',
+  itemSubCategory: ItemRangedWeaponSubCategory.grape,
   bonusModifier: +2,
   initModifier: 0,
   damage: 2,
@@ -178,6 +198,7 @@ export const saladinGrapeGun = {
 } as ItemWeapon;
 export const grapeRifle = {
   name: 'grapeRifle',
+  itemSubCategory: ItemRangedWeaponSubCategory.grape,
   bonusModifier: +2,
   initModifier: 0,
   damage: 2,
@@ -189,6 +210,7 @@ export const grapeRifle = {
 } as ItemWeapon;
 export const sawnOffGrapeRifle = {
   name: 'sawnOffGrapeRifle',
+  itemSubCategory: ItemRangedWeaponSubCategory.grape,
   bonusModifier: +2,
   initModifier: +1,
   damage: 2,
@@ -200,6 +222,7 @@ export const sawnOffGrapeRifle = {
 } as ItemWeapon;
 export const grapeCarbine = {
   name: 'grapeCarbine',
+  itemSubCategory: ItemRangedWeaponSubCategory.grape,
   bonusModifier: +2,
   initModifier: +1,
   damage: 2,
@@ -211,6 +234,7 @@ export const grapeCarbine = {
 } as ItemWeapon;
 export const longRifle = {
   name: 'longRifle',
+  itemSubCategory: ItemRangedWeaponSubCategory.rifle,
   bonusModifier: 0,
   initModifier: 0,
   damage: 2,
@@ -222,6 +246,7 @@ export const longRifle = {
 } as ItemWeapon;
 export const sawedOffLongRifle = {
   name: 'sawedOffLongRifle',
+  itemSubCategory: ItemRangedWeaponSubCategory.rifle,
   bonusModifier: 0,
   initModifier: +1,
   damage: 2,
@@ -233,6 +258,7 @@ export const sawedOffLongRifle = {
 } as ItemWeapon;
 export const acceleratorRifle = {
   name: 'acceleratorRifle',
+  itemSubCategory: ItemRangedWeaponSubCategory.rifle,
   bonusModifier: +1,
   initModifier: 0,
   damage: 3,
@@ -244,6 +270,7 @@ export const acceleratorRifle = {
 } as ItemWeapon;
 export const acceleratorRifleNesteraParox = {
   name: 'acceleratorRifleNesteraParox',
+  itemSubCategory: ItemRangedWeaponSubCategory.rifle,
   bonusModifier: 0,
   initModifier: 0,
   damage: 4,
@@ -255,6 +282,7 @@ export const acceleratorRifleNesteraParox = {
 } as ItemWeapon;
 export const thermalRifle = {
   name: 'thermalRifle',
+  itemSubCategory: ItemRangedWeaponSubCategory.rifle,
   bonusModifier: 0,
   initModifier: 0,
   damage: 5,
@@ -266,6 +294,7 @@ export const thermalRifle = {
 } as ItemWeapon;
 export const vulcanMachineGun = {
   name: 'vulcanMachineGun',
+  itemSubCategory: ItemRangedWeaponSubCategory.heavyWeapon,
   bonusModifier: +1,
   initModifier: 0,
   damage: 4,
@@ -277,6 +306,7 @@ export const vulcanMachineGun = {
 } as ItemWeapon;
 export const acceleratorMachineGun = {
   name: 'acceleratorMachineGun',
+  itemSubCategory: ItemRangedWeaponSubCategory.heavyWeapon,
   bonusModifier: +1,
   initModifier: 0,
   damage: 3,
@@ -288,6 +318,7 @@ export const acceleratorMachineGun = {
 } as ItemWeapon;
 export const acceleratorLauncher = {
   name: 'acceleratorLauncher',
+  itemSubCategory: ItemRangedWeaponSubCategory.heavyWeapon,
   bonusModifier: +1,
   initModifier: 0,
   damage: 'grenade',
@@ -299,6 +330,7 @@ export const acceleratorLauncher = {
 } as ItemWeapon;
 export const missileLauncher = {
   name: 'missileLauncher',
+  itemSubCategory: ItemRangedWeaponSubCategory.heavyWeapon,
   bonusModifier: 0,
   initModifier: 0,
   damage: 6,
@@ -310,6 +342,7 @@ export const missileLauncher = {
 } as ItemWeapon;
 export const flamethrower = {
   name: 'flamethrower',
+  itemSubCategory: ItemRangedWeaponSubCategory.heavyWeapon,
   bonusModifier: +1,
   initModifier: 0,
   damage: 3,
@@ -321,6 +354,7 @@ export const flamethrower = {
 } as ItemWeapon;
 export const grenadeLauncher = {
   name: 'grenadeLauncher',
+  itemSubCategory: ItemRangedWeaponSubCategory.heavyWeapon,
   bonusModifier: 0,
   initModifier: 0,
   damage: 'grenade',
@@ -332,6 +366,7 @@ export const grenadeLauncher = {
 } as ItemWeapon;
 export const thermalMachineGun = {
   name: 'thermalMachineGun',
+  itemSubCategory: ItemRangedWeaponSubCategory.heavyWeapon,
   bonusModifier: +1,
   initModifier: 0,
   damage: 4,
@@ -343,6 +378,7 @@ export const thermalMachineGun = {
 } as ItemWeapon;
 export const blowpipe = {
   name: 'blowpipe',
+  itemSubCategory: ItemRangedWeaponSubCategory.other,
   bonusModifier: 0,
   initModifier: +2,
   damage: 1,
@@ -354,6 +390,7 @@ export const blowpipe = {
 } as ItemWeapon;
 export const throwingKnife = {
   name: 'throwingKnife',
+  itemSubCategory: ItemRangedWeaponSubCategory.other,
   bonusModifier: 0,
   initModifier: +1,
   damage: 1,
@@ -365,6 +402,7 @@ export const throwingKnife = {
 } as ItemWeapon;
 export const throwingSpear = {
   name: 'throwingSpear',
+  itemSubCategory: ItemRangedWeaponSubCategory.other,
   bonusModifier: +1,
   initModifier: +1,
   damage: 2,
@@ -376,6 +414,7 @@ export const throwingSpear = {
 } as ItemWeapon;
 export const throwingAxe = {
   name: 'throwingAxe',
+  itemSubCategory: ItemRangedWeaponSubCategory.other,
   bonusModifier: 0,
   initModifier: 0,
   damage: 2,
@@ -387,6 +426,7 @@ export const throwingAxe = {
 } as ItemWeapon;
 export const spearThrower = {
   name: 'spearThrower',
+  itemSubCategory: ItemRangedWeaponSubCategory.other,
   bonusModifier: 0,
   initModifier: 0,
   damage: 2,
@@ -398,6 +438,7 @@ export const spearThrower = {
 } as ItemWeapon;
 export const harpoon = {
   name: 'harpoon',
+  itemSubCategory: ItemRangedWeaponSubCategory.other,
   bonusModifier: +1,
   initModifier: +1,
   damage: 2,
@@ -409,6 +450,7 @@ export const harpoon = {
 } as ItemWeapon;
 export const combatBow = {
   name: 'combatBow',
+  itemSubCategory: ItemRangedWeaponSubCategory.other,
   bonusModifier: +1,
   initModifier: +1,
   damage: '3/grenade',

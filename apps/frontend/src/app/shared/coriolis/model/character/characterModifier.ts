@@ -6,6 +6,8 @@ export type UserInteractionFunctionType = () => boolean;
 
 export class CharacterModifierSimple {
   public name: string;
+  public typeToBeModified?: unknown = undefined;
+  public getModifierFromUserInput?: () => number = () => 0;
 }
 
 export class CharacterModifier {

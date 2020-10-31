@@ -32,13 +32,13 @@ import { meleeWeaponsList, ItemWeapon } from '@viewer-app/shared';
         <th mat-header-cell *matHeaderCellDef mat-sort-header>weight</th>
         <td mat-cell *matCellDef="let element">{{ element.weight }}</td>
       </ng-container>
-      <ng-container matColumnDef="bonus">
+      <ng-container matColumnDef="bonusModifier">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>bonus</th>
         <td mat-cell *matCellDef="let element">{{ element.bonusModifier }}</td>
       </ng-container>
-      <ng-container matColumnDef="init">
+      <ng-container matColumnDef="initModifier">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>init</th>
-        <td mat-cell *matCellDef="let element">{{ element.init }}</td>
+        <td mat-cell *matCellDef="let element">{{ element.initModifier }}</td>
       </ng-container>
       <ng-container matColumnDef="damage">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>damage</th>
@@ -92,8 +92,8 @@ export class ItemMeleeWeaponComponent implements AfterViewInit {
     'name',
     'itemSubCategory',
     // 'weight',
-    'bonus',
-    'init',
+    'bonusModifier',
+    'initModifier',
     'damage',
     'crit',
     'range',
