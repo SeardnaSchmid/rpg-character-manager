@@ -1,5 +1,5 @@
 import { AdvancedSkillType, GeneralSkillType } from './characterSkill';
-import { CharacterModifier } from '@viewer-app/shared';
+import { CharacterModifier, CharacterModifierSimple } from '@viewer-app/shared';
 
 export type CharacterItem = ItemWeapon | ItemArmor | ItemGadget;
 
@@ -8,7 +8,7 @@ export class CharacterItemBase {
   name?: string;
   techTier?: ItemTechTier = ItemTechTier.ordinary;
   cost? = 0;
-  features?: Array<CharacterModifier | string> = [];
+  features?: Array<CharacterModifier | CharacterModifierSimple> = [];
   isRestricted?: boolean = false;
   inHands?: boolean = false;
   weight?: ItemWeight = ItemWeight.normal;

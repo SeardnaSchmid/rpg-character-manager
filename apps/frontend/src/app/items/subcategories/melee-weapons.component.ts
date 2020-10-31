@@ -4,7 +4,7 @@ import { MatSort } from '@angular/material/sort';
 import { meleeWeaponsList, ItemWeapon } from '@viewer-app/shared';
 
 @Component({
-  selector: 'items-weapon',
+  selector: 'items-melee-weapon',
   template: `
     <table
       mat-table
@@ -80,7 +80,7 @@ import { meleeWeaponsList, ItemWeapon } from '@viewer-app/shared';
   `,
   styleUrls: ['../items.component.scss'],
 })
-export class ItemWeaponComponent implements AfterViewInit {
+export class ItemMeleeWeaponComponent implements AfterViewInit {
   public dataSourceWeapons = new MatTableDataSource<ItemWeapon>(
     Object.keys(meleeWeaponsList).map((key) => meleeWeaponsList[key])
   );

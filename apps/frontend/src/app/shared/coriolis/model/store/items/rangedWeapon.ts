@@ -40,7 +40,7 @@ export const vulcanPistolAraxOmir = {
   damage: 3,
   crit: 2,
   range: ItemRange.short,
-  features: ['+2toMANIPULATIONwhenthreatening'],
+  features: [{name: '+2toMANIPULATIONwhenthreatening' }],
   techTier: ItemTechTier.ordinary,
   cost: 1200
 } as ItemWeapon;
@@ -238,7 +238,7 @@ export const acceleratorRifle = {
   damage: 3,
   crit: 1,
   range: ItemRange.extreme,
-  features: [armorPiercing, 'Nightsights', silent],
+  features: [armorPiercing, {name: 'Nightsights' }, silent],
   techTier: ItemTechTier.ordinary,
   cost: 2000
 } as ItemWeapon;
@@ -249,7 +249,7 @@ export const acceleratorRifleNesteraParox = {
   damage: 4,
   crit: 1,
   range: ItemRange.extreme,
-  features: [heavyWeapon, antiVehicle, armorPiercing, 'Nightsights', silent],
+  features: [heavyWeapon, antiVehicle, armorPiercing, {name: 'Nightsights' }, silent],
   techTier: ItemTechTier.ordinary,
   cost: 3000
 } as ItemWeapon;
@@ -260,7 +260,7 @@ export const thermalRifle = {
   damage: 5,
   crit: 2,
   range: ItemRange.extreme,
-  features: [armorPiercing, 'Nightsights'],
+  features: [armorPiercing, {name: 'Nightsights' }],
   techTier: ItemTechTier.advanced,
   cost: 6000
 } as ItemWeapon;

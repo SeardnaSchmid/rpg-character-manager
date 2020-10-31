@@ -4,6 +4,10 @@ import { ItemFeatureType } from './itemFeature';
 
 export type UserInteractionFunctionType = () => boolean;
 
+export class CharacterModifierSimple {
+  public name: string;
+}
+
 export class CharacterModifier {
   // mandatory fields
   public name: string;
