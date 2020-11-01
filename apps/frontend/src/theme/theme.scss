@@ -16,18 +16,22 @@ body {
   height: 100%;
 }
 
-mat-form-field{
+mat-form-field {
   padding-right: 0.5rem;
   padding-bottom: 0.5rem;
   vertical-align: middle;
 }
 
-.attribute-container{
+.mat-row:hover {
+  background-color: lightsteelblue;
+}
+
+.attribute-container {
   padding-right: 0.25em;
   padding-bottom: 0.25em;
 }
 
-.dotted{
+.dotted {
   text-decoration: underline;
   text-decoration-style: dotted;
 }

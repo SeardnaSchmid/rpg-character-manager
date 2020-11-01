@@ -461,7 +461,7 @@ export const combatBow = {
   cost: 2000
 } as ItemWeapon;
 
-export const allRangedWeapons = [
+export const allRangedWeapons = {
   vulcanCricket,
   vulcanPistol,
   vulcanPistolAraxOmir,
@@ -499,4 +499,4 @@ export const allRangedWeapons = [
   spearThrower,
   harpoon,
   combatBow
-];
+};

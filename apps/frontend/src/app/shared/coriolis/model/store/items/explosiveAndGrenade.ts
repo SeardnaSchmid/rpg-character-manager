@@ -1,15 +1,6 @@
-import {
-  ItemRange,
-  ItemRangedWeaponSubCategory,
-  ItemTechTier,
-  ItemWeapon,
-} from '../../character';
+import { ItemRange, ItemRangedWeaponSubCategory, ItemTechTier, ItemWeapon } from '../../character';
 
-import {
-  fire2,
-  fire3,
-  stun
-} from '../features'
+import { fire2, fire3, stun } from '../features';
 
 export const breachChargeSmall   = {name: "breachChargeSmall",   itemSubCategory: ItemRangedWeaponSubCategory.explosive ,bonusModifier: 0, initModifier: 0, blastPower: 6 , damage:  1, crit: 1,   range: ItemRange.close, features: [], techTier: ItemTechTier.ordinary, cost: 500    } as ItemWeapon;   // |||||||||| |
 export const breachChargeMedium  = {name: "breachChargeMedium",  itemSubCategory: ItemRangedWeaponSubCategory.explosive ,bonusModifier: 0, initModifier: 0, blastPower: 8 , damage:  1, crit: 1,   range: ItemRange.short, features: [], techTier: ItemTechTier.ordinary, cost: 2000  } as ItemWeapon;   // |||||||||| |
@@ -24,7 +15,7 @@ export const stunGrenade         = {name: "stunGrenade",         itemSubCategory
 export const thermalGrenade      = {name: "thermalGrenade",      itemSubCategory: ItemRangedWeaponSubCategory.grenade   ,bonusModifier: 0, initModifier: 0, blastPower: 6 , damage:  1, crit: 1,   range: ItemRange.close, features: [fire2], techTier: ItemTechTier.advanced, cost: 2000  } as ItemWeapon;   // |||||||||| |
 export const thermobaricGrenade  = {name: "thermobaricGrenade",  itemSubCategory: ItemRangedWeaponSubCategory.grenade   ,bonusModifier: 0, initModifier: 0, blastPower: 9 , damage:  1, crit: 1,   range: ItemRange.short, features: [fire3], techTier: ItemTechTier.advanced, cost: 4000  } as ItemWeapon;   // |||||||||| |
 
-export const allExplosivesAndGrenadesWeapons = [
+export const allExplosivesAndGrenadesWeapons = {
   breachChargeSmall,
   breachChargeMedium,
   breachChargeHeavy,
@@ -36,5 +27,5 @@ export const allExplosivesAndGrenadesWeapons = [
   smokeGrenade,
   stunGrenade,
   thermalGrenade,
-  thermobaricGrenade,
-];
+  thermobaricGrenade
+};

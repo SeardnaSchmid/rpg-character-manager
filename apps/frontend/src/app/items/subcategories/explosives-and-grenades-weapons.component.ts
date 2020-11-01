@@ -1,8 +1,7 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
-import { meleeWeaponsList, ItemWeapon, allExplosivesAndGrenadesWeapons } from '@viewer-app/shared';
-import { allRangedWeapons } from '../../shared/coriolis/model/store/items/rangedWeapon';
+import { allExplosivesAndGrenadesWeapons, ItemWeapon } from '@viewer-app/shared';
 
 @Component({
   selector: 'frontend-items-explosives-and-grenades-weapon',
@@ -32,7 +31,7 @@ import { allRangedWeapons } from '../../shared/coriolis/model/store/items/ranged
       <ng-container matColumnDef="blastPower">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Blast Power</th>
         <td mat-cell *matCellDef="let element">
-          {{ element.blastPower | titlecase }}
+          {{ element.blastPower }}
         </td>
       </ng-container>
       <ng-container matColumnDef="weight">
