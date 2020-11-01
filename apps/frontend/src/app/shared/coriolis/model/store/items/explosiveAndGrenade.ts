@@ -1,16 +1,40 @@
-| EXPLOSIVES AND GRENADES |       |      |             |        |      |        |                           |           |        |        |
-| ----------------------- | ----- | ---- | ----------- | ------ | ---- | ------ | ------------------------- | --------- | ------ | ------ |
-| EXPLOSIVE               | BONUS | INIT | BLAST POWER | DAMAGE | CRIT | RADIUS | FEATURES                  | TECH TIER | COST   | WEIGHT |
-| Breach charge           | 0     | 0    |             |        |      |        |                           | -         |        |        |
-| – Small                 |       |      | 6           | 1      | 1    | Close  |                           | O         | 500    | Heavy  |
-| – Medium                |       |      | 8           | 1      | 1    | Short  |                           | O         | 2,000  | Heavy  |
-| – Heavy                 |       |      | 12          | 1      | 1    | Short  |                           | O*        | 10,000 | -      |
-| – Massive               |       |      | 16          | 1      | 1    | Short  |                           | O*        | 40,000 | -      |
-| Concussion grenade      | 0     | 0    | 6           | 1      | 2    | Close  |                           | O         | 600    | Light  |
-| Frag grenade            | 0     | 0    | 6           | 2      | 1    | Close  |                           | O         | 500    | Light  |
-| Inferno grenade         | 0     | 0    | 9           | 2      | 1    | Short  |                           | A*        | 1,500  | Light  |
-| Sensor smoke grenade    | 0     | 0    | 0           | 0      | -    | Short  | Blocks vision and sensors | O         | 1,000  | Light  |
-| Smoke grenade           | 0     | 0    | 0           | 0      | -    | Short  | Blocks vision             | O         | 400    | Light  |
-| Stun grenade            | 0     | 0    | 6           | 1      | -    | Close  | Stun                      | O         | 800    | Light  |
-| Thermal grenade         | 0     | 0    | 6           | 1      | 1    | Close  | Fire 2                    | A*        | 2,000  | Light  |
-| Thermobaric grenade     | 0     | 0    | 9           | 1      | 1    | Short  | Fire 3                    | A*        | 4,000  | Light  |
+import {
+  ItemRange,
+  ItemRangedWeaponSubCategory,
+  ItemTechTier,
+  ItemWeapon,
+} from '../../character';
+
+import {
+  fire2,
+  fire3,
+  stun
+} from '../features'
+
+export const breachChargeSmall   = {name: "breachChargeSmall",   itemSubCategory: ItemRangedWeaponSubCategory.explosive ,bonusModifier: 0, initModifier: 0, blastPower: 6 , damage:  1, crit: 1,   range: ItemRange.close, features: [], techTier: ItemTechTier.ordinary, cost: 500    } as ItemWeapon;   // |||||||||| |
+export const breachChargeMedium  = {name: "breachChargeMedium",  itemSubCategory: ItemRangedWeaponSubCategory.explosive ,bonusModifier: 0, initModifier: 0, blastPower: 8 , damage:  1, crit: 1,   range: ItemRange.short, features: [], techTier: ItemTechTier.ordinary, cost: 2000  } as ItemWeapon;   // |||||||||| |
+export const breachChargeHeavy   = {name: "breachChargeHeavy",   itemSubCategory: ItemRangedWeaponSubCategory.explosive ,bonusModifier: 0, initModifier: 0, blastPower: 12, damage:  1, crit: 1,   range: ItemRange.short, features: [], techTier: ItemTechTier.ordinary, cost: 10000 } as ItemWeapon;   // |||||||||| |
+export const breachChargeMassive = {name: "breachChargeMassive", itemSubCategory: ItemRangedWeaponSubCategory.explosive ,bonusModifier: 0, initModifier: 0, blastPower: 16, damage:  1, crit: 1,   range: ItemRange.short, features: [], techTier: ItemTechTier.ordinary, cost: 40000 } as ItemWeapon;   // |||||||||| |
+export const concussionGrenade   = {name: "concussionGrenade",   itemSubCategory: ItemRangedWeaponSubCategory.grenade   ,bonusModifier: 0, initModifier: 0, blastPower: 6 , damage:  1, crit: 2,   range: ItemRange.close, features: [], techTier: ItemTechTier.ordinary, cost: 600    } as ItemWeapon;   // |||||||||| |
+export const fragGrenade         = {name: "fragGrenade",         itemSubCategory: ItemRangedWeaponSubCategory.grenade   ,bonusModifier: 0, initModifier: 0, blastPower: 6 , damage:  2, crit: 1,   range: ItemRange.close, features: [], techTier: ItemTechTier.ordinary, cost: 500    } as ItemWeapon;   // |||||||||| |
+export const infernoGrenade      = {name: "infernoGrenade",      itemSubCategory: ItemRangedWeaponSubCategory.grenade   ,bonusModifier: 0, initModifier: 0, blastPower: 9 , damage:  2, crit: 1,   range: ItemRange.short, features: [], techTier: ItemTechTier.advanced, cost: 1500  } as ItemWeapon;   // |||||||||| |
+export const sensorSmokeGrenade  = {name: "sensorSmokeGrenade",  itemSubCategory: ItemRangedWeaponSubCategory.grenade   ,bonusModifier: 0, initModifier: 0, blastPower: 0 , damage:  0, crit: "-", range: ItemRange.short, features: [{name: 'Blocks vision and sensors'}], techTier: ItemTechTier.ordinary, cost: 1000  } as ItemWeapon;   // |||||||||| |
+export const smokeGrenade        = {name: "smokeGrenade",        itemSubCategory: ItemRangedWeaponSubCategory.grenade   ,bonusModifier: 0, initModifier: 0, blastPower: 0 , damage:  0, crit: "-", range: ItemRange.short, features: [{name: 'Blocks vision' }], techTier: ItemTechTier.ordinary, cost: 400    } as ItemWeapon;   // |||||||||| |
+export const stunGrenade         = {name: "stunGrenade",         itemSubCategory: ItemRangedWeaponSubCategory.grenade   ,bonusModifier: 0, initModifier: 0, blastPower: 6 , damage:  1, crit: "-", range: ItemRange.close, features: [stun], techTier: ItemTechTier.ordinary, cost: 800    } as ItemWeapon;   // |||||||||| |
+export const thermalGrenade      = {name: "thermalGrenade",      itemSubCategory: ItemRangedWeaponSubCategory.grenade   ,bonusModifier: 0, initModifier: 0, blastPower: 6 , damage:  1, crit: 1,   range: ItemRange.close, features: [fire2], techTier: ItemTechTier.advanced, cost: 2000  } as ItemWeapon;   // |||||||||| |
+export const thermobaricGrenade  = {name: "thermobaricGrenade",  itemSubCategory: ItemRangedWeaponSubCategory.grenade   ,bonusModifier: 0, initModifier: 0, blastPower: 9 , damage:  1, crit: 1,   range: ItemRange.short, features: [fire3], techTier: ItemTechTier.advanced, cost: 4000  } as ItemWeapon;   // |||||||||| |
+
+export const allExplosivesAndGrenadesWeapons = [
+  breachChargeSmall,
+  breachChargeMedium,
+  breachChargeHeavy,
+  breachChargeMassive,
+  concussionGrenade,
+  fragGrenade,
+  infernoGrenade,
+  sensorSmokeGrenade,
+  smokeGrenade,
+  stunGrenade,
+  thermalGrenade,
+  thermobaricGrenade,
+];

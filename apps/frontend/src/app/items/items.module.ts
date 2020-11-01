@@ -11,7 +11,7 @@ import { ItemsComponent } from './items.component';
 import {
   ItemArmorComponent,
   ItemRangedWeaponComponent,
-  ItemMeleeWeaponComponent,
+  ItemMeleeWeaponComponent, ItemExplosivesAndGrenadesWeaponComponent
 } from '@viewer-app/items/subcategories';
 import { TooltipModule } from 'ng2-tooltip-directive';
 
@@ -26,6 +26,6 @@ import { TooltipModule } from 'ng2-tooltip-directive';
     TooltipModule,
     ItemsRoutingModule,
   ],
-  declarations: [ItemsComponent, ItemRangedWeaponComponent, ItemMeleeWeaponComponent, ItemArmorComponent],
+  declarations: [ItemsComponent, ItemRangedWeaponComponent, ItemMeleeWeaponComponent, ItemArmorComponent, ItemExplosivesAndGrenadesWeaponComponent],
 })
 export class ItemsModule {}

@@ -8,10 +8,9 @@ import {
   CoriolisCoreControllsService,
   GeneralSkillType
 } from '@viewer-app/shared';
-import { EnumValues } from 'enum-values';
 
 @Component({
-  selector: 'viewer-character-info-skills',
+  selector: 'frontend-character-info-skills',
   templateUrl: './character-info-skills.component.html',
   styleUrls: ['./character-info-skills.component.scss'],
 })
@@ -36,10 +35,10 @@ export class CharacterInfoSkillsComponent implements OnInit {
   }
 
   getGeneralSkills(skills: CharacterSkill[]) {
-    return skills.filter(skill => EnumValues.getNames(GeneralSkillType).includes(skill.type));
+    return skills.filter(skill => Object.keys(GeneralSkillType).includes(skill.type));
   }
 
   getAdvancedSkills(skills: CharacterSkill[]) {
-    return skills.filter(skill => EnumValues.getNames(AdvancedSkillType).includes(skill.type));
+    return skills.filter(skill => Object.keys(AdvancedSkillType).includes(skill.type));
   }
 }
