@@ -17,3 +17,10 @@ q {
 table {
   width: 100%;
 }
+
+.tables-container {
+  width: 100%;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
